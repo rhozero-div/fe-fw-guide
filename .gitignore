@@ -1,0 +1,4 @@
+.workbuddy/
+plans/
+.DS_Store
+__pycache__/

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火焰纹章 万缕千丝 · 第一部速查手册</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1f2430; --ink2:#5b6472; --ink3:#8b94a3;
+  --line:#e4e7ec; --line2:#eef0f4;
+  --accent:#8a5a14; --accent-soft:#fdf4e3; --accent-line:#e6cf9e;
+  --blue:#1d4ed8; --blue-soft:#eaf0ff;
+  --green:#166534; --green-soft:#e8f5ec;
+  --red:#b42318; --red-soft:#fdeceb;
+  --purple:#6d28d9; --purple-soft:#f2ecfe;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:.2px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 18px 80px}
+
+/* header */
+header{background:linear-gradient(135deg,#1d2433 0%,#2c3550 55%,#3b2f1e 100%);color:#fff;padding:22px 0 0}
+.hd{max-width:1320px;margin:0 auto;padding:0 18px}
+.hd h1{font-size:21px;letter-spacing:.5px}
+.hd .sub{color:#c9d0e0;font-size:12.5px;margin-top:5px}
+.hd .sub b{color:#f5c86b;font-weight:600}
+.ctrl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 0}
+.seg{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:9px;overflow:hidden}
+.seg button{background:none;border:0;color:#dfe4ef;padding:7px 14px;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.seg button.on{background:#f5c86b;color:#2a2113;font-weight:700}
+.search{position:relative}
+.search input{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;
+  border-radius:9px;padding:8px 12px 8px 30px;font-size:13px;width:240px;font-family:inherit;outline:none}
+.search input::placeholder{color:#aeb7c8}
+.search svg{position:absolute;left:9px;top:9px;opacity:.65}
+nav{display:flex;gap:4px;margin-top:16px;flex-wrap:wrap}
+nav button{background:none;border:0;border-bottom:3px solid transparent;color:#c3cadb;padding:10px 16px;
+  font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
+nav button.on{color:#fff;border-bottom-color:#f5c86b}
+nav button:hover{color:#fff}
+
+/* generic */
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+.card>h3{font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.muted{color:var(--ink2)}
+.small{font-size:12.5px}
+.tiny{font-size:11.5px}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;border:1px solid var(--line);
+  background:#fafbfc;color:var(--ink2);margin:2px 4px 2px 0;white-space:nowrap}
+.tag.acc{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.tag.blue{background:var(--blue-soft);border-color:#c9d6ff;color:var(--blue)}
+.tag.green{background:var(--green-soft);border-color:#c6e4d1;color:var(--green)}
+.tag.red{background:var(--red-soft);border-color:#f5cdc9;color:var(--red)}
+.tag.purple{background:var(--purple-soft);border-color:#ddd0fb;color:var(--purple)}
+.tag.grey{background:#f2f4f7;color:var(--ink3)}
+.warn{background:#fff8e6;border:1px solid var(--accent-line);border-radius:8px;padding:9px 12px;
+  font-size:12.5px;color:#7a5510;margin:10px 0}
+.info{background:#eef4ff;border:1px solid #cfdcff;border-radius:8px;padding:10px 13px;font-size:12.5px;color:#24406e;margin:10px 0}
+.hr{height:1px;background:var(--line2);margin:14px 0}
+
+/* table */
+.tw{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{background:#f4f6f9;color:var(--ink2);font-weight:700;font-size:12px;white-space:nowrap;position:sticky;top:0;z-index:2;cursor:pointer;user-select:none}
+th:hover{color:var(--accent)}
+th .ar{color:#c3c9d4;font-weight:400;font-size:10px}
+tbody tr:hover{background:#fafbfd}
+tbody tr.dim{opacity:.45}
+td.num{text-align:center;font-variant-numeric:tabular-nums;font-weight:600}
+td.g{text-align:center;font-variant-numeric:tabular-nums;font-weight:600}
+td.g.big{font-weight:800}
+.nm{font-weight:700;cursor:pointer}
+.nm:hover{color:var(--accent)}
+.sortbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.sortbar .lbl{color:var(--ink2);font-size:12.5px}
+.chk{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--ink2);cursor:pointer;
+  border:1px solid var(--line);border-radius:8px;padding:5px 10px;background:#fff}
+.chk input{margin:0}
+.lkbtn{background:#fff;border:1px solid var(--line);border-radius:7px;padding:3px 9px;font-size:12px;
+  font-family:inherit;color:var(--accent);cursor:pointer;margin:2px 4px 0 0}
+.lkbtn:hover{border-color:var(--accent);background:var(--accent-soft)}
+.more{display:block;width:100%;margin-top:10px;background:#fff;border:1px dashed var(--line);border-radius:9px;
+  padding:9px;font-size:13px;color:var(--ink2);cursor:pointer;font-family:inherit}
+.more:hover{border-color:var(--accent);color:var(--accent)}
+.rk{display:inline-block;min-width:34px;text-align:center;background:#eef2f8;border:1px solid #dde3ec;
+  border-radius:6px;padding:0 6px;font-weight:700;font-size:12px;font-variant-numeric:tabular-nums}
+.rk.hi{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.lkbox{background:var(--green-soft);border:1px solid #c6e4d1;border-radius:8px;padding:9px 13px;font-size:13px;
+  color:var(--green);margin-top:12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lkbox b{font-size:14px}
+.xbtn{background:#fff;border:1px solid #c6e4d1;color:var(--green);border-radius:6px;padding:2px 9px;
+  font-size:12px;cursor:pointer;font-family:inherit}
+select{border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:12.5px;background:#fff;
+  font-family:inherit;color:var(--ink)}
+.cnt{color:var(--ink3);font-size:12px;margin-left:auto}
+
+/* detail row */
+tr.detail>td{background:#fbfcfe;padding:0}
+.dbox{padding:14px 16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.dbox h5{margin:0 0 5px;font-size:12px;color:var(--ink3);font-weight:700;letter-spacing:.4px}
+.dbox .kv{font-size:13px}
+.jgrid{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:12.5px}
+
+/* recruit */
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;margin-top:12px}
+.rcard{border:1px solid var(--line);border-radius:10px;background:#fff;padding:12px 14px}
+.rcard .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rcard .top b{font-size:15px}
+.rcard .row{margin-top:6px;font-size:12.5px;display:grid;grid-template-columns:66px 1fr;gap:8px}
+.rcard .row span:first-child{color:var(--ink3)}
+.req{display:inline-block;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent);
+  border-radius:6px;padding:0 7px;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums}
+.req.b{background:var(--blue-soft);border-color:#c9d6ff;color:var(--blue)}
+.req.g{background:var(--green-soft);border-color:#c6e4d1;color:var(--green)}
+
+/* items */
+.igrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:12px}
+.icard{border:1px solid var(--line);border-radius:10px;background:#fff;padding:13px 15px}
+.icard .nm2{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.icard dl{margin:8px 0 0;font-size:12.5px;display:grid;grid-template-columns:56px 1fr;gap:4px 9px}
+.icard dt{color:var(--ink3)}
+.icard dd{margin:0}
+
+/* paralogue */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:13px;margin-top:12px}
+.pcard{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
+.pcard .hd2{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.pcard .ttl{font-weight:700;font-size:15px}
+.pcard .en{font-size:11.5px;color:var(--ink3)}
+.dw{white-space:pre-line;font-size:12.5px;background:#fafbfd;border:1px solid var(--line2);border-radius:8px;
+  padding:7px 10px;margin-top:7px}
+.pcard dl{margin:8px 0 0;font-size:12.5px;display:grid;grid-template-columns:62px 1fr;gap:5px 9px}
+.pcard dt{color:var(--ink3)}
+.pcard dd{margin:0}
+ul.rw{margin:5px 0 0;padding-left:18px;font-size:12.5px}
+.matrix td.y{background:var(--green-soft);color:var(--green);font-weight:700;text-align:center}
+.matrix td.n{color:#c8cdd6;text-align:center}
+.matrix th:first-child,.matrix td:first-child{position:static}
+.matrix td.ch{text-align:center;font-weight:600;color:var(--ink2)}
+
+footer{color:var(--ink3);font-size:12px;text-align:center;padding:26px 0 0}
+.hide{display:none!important}
+.mono{font-variant-numeric:tabular-nums}
+td.pt{padding:5px 6px;width:46px}
+td.pt img{width:40px;height:40px;border-radius:8px;display:block;border:1px solid var(--line);
+  background:#f2f4f7;object-fit:cover;object-position:top center}
+.bigpt{width:92px;height:92px;border-radius:10px;border:1px solid var(--line);background:#f2f4f7;
+  object-fit:cover;object-position:top center;display:block}
+.ptwrap{display:flex;gap:12px;align-items:flex-start}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin-top:8px}
+.lg{display:inline-flex;align-items:center;gap:6px}
+.sw{width:26px;height:11px;border-radius:3px;display:inline-block}
+@media (max-width:720px){
+  .search input{width:100%}
+  .hd h1{font-size:18px}
+  th,td{padding:6px 7px;font-size:12px}
+  td.pt{width:34px}
+  td.pt img{width:30px;height:30px;border-radius:6px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd">
+    <h1>火焰纹章 · 万缕千丝　<span style="font-weight:400;font-size:14px;opacity:.75">第一部速查手册</span></h1>
+    <div class="sub">Fire Emblem: Fortune's Weave ｜ 四位主角：<b>凯伊</b> · <b>迪托利希</b> · <b>赛奥朵拉</b> · <b>蕾达</b>　｜　数据范围：第一部（四条线各 12 章）</div>
+    <div class="ctrl">
+      <div class="seg" id="routeSeg"></div>
+      <div class="search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="q" placeholder="搜索角色 / 物品 / 外传…">
+      </div>
+    </div>
+    <nav id="tabs"></nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="tab-chars"></section>
+  <section id="tab-recruit" class="hide"></section>
+  <section id="tab-items" class="hide"></section>
+  <section id="tab-para" class="hide"></section>
+  <section id="tab-skills" class="hide"></section>
+  <section id="tab-about" class="hide"></section>
+</div>
+
+<footer>数据整理自中文攻略 wiki、游民星空、巴哈姆特、NGA、KeenGamer 等多源交叉核对 · 标注「待验证」处请以游戏内为准</footer>
+
+<script>
+const DATA = __DATA__;
+const ROUTES = ["凯伊","迪托利希","赛奥朵拉","蕾达"];
+const STATS = ["HP","力量","魔力","技巧","速度","幸运","防守","魔防","魅力"];
+const STAT_ABBR = {"HP":"HP","力量":"力","魔力":"魔","技巧":"技","速度":"速","幸运":"运","防守":"防","魔防":"魔防","魅力":"魅"};
+const state = {tab:"chars", route:"all", q:"", sortKey:"total", sortDir:-1, onlyRoute:false, prof:"", recSort:"renown",
+  sys:"", weapon:"", lookup:"", artLimit:60};
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num = s => { const m=String(s==null?"":s).match(/-?\d+(\.\d+)?/); return m?parseFloat(m[0]):null; };
+function gColor(v){ if(v==null) return ""; const a=(0.06+Math.min(v,70)/70*0.72); return "background:rgba(240,175,45,"+a.toFixed(3)+")"; }
+const total = c => c.growth? STATS.reduce((s,k)=>s+((c.growth[k])||0),0) : 0;
+
+/* ---------- header ---------- */
+const TABS = [{k:"chars",t:"① 角色成长图鉴"},{k:"recruit",t:"② 第一部挖角"},{k:"items",t:"③ 稀有物品 / 转职票证"},{k:"para",t:"④ 外传一览"},{k:"skills",t:"⑤ 熟练度习得技能"},{k:"about",t:"说明与来源"}];
+const SYS_ALT = {"箭术":"弓术","马术":"骑术"};
+const RANK_ORDER = (DATA.profSkills&&DATA.profSkills.rankOrder)||["E","E+","D","D+","C","C+","B","B+","A","A+","S","S+"];
+const LV2RANK = {"Lv.1":"D+","Lv.2":"C+","Lv.3":"B+","Lv.4":"A+","Lv.5":"S"};
+function rankIdx(r){
+  let s=String(r||"").split("/")[0].trim();
+  if(LV2RANK[s]) s=LV2RANK[s];
+  if(s.indexOf("S+")>=0) s="S+";
+  const i=RANK_ORDER.indexOf(s);
+  return i<0?99:i;
+}
+function sysLabel(s){ return SYS_ALT[s] ? s+"（"+SYS_ALT[s]+"）" : s; }
+function sysMatch(s,prof){ return s===prof || SYS_ALT[s]===prof; }
+const hasLearner = (list,name)=> Array.isArray(list) && (list.indexOf(name)>=0 || list.indexOf("大多数角色")>=0);
+function renderHeader(){
+  const rs = document.getElementById("routeSeg");
+  rs.innerHTML = [["all","全部路线"]].concat(ROUTES.map(r=>[r,r])).map(([v,t])=>
+    `<button class="${state.route===v?"on":""}" data-route="${v}">${t}</button>`).join("");
+  rs.querySelectorAll("button").forEach(b=>b.onclick=()=>{state.route=b.dataset.route;render();});
+  document.getElementById("tabs").innerHTML = TABS.map(t=>
+    `<button class="${state.tab===t.k?"on":""}" data-tab="${t.k}">${t.t}</button>`).join("");
+  document.getElementById("tabs").querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    state.tab=b.dataset.tab; render(); window.scrollTo({top:0,behavior:"smooth"});});
+}
+function portrait(name,size){
+  const p = (DATA.portraits||{})[name];
+  if(!p) return `<span class="tag grey" style="width:40px;height:40px;line-height:36px;text-align:center;padding:0">—</span>`;
+  return `<img src="${p}" alt="${esc(name)}" width="${size||40}" height="${size||40}" loading="lazy"
+    onerror="this.outerHTML='&lt;span class=&quot;tag grey&quot;&gt;—&lt;/span&gt;'">`;
+}
+function routeBadge(r){ const i=["acc","blue","purple","green"][ROUTES.indexOf(r)]; return i?`<span class="tag ${i}">${r}</span>`:`<span class="tag grey">${r}</span>`; }
+
+/* ---------- 1. characters ---------- */
+const JOIN_KEYS = ROUTES;
+function joinOf(c,r){ return (c.join&&c.join[r])||"—"; }
+function joinable(c,r){ const v=joinOf(c,r); return v && v!=="—"; }
+function charsFiltered(){
+  const q=state.q.trim();
+  let rows = DATA.characters.slice();
+  if(state.onlyRoute && state.route!=="all") rows = rows.filter(c=>joinable(c,state.route));
+  if(state.prof) rows = rows.filter(c=>Array.isArray(c.proficiency)&&c.proficiency.includes(state.prof));
+  if(q) rows = rows.filter(c=> (c.name+"|"+(c.personalSkill||"")+"|"+(c.proficiency||[]).join("|")+"|"+(c.note||"")+
+      "|"+((c.bloodSeal||[]).map(b=>b.name+(b.effect||"")).join("|"))).indexOf(q)>=0);
+  const k=state.sortKey;
+  rows.sort((a,b)=>{
+    let va,vb;
+    if(k==="name"){ va=a.name; vb=b.name; return va.localeCompare(vb,"zh")*state.sortDir; }
+    if(k==="total"){ va=total(a); vb=total(b); }
+    else if(STATS.indexOf(k)>=0){ va=(a.growth&&a.growth[k])||0; vb=(b.growth&&b.growth[k])||0; }
+    else if(k==="join"){ va=state.route==="all"?"":joinOf(a,state.route); vb=state.route==="all"?"":joinOf(b,state.route);
+      return String(va).localeCompare(String(vb),"zh")*state.sortDir; }
+    else { va=0; vb=0; }
+    return (va-vb)*state.sortDir || a.name.localeCompare(b.name,"zh");
+  });
+  return rows;
+}
+function renderChars(){
+  const rows = charsFiltered();
+  const profs = Array.from(new Set(DATA.characters.flatMap(c=>c.proficiency||[]))).sort((a,b)=>a.localeCompare(b,"zh"));
+  const ar = k => state.sortKey===k ? (state.sortDir<0?"▲":"▼") : "";
+  const th = (k,t,cls)=>`<th data-k="${k}" class="${cls||""}">${t}<span class="ar">${ar(k)}</span></th>`;
+  const joinCol = state.route==="all" ? "" : th("join", state.route+"线加入");
+  let html = `
+  <div class="card">
+    <h3>角色成长图鉴 <span class="tag grey">${DATA.characters.length} 名角色</span>
+      <span class="small muted" style="font-weight:400">点击角色名展开详情（含四路线加入时点与本线挖角条件）</span></h3>
+    <div class="info">成长率单位 %：升级时该属性提升的概率。颜色越深数值越高，<b>合计</b>为 9 项之和（越高=越容易全面发展）。
+      排序：点击任意表头列切换升/降序；默认按合计降序。职业成长修正另计，本表为角色个人成长率。</div>
+    <div class="sortbar">
+      <span class="lbl">筛选：</span>
+      <label class="chk"><input type="checkbox" id="onlyRoute" ${state.onlyRoute?"checked":""} ${state.route==="all"?"disabled":""}>仅看本路线可获得</label>
+      <select id="profSel"><option value="">全部擅长武器</option>${profs.map(p=>`<option ${state.prof===p?"selected":""}>${p}</option>`).join("")}</select>
+      <span class="cnt">当前显示 ${rows.length} / ${DATA.characters.length}</span>
+    </div>
+    <div class="tw"><table>
+      <thead><tr>
+        ${th("name","角色")}<th>头像</th><th>性别</th><th>个人特技</th><th>血印</th>
+        ${STATS.map(s=>th(s,STAT_ABBR[s],"g")).join("")}
+        ${th("total","合计","g")}
+        ${joinCol}
+        <th>擅长熟练度</th>
+      </tr></thead><tbody>`;
+  for(const c of rows){
+    const g=c.growth||{};
+    const joinCell = state.route==="all" ? "" : (()=>{
+      const v=joinOf(c,state.route); const ok=joinable(c,state.route);
+      return `<td class="small ${ok?"":"muted"}">${esc(v)}</td>`;})();
+    html += `<tr class="${state.route!=="all"&&!joinable(c,state.route)?"dim":""}">
+      <td class="nm" data-nm="${esc(c.name)}">${esc(c.name)}</td>
+      <td class="pt">${portrait(c.name,40)}</td>
+      <td class="small muted">${esc(c.gender||"")}</td>
+      <td class="small" title="${esc(c.personalSkill||"")}">${esc((c.personalSkill||"—").slice(0,42))}${ (c.personalSkill||"").length>42?"…":""}</td>
+      <td class="small">${(c.bloodSeal||[]).map(b=>`<span class="tag purple" title="${esc(b.name+"："+(b.effect||""))}">${esc(b.name)}</span>`).join("")||'<span class="muted tiny">—</span>'}</td>
+      ${STATS.map(s=>{const v=g[s];return `<td class="g ${v>=55?"big":""}" style="${gColor(v)}">${v==null?"—":v}</td>`;}).join("")}
+      <td class="g big" style="${gColor(total(c)*0.78)}">${total(c)}</td>
+      ${joinCell}
+      <td class="tiny">${(c.proficiency||[]).map(p=>`<span class="tag">${esc(p)}</span>`).join("")}</td>
+    </tr>`;
+  }
+  html += `</tbody></table></div>
+    <div class="legend"><span class="lg"><span class="sw" style="background:rgba(240,175,45,.15)"></span>低</span>
+      <span class="lg"><span class="sw" style="background:rgba(240,175,45,.45)"></span>中</span>
+      <span class="lg"><span class="sw" style="background:rgba(240,175,45,.8)"></span>高（≥55 加粗）</span></div>
+  </div>`;
+  const el=document.getElementById("tab-chars"); el.innerHTML=html;
+  el.querySelectorAll("th[data-k]").forEach(t=>t.onclick=()=>{
+    const k=t.dataset.k; if(state.sortKey===k) state.sortDir*=-1; else {state.sortKey=k; state.sortDir=-1;} renderChars();});
+  el.querySelectorAll("#onlyRoute").forEach(x=>x.onchange=e=>{state.onlyRoute=e.target.checked;renderChars();});
+  const ps=el.querySelector("#profSel"); if(ps) ps.onchange=e=>{state.prof=e.target.value;renderChars();};
+  el.querySelectorAll("td.nm").forEach(td=>td.onclick=()=>toggleDetail(td));
+}
+function toggleDetail(td){
+  const tr=td.parentElement;
+  if(tr.nextElementSibling && tr.nextElementSibling.classList.contains("detail")){ tr.nextElementSibling.remove(); return; }
+  const c=DATA.characters.find(x=>x.name===td.dataset.nm); if(!c) return;
+  const g=c.growth||{};
+  const rec = state.route==="all"?[]:DATA.recruitment.filter(r=>r.name===c.name&&r.route===state.route);
+  const recAll = DATA.recruitment.filter(r=>r.name===c.name);
+  const nProf = DATA.profSkills.skills.filter(s=>hasLearner(s.learners,c.name)).length;
+  const nArt = DATA.combatArts.arts.filter(a=>hasLearner(a.learners,c.name)).length;
+  const d=document.createElement("tr"); d.className="detail";
+  const bigP = (DATA.portraits||{})[c.name];
+  d.innerHTML = `<td colspan="21"><div class="dbox">
+    <div style="grid-column:1/-1"><div class="ptwrap">
+      ${bigP?`<img class="bigpt" src="${bigP}" alt="${esc(c.name)}">`:'<span class="tag grey">无头像</span>'}
+      <div><h5>${esc(c.name)}</h5>
+        <div class="kv small">${esc(c.gender||"")} ｜ 初始职业 ${esc(c.startClass||"—")}${c.faction?(" ｜ "+esc(c.faction)):""} ｜ 成长合计 <b>${total(c)}</b></div></div>
+    </div></div>
+    <div><h5>个人特技</h5><div class="kv">${esc(c.personalSkill||"—")}</div></div>
+    <div><h5>血印</h5><div class="kv">${(c.bloodSeal||[]).length? (c.bloodSeal.map(b=>`${esc(b.name)}<span class="tiny muted">（${esc(b.crest||"")}）</span>：${esc(b.effect||"")}`).join("<br>")) : "—"}</div></div>
+    <div><h5>四路线加入时点</h5><div class="jgrid">${ROUTES.map(r=>
+        `<span class="tag ${joinable(c,r)?"green":"grey"}">${r}</span><span class="small">${esc(joinOf(c,r))}</span>`).join("")}</div></div>
+    <div><h5>成长率</h5><div class="kv mono small">${STATS.map(s=>`${s} <b>${g[s]==null?"—":g[s]}</b>`).join(" ｜ ")}<br>合计 <b>${total(c)}</b></div></div>
+    <div style="grid-column:1/-1"><h5>${state.route==="all"?"挖角条件（各路线）":state.route+"线挖角条件"}</h5><div class="kv small">${
+      (state.route==="all"?recAll:rec).length? (state.route==="all"?recAll:rec).map(r=>
+        `${routeBadge(r.route)} 支援 <span class="req b">${esc(r.supportReq||"—")}</span> 名声 <span class="req">${esc(r.renownReq||"—")}</span> ${r.special?("｜"+esc(r.special)):""} ${r.earliest?("｜最早 "+esc(r.earliest)):""}`).join("<br>")
+      : "—（该角色在本路线为剧情加入或不需挖角）"}</div></div>
+    ${c.note?`<div style="grid-column:1/-1"><h5>备注</h5><div class="kv small">${esc(c.note)}</div></div>`:""}
+    <div style="grid-column:1/-1"><h5>可习得技能（点击查看清单）</h5><div>
+      <button class="lkbtn" data-lk="${esc(c.name)}">熟练度特技 ${nProf} 项</button>
+      <button class="lkbtn" data-lk="${esc(c.name)}">战技 ${nArt} 个</button>
+      <span class="tiny muted">※ 名单按 wiki 已知资料整理，可能不全</span></div></div>
+  </div></td>`;
+  tr.after(d);
+  d.querySelectorAll(".lkbtn").forEach(b=>b.onclick=()=>{
+    state.lookup=b.dataset.lk; state.q=""; state.sys=""; state.weapon=""; state.artLimit=60;
+    state.tab="skills"; render(); window.scrollTo({top:0,behavior:"smooth"});});
+}
+
+/* ---------- 2. recruitment ---------- */
+function renderRecruit(){
+  const q=state.q.trim();
+  const routes = state.route==="all"?ROUTES:[state.route];
+  let rows = DATA.recruitment.filter(r=>routes.includes(r.route));
+  if(q) rows = rows.filter(r=>(r.name+"|"+(r.special||"")+"|"+(r.tip||"")+"|"+(r.earliest||"")).indexOf(q)>=0);
+  rows.sort((a,b)=>{
+    if(state.recSort==="renown"){ const va=num(a.renownReq)??99, vb=num(b.renownReq)??99; return va-vb || (num(a.supportReq)??9)-(num(b.supportReq)??9) || a.name.localeCompare(b.name,"zh"); }
+    if(state.recSort==="support"){ const va=num(a.supportReq)??9, vb=num(b.supportReq)??9; return va-vb || (num(a.renownReq)??99)-(num(b.renownReq)??99) || a.name.localeCompare(b.name,"zh"); }
+    if(state.recSort==="chapter"){ return String(a.earliest||"").localeCompare(String(b.earliest||""),"zh") || a.route.localeCompare(b.route,"zh"); }
+    return a.name.localeCompare(b.name,"zh") || a.route.localeCompare(b.route,"zh");
+  });
+  const stats = ROUTES.map(r=>{const n=DATA.recruitment.filter(x=>x.route===r).length;return `${r} ${n} 名`;}).join(" · ");
+  let html = `
+  <div class="card">
+    <h3>第一部挖角指南 <span class="tag grey">${stats}</span></h3>
+    <div class="info"><b>核心机制</b>：挖角需<b>同时</b>满足两个条件 —— ① 该角色与你的<b>支援等级</b>（好感度，全局永久保留、跨线继承）；② <b>当前路线的名声等级</b>（每条线单独计算，换线归零需重刷）。
+      名声来源：支线任务、NPC 委托、章节附加目标、方尖塔挑战。部分角色还需交素材 / 先完成委托支线 / 先通关某外传。<br>
+      <b>建议</b>：先在一条线（推荐蕾达线第 9 章约 120 回合）把全局支援刷满，之后换线只需刷名声即可批量挖角。</div>
+    <div class="warn">⚠ 挖角时机越晚，角色加入时等级越高、装备越好；但等级 6 后招募初始等级会超过 19 级、直接解锁中级职业，难以融入主力。想培养的角色建议<b>趁早挖</b>。</div>
+    <div class="sortbar">
+      <span class="lbl">排序：</span>
+      <select id="recSort">
+        <option value="renown" ${state.recSort==="renown"?"selected":""}>按名声要求（低→高）</option>
+        <option value="support" ${state.recSort==="support"?"selected":""}>按支援要求（低→高）</option>
+        <option value="chapter" ${state.recSort==="chapter"?"selected":""}>按最早可挖章节</option>
+        <option value="name" ${state.recSort==="name"?"selected":""}>按角色名</option>
+      </select>
+      <span class="cnt">当前显示 ${rows.length} 条</span>
+    </div>
+    <div class="rgrid">`;
+  for(const r of rows){
+    const rn=num(r.renownReq), sp=num(r.supportReq);
+    const cheap = rn!=null&&rn<=4;
+    html += `<div class="rcard">
+      <div class="top"><b>${esc(r.name)}</b>${routeBadge(r.route)}${cheap?'<span class="tag green">低门槛</span>':""}</div>
+      <div class="row"><span>支援要求</span><span><span class="req b">${esc(r.supportReq||"—")}</span></span></div>
+      <div class="row"><span>名声要求</span><span><span class="req">${esc(r.renownReq||"—")}</span></span></div>
+      <div class="row"><span>特殊条件</span><span>${esc(r.special||"—")}</span></div>
+      <div class="row"><span>最早时点</span><span>${esc(r.earliest||'<span class="muted">待验证</span>')}</span></div>
+      ${r.tip?`<div class="row"><span>备注</span><span class="muted">${esc(r.tip)}</span></div>`:""}
+    </div>`;
+  }
+  html += `</div></div>`;
+  const el=document.getElementById("tab-recruit"); el.innerHTML=html;
+  const s=el.querySelector("#recSort"); if(s) s.onchange=e=>{state.recSort=e.target.value;renderRecruit();};
+}
+
+/* ---------- 3. items ---------- */
+function itemCards(list,fields,mustKey){
+  const q=state.q.trim();
+  return list.filter(x=>!q || (x.name+"|"+(x.effect||x.usage||"")+"|"+(x.location||x.how||"")+"|"+(x.chapter||"")+"|"+(x.route||"")).indexOf(q)>=0)
+  .map(x=>{
+    const must = mustKey && x.mustHave;
+    return `<div class="icard">
+      <div class="nm2">${esc(x.name)}${must?'<span class="tag red">必拿</span>':""}
+        ${x.route&&x.route!=="全路线"?routeBadge(x.route):(x.route==="全路线"?'<span class="tag grey">全路线</span>':"")}</div>
+      <dl>
+        ${fields.map(f=>{
+          const v = f.key==="effect"? (x.effect||x.usage||"") : (f.key==="where"? (x.location||x.how||"") : x[f.key]);
+          return v? `<dt>${f.t}</dt><dd>${esc(v)}</dd>` : "";
+        }).join("")}
+      </dl></div>`;
+  }).join("");
+}
+function renderItems(){
+  const it = DATA.items;
+  let html = `<div class="card">
+    <h3>上级转职票证（上级考试票证）<span class="tag grey">第一部每线约 10 张</span></h3>
+    <div class="info">${esc(it.notes.inGameName)}。${esc(it.notes.countDisclaimer)}<br>
+      <b>最优策略</b>：尽早解锁地图最下方的<b>王都美盖拉</b>（市场每章固定刷新 1 张）+ 帝都商店街每章补货（3000G，最多囤 5 个），右下迷宫宝箱另有 1 张。35 级前及时转职。</div>
+    <div class="igrid">`;
+  for(const e of it.examScrolls){
+    if(state.route!=="all" && e.route!==state.route) continue;
+    html += `<div class="icard"><div class="nm2">${routeBadge(e.route)} 约 <span class="req">${e.count}</span> 张</div>
+      <dl><dt>获取途径</dt><dd><table style="width:100%">${e.detail.map(d=>
+        `<tr><td class="tiny" style="border:0;padding:3px 0"><b>${esc(d.location)}</b><br><span class="muted">${esc(d.chapter)}</span><br>${esc(d.how)}</td></tr>`).join("")}</table></dd></dl></div>`;
+  }
+  html += `</div></div>`;
+
+  html += `<div class="card"><h3>稀有武器 <span class="tag grey">${it.rareWeapons.length} 件</span></h3>
+    <div class="igrid">${itemCards(it.rareWeapons,[{t:"效果",key:"effect"},{t:"获取",key:"where"},{t:"章节",key:"chapter"}],true)}</div></div>`;
+  html += `<div class="card"><h3>稀有技能 / 特技 <span class="tag grey">${it.rareSkills.length} 项</span></h3>
+    <div class="igrid">${itemCards(it.rareSkills,[{t:"效果",key:"effect"},{t:"获取",key:"where"},{t:"章节",key:"chapter"}],false)}</div></div>`;
+  html += `<div class="card"><h3>其他稀有 / 必备物品 <span class="tag grey">${it.keyItems.length} 项</span></h3>
+    <div class="igrid">${itemCards(it.keyItems,[{t:"用途",key:"effect"},{t:"获取",key:"where"},{t:"章节",key:"chapter"},{t:"时限",key:"deadline"}],true)}</div></div>`;
+  document.getElementById("tab-items").innerHTML = html;
+}
+
+/* ---------- 4. paralogues ---------- */
+function renderPara(){
+  const q=state.q.trim();
+  let rows = DATA.paralogues.filter(p=>!q || (p.name+"|"+p.character+"|"+(p.nameEn||"")+"|"+(p.rewards||[]).join("")+"|"+(p.trigger||"")).indexOf(q)>=0);
+  const order = {"佯攻作战":"9/2","勇士像的去向":"9/3","布里吉特王的亲善赛":"9/17","消失马车的秘密":"9/17",
+    "金色的秘密":"9/24","被抹消者们的女王":"10/5","大逃亡":"10/16","被封印的过去":"10/16","欧露赫露的牵挂":"10/18"};
+  rows.sort((a,b)=>(order[a.name]||"").localeCompare(order[b.name]||""));
+  const only = state.route!=="all";
+  let html = `<div class="card">
+    <h3>第一部九个外传 · 触发时点总览 <span class="tag grey">全 9 个</span>
+      <span class="small muted" style="font-weight:400">外传只在第一部出现，单条路线打不全；错过窗口本周目无法再打（可用重玩补救）</span></h3>
+    <div class="warn">⚠ 外传不会在第 9 章（迪托利希线）/ 第 10 章（其余三线）之前出现。每个外传都绑定一名角色，<b>该角色自己的路线不能打自己的外传</b>。
+      完成外传会影响第三部角色可用性，其中贝特兰 / 谭利穆恩 / 爱娜特莉亚 / 欧露赫露 属「必须打外传才能在第 3 部取得」的隐藏角色。</div>
+    <div class="tw"><table class="matrix"><thead><tr><th>外传</th><th>绑定角色</th>${ROUTES.map(r=>`<th>${r}</th>`).join("")}<th>奖励</th></tr></thead><tbody>`;
+  for(const p of rows){
+    html += `<tr class="${only&&!p.routes.includes(state.route)?"dim":""}">
+      <td><b>${esc(p.name)}</b><br><span class="tiny muted">${esc(p.nameEn||"")}</span></td>
+      <td>${esc(p.character)}</td>
+      ${ROUTES.map(r=> p.routes.includes(r)
+        ? `<td class="y" title="${esc(p.chapterWindow)}">✓</td>`
+        : `<td class="n">—</td>`).join("")}
+      <td class="tiny">${(p.rewards||[]).slice(0,3).map(esc).join("、")}${(p.rewards||[]).length>3?"等":""}</td></tr>`;
+  }
+  html += `</tbody></table></div></div>`;
+
+  html += `<div class="pgrid">`;
+  for(const p of rows){
+    if(only && !p.routes.includes(state.route)) continue;
+    html += `<div class="pcard">
+      <div class="hd2"><div><div class="ttl">${esc(p.name)}</div><div class="en">${esc(p.nameEn||"")} ｜ 绑定角色：${esc(p.character)}（${esc(p.characterEn||"")}）</div></div>
+        <div>${p.routes.map(routeBadge).join("")}</div></div>
+      <dl><dt>可触发路线</dt><dd>${p.routes.map(esc).join(" · ")}</dd>
+        <dt>章节窗口</dt><dd>${esc(p.chapterWindow)}</dd></dl>
+      <div class="dw">${esc(p.dateWindow)}</div>
+      <dl><dt>触发方式</dt><dd>${esc(p.trigger)}</dd>
+        <dt>奖励</dt><dd><ul class="rw">${(p.rewards||[]).map(r=>`<li>${esc(r)}</li>`).join("")}</ul></dd>
+        <dt>第三部影响</dt><dd>${esc(p.part3Effect)}</dd></dl>
+      ${p.note?`<div class="warn" style="margin-top:10px">⚠ ${esc(p.note)}</div>`:""}
+    </div>`;
+  }
+  html += `</div>`;
+  document.getElementById("tab-para").innerHTML = html;
+}
+
+/* ---------- 5. proficiency skills & combat arts ---------- */
+function learnerCell(list,lookup){
+  if(!list||!list.length) return '<span class="muted tiny">—</span>';
+  if(list.length===1&&list[0]==="大多数角色") return '<span class="tag green">大多数角色</span>';
+  const show = list.slice(0,26).map(n=> n===lookup? `<span class="tag acc">${esc(n)}</span>` : `<span class="tag">${esc(n)}</span>`).join("");
+  return show + (list.length>26? `<span class="tiny muted"> …等 ${list.length} 人</span>`:"");
+}
+function renderSkills(){
+  const ps = DATA.profSkills, ca = DATA.combatArts;
+  const lookup = state.lookup, q = state.q.trim();
+  const sysList = ps.systems||[];
+  let sk = ps.skills.filter(s=>{
+    if(state.sys && s.system!==state.sys) return false;
+    if(lookup && !hasLearner(s.learners,lookup)) return false;
+    if(q && !lookup){ const hay=s.name+"|"+s.effect+"|"+s.system+"|"+(s.learners||[]).join("|")+"|"+(s.note||""); if(hay.indexOf(q)<0) return false; }
+    return true;
+  });
+  sk.sort((a,b)=> (sysList.indexOf(a.system)-sysList.indexOf(b.system)) || (rankIdx(a.rank)-rankIdx(b.rank)) || a.name.localeCompare(b.name,"zh"));
+  const weapons = Array.from(new Set(ca.arts.map(a=>a.weapon||"其他"))).sort((a,b)=>a.localeCompare(b,"zh"));
+  let arts = ca.arts.filter(a=>{
+    if(state.weapon && (a.weapon||"其他")!==state.weapon) return false;
+    if(lookup && !hasLearner(a.learners,lookup)) return false;
+    if(q && !lookup){ const hay=a.name+"|"+a.effect+"|"+a.cond+"|"+(a.learners||[]).join("|")+"|"+(a.weapon||""); if(hay.indexOf(q)<0) return false; }
+    return true;
+  });
+  const artShown = arts.slice(0,state.artLimit);
+  const charNames = DATA.characters.map(c=>c.name);
+
+  let html = `<div class="card">
+    <h3>武器 / 兵种熟练度习得技能 <span class="tag grey">熟练度特技 ${ps.skills.length} 项</span> <span class="tag grey">战技 ${ca.arts.length} 个</span></h3>
+    <div class="info">
+      <b>熟练度等级顺序</b>：${RANK_ORDER.join(" → ")}（E 最低，S+ 最高；E→S+ 累计约 2560 经验）。<br>
+      <b>武器熟练度 Lv.1～5 的对应</b>：Lv.1＝${LV2RANK["Lv.1"]}、Lv.2＝${LV2RANK["Lv.2"]}、Lv.3＝${LV2RANK["Lv.3"]}、Lv.4＝${LV2RANK["Lv.4"]}、Lv.5＝${LV2RANK["Lv.5"]}；「〇〇的奥妙」为 <b>S+</b>。<br>
+      <b>刷熟练度技巧</b>：第一部即可用地牢遭遇战「撤退循环」反复刷 —— 进遭遇圈、装最弱武器打非致命一击、然后撤退（熟练度保留），可无限重复；治疗法术同理刷白魔术熟练度。<br>
+      ${esc(ps.gradeNote||"")}
+    </div>
+    <div class="sortbar">
+      <span class="lbl">按角色反查：</span>
+      <select id="lkSel"><option value="">— 选择角色 —</option>${charNames.map(n=>`<option ${lookup===n?"selected":""}>${esc(n)}</option>`).join("")}</select>
+      ${lookup?`<span class="tag acc">反查中：${esc(lookup)}</span><button class="xbtn" id="lkClear">清除反查</button>`:""}
+      <span class="cnt">熟练度特技 ${sk.length} 项 ｜ 战技 ${arts.length} 个</span>
+    </div>
+    <div class="sortbar">
+      <span class="lbl">熟练度系统：</span>
+      <span class="tag ${state.sys===""?"acc":""}" data-sys="" style="cursor:pointer">全部</span>
+      ${sysList.map(s=>`<span class="tag ${state.sys===s?"acc":""}" data-sys="${esc(s)}" style="cursor:pointer">${esc(sysLabel(s))}</span>`).join("")}
+    </div>
+    <div class="sortbar">
+      <span class="lbl">战技武器：</span>
+      <span class="tag ${state.weapon===""?"acc":""}" data-wp="" style="cursor:pointer">全部</span>
+      ${weapons.map(w=>`<span class="tag ${state.weapon===w?"acc":""}" data-wp="${esc(w)}" style="cursor:pointer">${esc(w)}</span>`).join("")}
+    </div>`;
+
+  if(lookup){
+    const bySys = {}; sk.forEach(s=>{ bySys[s.system]=(bySys[s.system]||0)+1; });
+    html += `<div class="lkbox"><b>${esc(lookup)}</b> 可习得：
+      熟练度特技 <b>${sk.length}</b> 项（${Object.keys(bySys).map(s=>esc(sysLabel(s))+" "+bySys[s]).join(" ｜ ")||"无"}）
+      ｜ 战技 <b>${arts.length}</b> 个
+      <span class="small" style="color:#3f6b4f">※ 名单按 wiki 已知资料整理，可能不全（视为已知下限）</span></div>`;
+  }
+  html += `</div>`;
+
+  html += `<div class="card"><h3>① 熟练度习得特技 <span class="tag grey">${sk.length} 项</span>
+    <span class="small muted" style="font-weight:400">按熟练度系统 → 所需等级排序；同一技能不同角色所需等级不同时以「D/C/B」形式标注</span></h3>
+    <div class="tw"><table><thead><tr><th>系统</th><th>等级</th><th>技能名</th><th>类别</th><th>效果</th><th>可习得角色</th></tr></thead><tbody>`;
+  for(const s of sk){
+    const ri = rankIdx(s.rank);
+    html += `<tr>
+      <td class="tiny"><span class="tag">${esc(sysLabel(s.system))}</span></td>
+      <td><span class="rk ${ri>=8?"hi":""}">${esc(s.rank)}</span></td>
+      <td><b>${esc(s.name)}</b>${s.note?`<br><span class="tiny muted">${esc(s.note)}</span>`:""}</td>
+      <td class="tiny muted">${esc(s.category||"")}</td>
+      <td class="small">${esc(s.effect||"—")}</td>
+      <td class="tiny">${learnerCell(s.learners,lookup)}</td></tr>`;
+  }
+  html += `</tbody></table></div></div>`;
+
+  html += `<div class="card"><h3>② 战技（Combat Arts） <span class="tag grey">${arts.length} 个${arts.length>artShown.length?"，显示前 "+artShown.length:""}</span>
+    <span class="small muted" style="font-weight:400">习得条件含：剧情 / 等级 / 装备特定武器 / 秘传传授 / 魔响石战技强化</span></h3>
+    <div class="tw"><table><thead><tr><th>战技名</th><th>武器</th><th>消耗</th><th>效果</th><th>习得条件</th><th>可习得角色</th></tr></thead><tbody>`;
+  for(const a of artShown){
+    html += `<tr>
+      <td><b>${esc(a.name)}</b>${a.note?`<br><span class="tiny muted">${esc(a.note)}</span>`:""}</td>
+      <td class="tiny"><span class="tag">${esc(a.weapon||"—")}</span></td>
+      <td class="tiny muted">${esc(a.cost||"—")}</td>
+      <td class="small">${esc(a.effect||"—")}</td>
+      <td class="small muted">${esc(a.cond||"—")}</td>
+      <td class="tiny">${learnerCell(a.learners,lookup)}</td></tr>`;
+  }
+  html += `</tbody></table></div>`;
+  if(arts.length>artShown.length) html += `<button class="more" id="artMore">显示更多（剩余 ${arts.length-artShown.length} 个）</button>`;
+  html += `</div>`;
+
+  const el=document.getElementById("tab-skills"); el.innerHTML=html;
+  const sel=el.querySelector("#lkSel"); if(sel) sel.onchange=e=>{state.lookup=e.target.value;state.artLimit=60;renderSkills();};
+  const clr=el.querySelector("#lkClear"); if(clr) clr.onclick=()=>{state.lookup="";state.artLimit=60;renderSkills();};
+  el.querySelectorAll("span[data-sys]").forEach(t=>t.onclick=()=>{state.sys=t.dataset.sys;renderSkills();});
+  el.querySelectorAll("span[data-wp]").forEach(t=>t.onclick=()=>{state.weapon=t.dataset.wp;state.artLimit=60;renderSkills();});
+  const mo=el.querySelector("#artMore"); if(mo) mo.onclick=()=>{state.artLimit+=120;renderSkills();};
+}
+
+/* ---------- 6. about ---------- */
+function renderAbout(){
+  const gaps = (DATA.items.notes.gaps||[]);
+  const ch = DATA.characters, rc = DATA.recruitment;
+  const missingSkill = ch.filter(c=>!c.personalSkill).map(c=>c.name);
+  const missingJoin = ch.filter(c=>ROUTES.some(r=>c.join&&c.join[r]==null)).map(c=>c.name);
+  const missingEarliest = rc.filter(r=>!r.earliest).length;
+  document.getElementById("tab-about").innerHTML = `
+  <div class="card"><h3>使用说明</h3>
+    <ul style="margin:6px 0 0;padding-left:19px" class="small">
+      <li>顶部<b>路线切换</b>会联动全部四个模块：角色表高亮该线可获得角色、挖角只显示该线条目、物品/外传只显示该线相关内容。选「全部路线」可查看完整数据。</li>
+      <li>顶部<b>搜索框</b>对当前所在模块生效（角色含特技与熟练度、物品含效果与地点、外传含奖励）。</li>
+      <li>角色表点击任意<b>表头</b>排序，点击<b>角色名</b>展开详情（四路线加入时点 + 本线挖角条件）。</li>
+      <li>标注 <span class="tag red">待验证</span> 的条目表示多来源说法不一或资料缺失，请以游戏内实际为准。</li>
+    </ul>
+  </div>
+  <div class="card"><h3>数据规模</h3>
+    <div class="small">角色 <b>${ch.length}</b> 名 ｜ 挖角记录 <b>${rc.length}</b> 条（${ROUTES.map(r=>r+" "+DATA.recruitment.filter(x=>x.route===r).length).join(" / ")}）
+      ｜ 稀有武器 <b>${DATA.items.rareWeapons.length}</b> 件 ｜ 稀有技能 <b>${DATA.items.rareSkills.length}</b> 项 ｜ 关键物品 <b>${DATA.items.keyItems.length}</b> 项 ｜ 外传 <b>${DATA.paralogues.length}</b> 个
+      ｜ 熟练度特技 <b>${DATA.profSkills.skills.length}</b> 项（覆盖 ${(DATA.profSkills.systems||[]).length} 个熟练度系统）｜ 战技 <b>${DATA.combatArts.arts.length}</b> 个（${DATA.combatArts.arts.filter(a=>a.learners&&a.learners.length).length} 个带可习得角色名单）</div>
+  </div>
+  <div class="card"><h3>熟练度 / 战技模块说明</h3>
+    <ul class="small" style="margin:6px 0 0;padding-left:19px">
+      <li><b>按角色反查</b>：选下拉框（或在角色图鉴点角色详情里的按钮），即可列出该角色能习得的全部熟练度特技与战技。</li>
+      <li>熟练度等级 ${RANK_ORDER.join(" → ")}；武器熟练度 Lv.1～5 分别对应 ${["Lv.1","Lv.2","Lv.3","Lv.4","Lv.5"].map(k=>LV2RANK[k]).join(" / ")}。</li>
+      <li>战技的「可习得角色名单」按 wiki 已知资料整理，<b>可能不全</b>，请当作已知下限；部分战技为装备限定武器或秘传传授（全角色可学），源站未给名单。</li>
+      <li>113 条「战技强化（+ 版）」的名单继承自其原版战技（有原版才能强化）。</li>
+    </ul>
+    <div class="warn">${esc((DATA.combatArts.meta&&DATA.combatArts.meta.note)||"")}</div>
+  </div>
+  <div class="card"><h3>已知数据缺口（待验证）</h3>
+    <ul class="small" style="margin:6px 0 0;padding-left:19px">
+      ${gaps.map(g=>`<li>${esc(g)}</li>`).join("")}
+      ${missingSkill.length?`<li>缺个人特技：${missingSkill.map(esc).join("、")}</li>`:""}
+      ${missingJoin.length?`<li>加入时点有缺失：${missingJoin.map(esc).join("、")}</li>`:""}
+      ${missingEarliest?`<li>挖角「最早时点」缺失 ${missingEarliest} 条（攻略站本身为空）</li>`:""}
+      <li>外传固定战斗日：蕾达外传 9/9 vs 9/8、凯伊外传 10/23 vs 10/22 存在来源分歧</li>
+      <li>上级考试票证每线数量为玩家实测估算值（约 10 张），实际取决于美盖拉解锁早晚</li>
+    </ul>
+  </div>
+  <div class="card"><h3>数据来源</h3>
+    <div class="small">${(DATA.items.notes.sources||[]).map(esc).join("<br>")}<br>
+      fire-emblem-fw.site 中文攻略 wiki（characters / recruit / items / paralogues / story 页）<br>
+      KeenGamer 全角色成长率表、全外传列表（英文交叉核对）｜ 游民星空 / 娱乐计程车 角色资料整理 ｜ 18183 外传解锁攻略 ｜ 360 游戏大厅 / 52pk 挖角心得 ｜ 巴哈姆特、NGA 玩家实测</div>
+  </div>`;
+}
+
+/* ---------- render ---------- */
+function render(){
+  renderHeader();
+  const TKS=["chars","recruit","items","para","skills","about"];
+  TKS.forEach(k=>document.getElementById("tab-"+k).classList.toggle("hide", state.tab!==k));
+  if(state.tab==="chars") renderChars();
+  if(state.tab==="recruit") renderRecruit();
+  if(state.tab==="items") renderItems();
+  if(state.tab==="para") renderPara();
+  if(state.tab==="skills") renderSkills();
+  if(state.tab==="about") renderAbout();
+}
+document.getElementById("q").addEventListener("input",e=>{state.q=e.target.value;render();});
+render();
+</script>
+</body>
+</html>
