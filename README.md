@@ -6,11 +6,13 @@
 >
 > 手机、平板直接打开即可，无需安装；也可下载 `index.html` 双击离线使用。
 
-## 分册：凯伊线专项攻略
+## 分册：四条路线攻略（外传 / 特有收集 / 挖角）
 
-> **🌐 <https://rhozero-div.github.io/fe-fw-guide/kai.html>**（本地文件 `kai.html` / `凯伊线-外传抓捕挖角攻略.html`）
+> **🌐 <https://rhozero-div.github.io/fe-fw-guide/routes.html>**（本地文件 `routes.html` / `四线-外传·特有收集·挖角.html`）
 >
-> 凯伊线第一部重玩专用：4 个可打外传的窗口与完美打法、15 种坐骑抓捕、36 人挖角门槛与「路线独占」的真实情况。
+> 第一部任意线重玩用：9 个外传按路线拆出各自的窗口与完美打法、每线专属收集（迪托利希的魔响石双系统、赛奥朵拉的专属兵种、蕾达的舞者与兴行）、44 名角色的挖角门槛与「路线独占」的真实判定、15 种坐骑抓捕。
+>
+> 顶部按钮切换主角线（凯伊 / 迪托利希 / 赛奥朵拉 / 蕾达），旧链接 `kai.html` 会自动跳到凯伊线。
 
 ---
 
@@ -37,13 +39,14 @@
 .
 ├── index.html                               # 构建产物（GitHub Pages 入口）
 ├── 火焰纹章-万缕千丝-第一部速查手册.html      # 同一份产物（中文文件名，便于本地保存）
-├── kai.html                                 # 凯伊线专项攻略（外传 / 抓捕 / 挖角）
-├── 凯伊线-外传抓捕挖角攻略.html              # 同一份产物（中文文件名）
+├── routes.html                              # 四线攻略（外传 / 特有收集 / 挖角 / 坐骑）
+├── 四线-外传·特有收集·挖角.html               # 同一份产物（中文文件名）
+├── kai.html                                 # 旧链接跳转页 → routes.html#/凯伊
 ├── build/
 │   ├── template.html                        # 页面模板，含 __DATA__ 占位符与全部前端逻辑
 │   ├── build.py                             # 注入数据 → 生成上述两个 HTML
-│   ├── kai_template.html                    # 凯伊线攻略模板（四个 Tab，hash 路由）
-│   └── kai_build.py                         # 注入 kai_* 数据 → 生成 kai.html
+│   ├── route_template.html                  # 四线攻略模板（五 Tab + 路线切换 + hash 路由）
+│   └── route_build.py                       # 注入外传/坐骑/挖角/特有收集 → 生成 routes.html
 └── data/                                    # 数据源（唯一真相来源）
     ├── characters.json                      # 63 名角色：特技/血印/成长率/熟练度/加入时点
     ├── recruitment.json                     # 151 条挖角记录
@@ -52,8 +55,10 @@
     ├── proficiency_skills.json              # 117 项熟练度习得特技 + 等级顺序
     ├── combat_arts.json                     # 355 个战技及可习得角色
     ├── portraits.json                       # 63 名角色头像（base64）
-    ├── kai_paralogues.json                  # 凯伊线 4 个外传：窗口/完美清单/打法/坑
+    ├── route_paralogues.json                # 9 个外传 × 各线窗口/完美清单/打法/坑
     ├── kai_mounts.json                      # 15 种可捕坐骑：诱饵/产地/优先度
+    ├── route_unique.json                    # 每条线的特有系统（指导/魔响石/战备/兴行）
+    ├── classes.json                         # 60 个兵种：转职要求与路线限定解锁条件
     ├── kai_chapters.json                    # 凯伊线 12 章自由行动回合与必做事项
     └── recruitment_timeline.json            # 逐路线挖角表（含教学招募与不可挖角标注）
 ```
@@ -64,7 +69,7 @@
 
 ```bash
 python3 build/build.py     # 需要 Python 3.8+，无第三方依赖
-python3 build/kai_build.py # 单独重建凯伊线攻略
+python3 build/route_build.py # 单独重建四线攻略
 ```
 
 该命令会重新生成 `index.html` 与中文名 HTML。推送到 `main` 分支后，GitHub Pages 约 1 分钟内自动更新。
@@ -72,6 +77,7 @@ python3 build/kai_build.py # 单独重建凯伊线攻略
 ## 数据来源
 
 - [fire-emblem-fw.site](https://fire-emblem-fw.site/) 中文攻略 wiki（主要来源：技能、战技、角色数据）
+- [fireemblem.top](https://fireemblem.top/database/recruitment)（逐路线挖角表：各线名声/支援/最早章节/教学招募/不可挖角）
 - [fextralife wiki](https://fortunesweave.wiki.fextralife.com/)（英文交叉核对成长率、熟练度等级）
 - 游民星空 / 娱乐计程车（血印与四线加入时点）、18183（外传解锁）、360 / 52pk（流程与物品）
 - 巴哈姆特哈啦区、NGA 玩家实测（票证数量、日期窗口）

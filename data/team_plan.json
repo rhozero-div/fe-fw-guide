@@ -1,0 +1,609 @@
+{
+ "note": "最终四队名单（声望+支援双约束；哈尔温↔希蒙 对调以提升队内支援密度）",
+ "teams": {
+  "凯伊": [
+   {
+    "name": "凯伊",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "媞雅拉",
+     "皮特鲁",
+     "乌尔坦德",
+     "哥莱亚斯",
+     "妮涅"
+    ]
+   },
+   {
+    "name": "媞雅拉",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "凯伊",
+     "皮特鲁",
+     "乌尔坦德",
+     "伊欧",
+     "西提司"
+    ]
+   },
+   {
+    "name": "皮特鲁",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "凯伊",
+     "媞雅拉",
+     "乌尔坦德",
+     "妮涅"
+    ]
+   },
+   {
+    "name": "古扎岚",
+    "kind": "教学",
+    "chapter": 3,
+    "renown": null,
+    "supportReq": null,
+    "links": []
+   },
+   {
+    "name": "诺克裘拉",
+    "kind": "可挖",
+    "chapter": 5,
+    "renown": "4",
+    "supportReq": "1",
+    "links": [
+     "哥莱亚斯"
+    ]
+   },
+   {
+    "name": "乌尔坦德",
+    "kind": "剧情",
+    "chapter": 6,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "凯伊",
+     "媞雅拉",
+     "皮特鲁",
+     "佩佩",
+     "哥莱亚斯",
+     "哪吒"
+    ]
+   },
+   {
+    "name": "哪吒",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "6",
+    "supportReq": "3",
+    "links": [
+     "乌尔坦德",
+     "马吉迪"
+    ]
+   },
+   {
+    "name": "妮涅",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "6",
+    "supportReq": "3",
+    "links": [
+     "凯伊",
+     "皮特鲁",
+     "佩佩"
+    ]
+   },
+   {
+    "name": "西提司",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "6",
+    "supportReq": "3",
+    "links": [
+     "媞雅拉"
+    ]
+   },
+   {
+    "name": "马吉迪",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "5",
+    "supportReq": "2",
+    "links": [
+     "哪吒"
+    ]
+   },
+   {
+    "name": "哥莱亚斯",
+    "kind": "可挖",
+    "chapter": 7,
+    "renown": "7",
+    "supportReq": "3",
+    "links": [
+     "凯伊",
+     "乌尔坦德",
+     "诺克裘拉"
+    ]
+   },
+   {
+    "name": "伊欧",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "10",
+    "supportReq": "3",
+    "links": [
+     "媞雅拉"
+    ]
+   },
+   {
+    "name": "佩佩",
+    "kind": "可挖",
+    "chapter": 10,
+    "renown": "9",
+    "supportReq": "1",
+    "links": [
+     "乌尔坦德",
+     "妮涅"
+    ]
+   }
+  ],
+  "迪托利希": [
+   {
+    "name": "迪托利希",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "法毕欧",
+     "艾丝梅拉尔达",
+     "米迦艾拉",
+     "哈尔温"
+    ]
+   },
+   {
+    "name": "法毕欧",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "迪托利希",
+     "艾丝梅拉尔达",
+     "米迦艾拉",
+     "哈尔温"
+    ]
+   },
+   {
+    "name": "艾丝梅拉尔达",
+    "kind": "剧情",
+    "chapter": 2,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "迪托利希",
+     "法毕欧",
+     "米迦艾拉",
+     "奇洛伊卡",
+     "迪雅各",
+     "露露蒂雅"
+    ]
+   },
+   {
+    "name": "米迦艾拉",
+    "kind": "剧情",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "迪托利希",
+     "法毕欧",
+     "艾丝梅拉尔达",
+     "杰斯塔"
+    ]
+   },
+   {
+    "name": "杨界",
+    "kind": "教学",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "沙兰"
+    ]
+   },
+   {
+    "name": "奇洛伊卡",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "4",
+    "supportReq": "1",
+    "links": [
+     "艾丝梅拉尔达"
+    ]
+   },
+   {
+    "name": "杰斯塔",
+    "kind": "可挖",
+    "chapter": 8,
+    "renown": "6",
+    "supportReq": "3",
+    "links": [
+     "米迦艾拉",
+     "哈尔温"
+    ]
+   },
+   {
+    "name": "哈尔温",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "9",
+    "supportReq": "3",
+    "links": [
+     "迪托利希",
+     "法毕欧",
+     "杰斯塔",
+     "沙兰",
+     "迪雅各"
+    ]
+   },
+   {
+    "name": "露露蒂雅",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "9",
+    "supportReq": "3",
+    "links": [
+     "艾丝梅拉尔达",
+     "盖茨"
+    ]
+   },
+   {
+    "name": "努佐",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "9",
+    "supportReq": "1",
+    "links": [
+     "迪雅各"
+    ]
+   },
+   {
+    "name": "沙兰",
+    "kind": "可挖",
+    "chapter": 11,
+    "renown": "10",
+    "supportReq": "3",
+    "links": [
+     "杨界",
+     "哈尔温",
+     "迪雅各"
+    ]
+   },
+   {
+    "name": "迪雅各",
+    "kind": "可挖",
+    "chapter": 11,
+    "renown": "9",
+    "supportReq": "3",
+    "links": [
+     "艾丝梅拉尔达",
+     "哈尔温",
+     "沙兰",
+     "努佐"
+    ]
+   },
+   {
+    "name": "盖茨",
+    "kind": "可挖",
+    "chapter": 12,
+    "renown": "10",
+    "supportReq": "3",
+    "links": [
+     "露露蒂雅"
+    ]
+   }
+  ],
+  "赛奥朵拉": [
+   {
+    "name": "赛奥朵拉",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "波拿帕尔特",
+     "托比亚斯",
+     "莉利安",
+     "莱桑达",
+     "亚历珊德拉",
+     "希蒙"
+    ]
+   },
+   {
+    "name": "波拿帕尔特",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "赛奥朵拉",
+     "托比亚斯",
+     "莉利安",
+     "莱桑达",
+     "乌修拉",
+     "努蒂奴"
+    ]
+   },
+   {
+    "name": "托比亚斯",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "赛奥朵拉",
+     "波拿帕尔特",
+     "莉利安",
+     "莱桑达",
+     "索绯雅",
+     "罗蕾塔"
+    ]
+   },
+   {
+    "name": "莉利安",
+    "kind": "剧情",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "赛奥朵拉",
+     "波拿帕尔特",
+     "托比亚斯",
+     "莱桑达",
+     "努蒂奴",
+     "希蒙"
+    ]
+   },
+   {
+    "name": "莱桑达",
+    "kind": "剧情",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "赛奥朵拉",
+     "波拿帕尔特",
+     "托比亚斯",
+     "莉利安"
+    ]
+   },
+   {
+    "name": "索绯雅",
+    "kind": "教学",
+    "chapter": 5,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "托比亚斯"
+    ]
+   },
+   {
+    "name": "札可捏",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "4",
+    "supportReq": "1",
+    "links": [
+     "希蒙"
+    ]
+   },
+   {
+    "name": "努蒂奴",
+    "kind": "可挖",
+    "chapter": 7,
+    "renown": "5",
+    "supportReq": "3",
+    "links": [
+     "波拿帕尔特",
+     "莉利安"
+    ]
+   },
+   {
+    "name": "罗蕾塔",
+    "kind": "可挖",
+    "chapter": 7,
+    "renown": "5",
+    "supportReq": "3",
+    "links": [
+     "托比亚斯"
+    ]
+   },
+   {
+    "name": "亚历珊德拉",
+    "kind": "可挖",
+    "chapter": 8,
+    "renown": "6",
+    "supportReq": "1",
+    "links": [
+     "赛奥朵拉"
+    ]
+   },
+   {
+    "name": "希蒙",
+    "kind": "可挖",
+    "chapter": 8,
+    "renown": "7",
+    "supportReq": "3",
+    "links": [
+     "赛奥朵拉",
+     "莉利安",
+     "乌修拉",
+     "札可捏"
+    ]
+   },
+   {
+    "name": "乌修拉",
+    "kind": "可挖",
+    "chapter": 11,
+    "renown": "9",
+    "supportReq": "3",
+    "links": [
+     "波拿帕尔特",
+     "希蒙"
+    ]
+   }
+  ],
+  "蕾达": [
+   {
+    "name": "蕾达",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "巴卡尼亚",
+     "西洛可",
+     "穆",
+     "奥琳琵娅",
+     "丹提"
+    ]
+   },
+   {
+    "name": "巴卡尼亚",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "蕾达",
+     "西洛可",
+     "穆",
+     "奥琳琵娅",
+     "嘉丝敏",
+     "大刀"
+    ]
+   },
+   {
+    "name": "西洛可",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "蕾达",
+     "巴卡尼亚",
+     "穆",
+     "奥琳琵娅",
+     "丹提"
+    ]
+   },
+   {
+    "name": "穆",
+    "kind": "剧情",
+    "chapter": 1,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "蕾达",
+     "巴卡尼亚",
+     "西洛可",
+     "奥琳琵娅"
+    ]
+   },
+   {
+    "name": "奥琳琵娅",
+    "kind": "剧情",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": [
+     "蕾达",
+     "巴卡尼亚",
+     "西洛可",
+     "穆",
+     "嘉丝敏",
+     "班迪兹",
+     "绯亚娜"
+    ]
+   },
+   {
+    "name": "卡塔妮雅",
+    "kind": "教学",
+    "chapter": 4,
+    "renown": null,
+    "supportReq": null,
+    "links": []
+   },
+   {
+    "name": "嘉丝敏",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "4",
+    "supportReq": "2",
+    "links": [
+     "巴卡尼亚",
+     "奥琳琵娅"
+    ]
+   },
+   {
+    "name": "大刀",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "5",
+    "supportReq": "2",
+    "links": [
+     "巴卡尼亚",
+     "易尼奥尼"
+    ]
+   },
+   {
+    "name": "绯亚娜",
+    "kind": "可挖",
+    "chapter": 6,
+    "renown": "5",
+    "supportReq": "3",
+    "links": [
+     "奥琳琵娅"
+    ]
+   },
+   {
+    "name": "班迪兹",
+    "kind": "可挖",
+    "chapter": 7,
+    "renown": "7",
+    "supportReq": "3",
+    "links": [
+     "奥琳琵娅"
+    ]
+   },
+   {
+    "name": "丹提",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "10",
+    "supportReq": "3",
+    "links": [
+     "蕾达",
+     "西洛可"
+    ]
+   },
+   {
+    "name": "易尼奥尼",
+    "kind": "可挖",
+    "chapter": 9,
+    "renown": "7",
+    "supportReq": "1",
+    "links": [
+     "大刀"
+    ]
+   }
+  ]
+ }
+}

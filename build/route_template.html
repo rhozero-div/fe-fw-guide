@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火焰纹章 万缕千丝 · 四线 外传 / 特有收集 / 挖角</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1f2430; --ink2:#5b6472; --ink3:#8b94a3;
+  --line:#e4e7ec; --line2:#eef0f4;
+  --accent:#8a5a14; --accent-soft:#fdf4e3; --accent-line:#e6cf9e;
+  --blue:#1d4ed8; --blue-soft:#eaf0ff;
+  --green:#166534; --green-soft:#e8f5ec;
+  --red:#b42318; --red-soft:#fdeceb;
+  --purple:#6d28d9; --purple-soft:#f2ecfe;
+  --teal:#0f766e; --teal-soft:#e6f6f4;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:14px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+h1,h2,h3,h4,h5{margin:0;font-weight:700;letter-spacing:.2px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 18px 90px}
+
+header{background:linear-gradient(135deg,#1d2433 0%,#2c3550 55%,#3b2f1e 100%);color:#fff;padding:22px 0 0}
+.hd{max-width:1260px;margin:0 auto;padding:0 18px}
+.hd h1{font-size:21px;letter-spacing:.5px}
+.hd .sub{color:#c9d0e0;font-size:12.5px;margin-top:5px}
+.hd .sub b{color:#f5c86b;font-weight:600}
+.rseg{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;overflow:hidden;margin-top:14px;flex-wrap:wrap}
+.rseg button{background:none;border:0;color:#dfe4ef;padding:8px 16px;font-size:13.5px;cursor:pointer;
+  font-family:inherit;font-weight:600;white-space:nowrap}
+.rseg button.on{background:#f5c86b;color:#2a2113}
+.kpis{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px}
+.kpi{display:flex;align-items:baseline;gap:6px}
+.kpi b{font-size:18px;color:#f5c86b;font-variant-numeric:tabular-nums}
+.kpi span{font-size:11.5px;color:#b9c2d4}
+nav{display:flex;gap:2px;margin-top:14px;flex-wrap:wrap}
+nav button{background:none;border:0;border-bottom:3px solid transparent;color:#c3cadb;padding:10px 14px;
+  font-size:13.5px;cursor:pointer;font-family:inherit;font-weight:600}
+nav button.on{color:#fff;border-bottom-color:#f5c86b}
+nav button:hover{color:#fff}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+.card>h3{font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.card>h4{font-size:13.5px;margin:14px 0 6px}
+.muted{color:var(--ink2)} .small{font-size:12.5px} .tiny{font-size:11.5px}
+.tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;border:1px solid var(--line);
+  background:#fafbfc;color:var(--ink2);margin:2px 4px 2px 0;white-space:nowrap}
+.tag.acc{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.tag.blue{background:var(--blue-soft);border-color:#c9d6ff;color:var(--blue)}
+.tag.green{background:var(--green-soft);border-color:#c6e4d1;color:var(--green)}
+.tag.red{background:var(--red-soft);border-color:#f5cdc9;color:var(--red)}
+.tag.purple{background:var(--purple-soft);border-color:#ddd0fb;color:var(--purple)}
+.tag.teal{background:var(--teal-soft);border-color:#bfe3de;color:var(--teal)}
+.tag.grey{background:#f2f4f7;color:var(--ink3)}
+.warn{background:#fff8e6;border:1px solid var(--accent-line);border-radius:8px;padding:9px 12px;
+  font-size:12.5px;color:#7a5510;margin:10px 0}
+.info{background:#eef4ff;border:1px solid #cfdcff;border-radius:8px;padding:10px 13px;font-size:12.5px;color:#24406e;margin:10px 0}
+.danger{background:var(--red-soft);border:1px solid #f5cdc9;border-radius:8px;padding:10px 13px;font-size:12.5px;color:var(--red);margin:10px 0}
+
+.tw{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{background:#f4f6f9;color:var(--ink2);font-weight:700;font-size:12px;white-space:nowrap;position:sticky;top:0;z-index:2}
+tbody tr:hover{background:#fafbfd}
+td.c{text-align:center;font-variant-numeric:tabular-nums}
+td.nm{font-weight:700;white-space:nowrap}
+tr.grp td{background:#f7f9fc;font-weight:700;font-size:12px;color:var(--ink2);border-bottom:1px solid var(--line)}
+.bar-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+select,input[type=text]{border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12.5px;
+  background:#fff;font-family:inherit;color:var(--ink);outline:none}
+input[type=text]:focus{border-color:var(--accent)}
+.chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px;
+  cursor:pointer;font-family:inherit;color:var(--ink2)}
+.chip.on{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent);font-weight:700}
+.req{display:inline-block;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent);
+  border-radius:6px;padding:0 7px;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums}
+.req.b{background:var(--blue-soft);border-color:#c9d6ff;color:var(--blue)}
+.req.g{background:var(--green-soft);border-color:#c6e4d1;color:var(--green)}
+
+/* gantt */
+.gantt{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:16px 16px 8px;overflow:auto}
+.grow{display:grid;grid-template-columns:186px 1fr;gap:10px;align-items:center;margin-bottom:7px;min-width:660px}
+.glab{font-size:12.5px;font-weight:700;white-space:nowrap}
+.glab i{display:block;font-style:normal;font-weight:400;color:var(--ink3);font-size:11px}
+.gtrack{position:relative;height:18px;background:#f7f9fc;border-radius:5px;border:1px solid var(--line2)}
+.gseg{position:absolute;top:2px;bottom:2px;border-radius:4px;color:#fff;font-size:10px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;text-indent:-9999px}
+.gaxis{position:relative;height:22px;margin-left:196px;min-width:660px}
+.gaxis span{position:absolute;font-size:10.5px;color:var(--ink3);transform:translateX(-50%)}
+
+/* paralogue cards */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(390px,1fr));gap:13px;margin-top:12px}
+.pcard{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
+.pcard.tight{border-color:#f0c9c4;box-shadow:0 0 0 3px #fdf1f0 inset}
+.pcard .t1{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.pcard .ttl{font-weight:700;font-size:15px}
+.pcard .en{font-size:11.5px;color:var(--ink3);margin-top:1px}
+.pcard dl{margin:9px 0 0;font-size:12.5px;display:grid;grid-template-columns:62px 1fr;gap:5px 9px}
+.pcard dt{color:var(--ink3)}
+.pcard dd{margin:0}
+.dw{white-space:pre-line;font-size:12.5px;background:#fafbfd;border:1px solid var(--line2);border-radius:8px;
+  padding:7px 10px;margin-top:8px;font-variant-numeric:tabular-nums}
+
+/* battle blocks */
+.bblock{border:1px solid var(--line);border-radius:12px;background:#fff;margin-top:14px;overflow:hidden}
+.bhead{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px 18px;
+  background:linear-gradient(90deg,#fbfaf6,#fff);border-bottom:1px solid var(--line2);flex-wrap:wrap}
+.bhead .bt{font-size:15.5px;font-weight:700}
+.bhead .bs{font-size:12px;color:var(--ink3);margin-top:2px}
+.bbody{padding:6px 18px 16px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:6px 22px}
+ul.ck{margin:6px 0 0;padding-left:0;list-style:none;font-size:12.5px}
+ul.ck li{position:relative;padding-left:22px;margin-bottom:5px}
+ul.ck li:before{content:"";position:absolute;left:0;top:4px;width:13px;height:13px;border-radius:4px;
+  border:1.5px solid var(--accent-line);background:var(--accent-soft)}
+ul.dt{margin:6px 0 0;padding-left:17px;font-size:12.5px}
+ul.dt li{margin-bottom:5px}
+ul.dt li::marker{color:var(--accent)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:12.5px;margin-top:8px}
+.step b{color:var(--teal);white-space:nowrap}
+
+/* summary */
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.bigc{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
+.bigc .n{font-size:25px;font-weight:800;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.bigc .l{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.bigc .x{font-size:12px;color:var(--ink3);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+table.mt{font-size:12.5px}
+table.mt th,table.mt td{padding:7px 9px}
+table.mt td:nth-child(3),table.mt td:nth-child(4),table.mt td:nth-child(5),table.mt td:nth-child(8){white-space:nowrap}
+table.mt th:nth-child(9),table.mt td:nth-child(9){min-width:216px}
+details{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px}
+details summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--accent)}
+.upg{display:grid;grid-template-columns:72px 1fr;gap:6px 10px;margin-top:10px;font-size:12.5px}
+.upg .w{color:var(--ink3);font-weight:700}
+.upg .lst span{display:inline-block;background:#f7f9fc;border:1px solid var(--line2);border-radius:6px;
+  padding:0 6px;margin:0 4px 4px 0;font-size:12px}
+footer{max-width:1260px;margin:0 auto;padding:26px 18px 60px;color:var(--ink3);font-size:11.5px}
+@media(max-width:640px){
+  .wrap{padding:0 12px 70px}.hd h1{font-size:17px}
+  nav button{padding:9px 9px;font-size:12.5px}.rseg button{padding:7px 11px;font-size:12.5px}
+  .grow{grid-template-columns:120px 1fr}.gaxis{margin-left:132px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hd">
+    <h1>火焰纹章 万缕千丝 · 四条路线</h1>
+    <div class="sub">第一部 外传全清 · 路线特有收集 · 独占挖角　｜　<b>数据源</b> fireemblem.top 逐路线挖角表 + 中文 wiki 外传专页 + 游戏内兵种/战技数值</div>
+    <div class="rseg" id="rseg"></div>
+    <div class="kpis" id="kpis"></div>
+    <nav id="nav"></nav>
+  </div>
+</header>
+
+<div class="wrap" id="app"></div>
+<footer>
+  单文件离线版，数据内嵌，断网可用。外传日期取各来源中最窄的窗口（宁可早到，不会扑空），源间分歧已在「坑」里标注。<br>
+  切换主角线后，外传、特有收集、挖角三个页签都会跟着换成本线的数据；坐骑抓捕全路线通用。
+</footer>
+
+<script>
+const PARA = __PARA__;
+const MOUNTS = __MOUNT__;
+const REC = __REC__;
+const UNIQ = __UNIQ__;
+const EXTRA = __EXTRA__;
+
+const ROUTES = ["凯伊","迪托利希","赛奥朵拉","蕾达"];
+const TABS = [
+  {id:"para",  name:"① 外传总表"},
+  {id:"battle",name:"② 逐关打法"},
+  {id:"uniq",  name:"③ 特有收集"},
+  {id:"rec",   name:"④ 挖角与独占"},
+  {id:"mount", name:"⑤ 坐骑抓捕"}
+];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+let route = "凯伊", cur = "para";
+(function initHash(){
+  const h = decodeURIComponent((location.hash||"").replace(/^#\/?/,""));
+  const [r,t] = h.split("/");
+  if(ROUTES.includes(r)) route = r;
+  if(TABS.some(x=>x.id===t)) cur = t;
+})();
+function setHash(){
+  if(history.replaceState) history.replaceState(null,"","#/"+encodeURIComponent(route)+"/"+cur);
+  else location.hash = "#/"+route+"/"+cur;
+}
+
+const dstr = w => w[0][0]+"/"+w[0][1]+"–"+w[1][0]+"/"+w[1][1];
+const dkey = s => { const m=/^(\d+)\/(\d+)\/(\d+)$/.exec(s||""); return m? (+m[1]*10000 + +m[2]*100 + +m[3]) : 9e9; };
+const paras = () => PARA.filter(p=>p.routes[route])
+  .sort((a,b)=> a.routes[route].ch - b.routes[route].ch
+             || dkey(a.routes[route].deadline) - dkey(b.routes[route].deadline));
+
+/* ---------- 甘特图：9/2 → 11/1 ---------- */
+const idx = (m,d)=> (+m===9) ? (+d-2) : (+m===10 ? 28 + +d : 58 + +d);
+const TOTAL = 59;
+const PAL = ["#c98a2e","#b42318","#0f766e","#6d28d9","#1d4ed8","#a1442c","#2f7d4f","#8a5a9e","#0e7490"];
+function gantt(){
+  const ps = paras();
+  const rows = ps.map((p,i)=>{
+    const w = p.routes[route], segs=[];
+    const push=(seg,lab)=>{
+      const a=idx(seg[0][0],seg[0][1]), b=idx(seg[1][0],seg[1][1]);
+      segs.push(`<div class="gseg" title="${lab}" style="left:${(a/TOTAL*100).toFixed(2)}%;width:${((b-a+1)/TOTAL*100).toFixed(2)}%;background:${PAL[i%PAL.length]}">${lab}</div>`);
+    };
+    push(w.win, dstr(w.win));
+    if(w.win2) push(w.win2, dstr(w.win2));
+    const txt = dstr(w.win) + (w.win2 ? " ／ "+dstr(w.win2) : "");
+    return `<div class="grow"><div class="glab">${esc(p.char)}<i>${esc(txt)}</i></div>
+      <div class="gtrack">${segs.join("")}</div></div>`;
+  }).join("");
+  const ticks=[[0,"9/2"],[14,"9/16"],[29,"10/1"],[44,"10/16"],[59,"11/1"]]
+    .map(([v,l])=>`<span style="left:${(v/TOTAL*100).toFixed(2)}%">${l}</span>`).join("");
+  return `<div class="gantt">${rows}<div class="gaxis">${ticks}</div></div>`;
+}
+
+/* ---------- Tab1 ---------- */
+function rankTag(r){
+  const m={"必打":"red","最紧":"red","打":"acc"};
+  return `<span class="tag ${m[r]||"grey"}">${esc(r)}</span>`;
+}
+function unavail(){
+  const mine = new Set(paras().map(p=>p.id));
+  return PARA.filter(p=>!mine.has(p.id)).map(p=>{
+    const others = Object.keys(p.routes).join(" / ");
+    const why = p.char===route ? "角色不能进自己的外传 —— 本线打不了，要交给 "+others+" 线"
+              : "本线没有接取点，只在 "+others+" 线开放";
+    return `<tr><td class="nm">${esc(p.name)}</td><td>${esc(p.char)}</td><td class="muted">${esc(why)}</td></tr>`;
+  }).join("");
+}
+function tabPara(){
+  const ps = paras();
+  const cards = ps.map(p=>{
+    const w = p.routes[route];
+    const tight = p.rank==="最紧" || (route==="迪托利希"&&p.id==="ss7");
+    return `<div class="pcard${tight?" tight":""}">
+      <div class="t1">
+        <div><div class="ttl">${esc(p.name)}</div><div class="en">${esc(p.en)}</div></div>
+        <div style="text-align:right">${rankTag(tight?"最紧":p.rank)}<div class="tiny muted" style="margin-top:3px">第${w.ch}章</div></div>
+      </div>
+      <div class="dw">${esc(dstr(w.win))}${w.win2?"\n补接 "+esc(dstr(w.win2)):""}
+硬截止 ${esc(w.deadline)}</div>
+      <dl>
+        <dt>委托人</dt><dd>${esc(p.giver)}</dd>
+        <dt>接取点</dt><dd>${esc(p.place)}</dd>
+        <dt>战场</dt><dd>${esc(p.battlePlace)}</dd>
+        <dt>时间</dt><dd>${esc(p.auto)}</dd>
+        <dt>解锁</dt><dd>${p.unlock.length?p.unlock.map(u=>`<span class="tag blue">${esc(u)} 挖角</span>`).join(""):'<span class="muted tiny">无挖角前置</span>'}</dd>
+        <dt>报酬</dt><dd>${p.rewards.filter(r=>!/^解锁/.test(r)).map(r=>`<span class="tag">${esc(r)}</span>`).join("")}</dd>
+        <dt>第三部</dt><dd>${esc(p.part3)}</dd>
+      </dl>
+      <div class="warn" style="margin-bottom:0"><b>为什么本线要打：</b>${esc(p.why)}</div>
+    </div>`;
+  }).join("");
+
+  const order = ps.slice().sort((a,b)=> dkey(a.routes[route].deadline)-dkey(b.routes[route].deadline))
+    .map((p,i)=>`<tr><td class="c">${i+1}</td><td class="nm">${esc(p.name)}</td>
+      <td>第${p.routes[route].ch}章</td><td class="small">${esc(dstr(p.routes[route].win))}</td>
+      <td class="small"><span class="req r">${esc(p.routes[route].deadline)}</span></td>
+      <td class="small muted">${esc(p.unlock.join("、")||"—")}</td></tr>`).join("");
+
+  const p3 = ps.map(p=>`<tr><td class="nm">${esc(p.char)}</td><td class="small">${esc(p.part3)}</td></tr>`).join("");
+
+  return `
+  <div class="info"><b>${route}线可打 ${ps.length} / 9 个外传。</b>${ps.length===8?"除自己本人的外传之外全都能打 —— 这是四线里外传覆盖最全的一条，缺的只有「被封印的过去」（迪托利希本人）。":"角色不能进自己的外传，所以本线最少也会缺一个；另外还有只对别的线开放的外传。"}
+  外传不只是拿钱和道具：<b>${ps.filter(p=>p.unlock.length).length} 个外传挂着挖角前置</b>，漏一个就少一个人。</div>
+
+  <div class="card"><h3>时间窗（9/2 – 11/1）</h3>
+    ${gantt()}
+    <div class="small muted" style="margin-top:8px">条越短越难打；只剩一个小方块的 = 当天窗口（贝特兰在迪托利希线只有 9/17 一天）。同一外传在不同线里的窗口可能差好几天，本图只画 ${route} 线的窗口。</div>
+  </div>
+
+  <div class="card"><h3>本线外传一览 <span class="tag grey">按章节排序</span></h3>
+    <div class="pgrid">${cards}</div>
+  </div>
+
+  <div class="card"><h3>按截止日排序的执行顺序</h3>
+    <div class="tw"><table><thead><tr><th>#</th><th>外传</th><th>章</th><th>窗口</th><th>硬截止</th><th>挖角前置</th></tr></thead><tbody>${order}</tbody></table></div>
+    <div class="warn" style="margin-bottom:0"><b>排序逻辑：</b>按「窗口关闭时间」而不是「报酬大小」。窗口只有一天的（迪托利希线的贝特兰）和接取会跳时间的（蕾达线佯攻作战、凯伊线大逃亡）要放在当天行程的最后。</div>
+  </div>
+
+  <div class="card"><h3>本线打不了的 ${9-ps.length} 个</h3>
+    <div class="tw"><table><thead><tr><th>外传</th><th>主角</th><th>原因</th></tr></thead><tbody>${unavail()}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>第三部后果（漏打会怎样）</h3>
+    <div class="tw"><table><thead><tr><th>外传主角</th><th>后果</th></tr></thead><tbody>${p3}</tbody></table></div>
+  </div>`;
+}
+
+/* ---------- Tab2 ---------- */
+function tabBattle(){
+  return paras().map((p,i)=>{
+    const w = p.routes[route];
+    return `<div class="bblock">
+      <div class="bhead">
+        <div><div class="bt">${i+1}. ${esc(p.name)}　<span class="muted" style="font-size:13px">${esc(p.char)} · 第${w.ch}章</span></div>
+        <div class="bs">${esc(dstr(w.win))}${w.win2?" ／ 补接 "+esc(dstr(w.win2)):""}　·　硬截止 ${esc(w.deadline)}　·　${esc(p.place)}</div></div>
+        <div>${rankTag(p.rank)}</div>
+      </div>
+      <div class="bbody">
+        <div class="two">
+          <div>
+            <h4 style="margin-top:12px">完美达成清单</h4>
+            <ul class="ck">${p.perfect.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+            <h4>打法</h4>
+            <ul class="dt">${p.tactics.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+          </div>
+          <div>
+            <h4 style="margin-top:12px">坑（会翻车的地方）</h4>
+            <ul class="dt">${p.traps.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+            <h4>报酬与后果</h4>
+            <div class="small">${p.rewards.map(r=>`<span class="tag">${esc(r)}</span>`).join("")}</div>
+            <div class="danger" style="margin-top:10px"><b>漏打：</b>${esc(p.risk)}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+}
+
+/* ---------- Tab3 特有收集 ---------- */
+function tabUniq(){
+  const u = UNIQ[route] || {tagline:"",systems:[],caveat:""};
+  const sys = (u.systems||[]).map(s=>`<tr><td class="nm" style="white-space:nowrap">${esc(s.name)}</td>
+    <td class="small">${esc(s.how)}</td><td class="small muted">${esc(s.payoff)}</td></tr>`).join("");
+
+  const sanct = EXTRA.sanct[route];
+  const sanctBox = sanct ? `<div class="bigc"><div class="l">本线专属圣焰战技</div>
+      <div style="font-size:16px;font-weight:800;margin-top:2px">${esc(sanct.name)}</div>
+      <div class="x">${esc(sanct.effect)}　·　消耗 HP ${esc(sanct.cost)}<br><span class="muted">${esc(sanct.cond)}</span></div></div>` : "";
+
+  const cls = EXTRA.classes[route] || [];
+  const clsRows = cls.map(c=>`<tr><td class="nm">${esc(c.name)}</td><td><span class="tag grey">${esc(c.tier)}</span></td>
+    <td class="small muted">${esc(c.requirement)}</td><td class="small">${esc(c.cond)}</td></tr>`).join("");
+  const clsBox = cls.length ? `<div class="tw"><table><thead><tr><th>兵种</th><th>层级</th><th>转职要求</th><th>本线解锁条件</th></tr></thead><tbody>${clsRows}</tbody></table></div>
+    <div class="small muted" style="margin-top:8px">这些兵种的解锁文案里带着「${route}篇」，换别的线拿不到同样的入口。第一部实际只能转到上级职业（最上级要 Lv45、神将要靠第4区分道具）。</div>`
+    : `<div class="info">本线没有专属解锁的兵种。</div>`;
+
+  let dietrich = "";
+  if(route==="迪托利希"){
+    const sec = EXTRA.secret.map(a=>`<tr><td class="nm">${esc(a.name)}</td><td><span class="tag grey">${esc(a.weapon)}</span></td>
+      <td class="c">${esc(a.cost)}</td><td class="small">${esc(a.effect)}</td></tr>`).join("");
+    const groups = Object.entries(EXTRA.upgrade).map(([w,lst])=>
+      `<div class="w">${esc(w)} <span class="muted tiny">${lst.length}</span></div>
+       <div class="lst">${lst.map(n=>`<span>${esc(n)}</span>`).join("")}</div>`).join("");
+    dietrich = `
+    <div class="card"><h3>秘传传授 · 9 个只能这样拿的战技</h3>
+      <div class="small muted">第7章开头的黑猫事件之后，在帝都上层史米尔诺斯神殿消耗魔响石，传授给「迪托利希以外」的同伴。</div>
+      <div class="tw"><table><thead><tr><th>战技</th><th>武器</th><th>耐久</th><th>效果</th></tr></thead><tbody>${sec}</tbody></table></div>
+      <div class="warn" style="margin-bottom:0"><b>顺序陷阱：</b>「已强化的传授后要重新强化」—— 先把战技强化到 +，再传授给别人，否则对方拿到的是未强化版，得重练一次。</div>
+    </div>
+    <div class="card"><h3>战技强化 · ${EXTRA.upgradeTotal} 个战技有「+」</h3>
+      <div class="small muted">第4章起在史米尔诺斯神殿受理处，用魔响石（战斗「刃鸣」获得）强化。<b>每个角色要分别强化</b> —— 同一战技换个人还得再花一次魔响石，这是全作最长的养成线。</div>
+      <details><summary>展开 ${EXTRA.upgradeTotal} 个可强化战技（按武器分类）</summary>
+        <div class="upg">${groups}</div>
+      </details>
+      <div class="info" style="margin-bottom:0">实用取舍：优先强化队伍主力真正常用的 1～2 个战技（例如「必闪一击+」「双刃+」这类低消耗高收益的），别摊大饼。魔响石总量有限，摊开等于谁都不强。</div>
+    </div>`;
+  }
+
+  return `
+  <div class="card"><h3>${route}线的特有收集</h3>
+    <div class="info" style="margin-top:0">${esc(u.tagline)}</div>
+    <div class="tw"><table><thead><tr><th>系统 / 收集</th><th>怎么拿</th><th>拿到什么</th></tr></thead><tbody>${sys}</tbody></table></div>
+    <div class="warn" style="margin-bottom:0">${esc(u.caveat)}</div>
+  </div>
+
+  <div class="three">${sanctBox}
+    <div class="bigc"><div class="l">本线专属兵种</div><div class="n">${cls.length}</div>
+      <div class="x">${cls.map(c=>esc(c.name)).join(" / ")||"—"}</div></div>
+    <div class="bigc"><div class="l">本线独占挖角</div><div class="n">${exclusives().length}</div>
+      <div class="x">${exclusives().length?exclusives().map(e=>esc(e.name)).join(" / "):"无（能挖的人在别线也能挖）"}</div></div>
+  </div>
+
+  <div class="card"><h3>路线限定兵种</h3>${clsBox}</div>
+  ${dietrich}`;
+}
+
+/* ---------- 挖角数据 ---------- */
+function kind(x){
+  const r = (x&&x.renown)||"";
+  if(/^\d+$/.test(r)) return "n";
+  if(r.includes("教学")) return "t";
+  if(r.includes("不可挖")) return "x";
+  if(r.includes("临时")) return "tmp";
+  return "o";
+}
+function recIndex(){
+  const by={};
+  REC.forEach(x=>{ (by[x.name]=by[x.name]||{})[x.route]=x; });
+  return by;
+}
+function parseRow(x){
+  const parts = (x.cond||"").split("|");
+  const head = parts[0]||"", tail = parts.slice(1).join(" ").trim();
+  const isPay = t => /^(支付|给|交|消耗)/.test(t) || /[×xX\*]\s*\d/.test(t);
+  let cost="", extra="";
+  if(tail){ isPay(tail)?(cost=tail):(extra=tail); }
+  let h = head.replace(new RegExp("^"+route+"："),"").replace(/支援LV\d、?/,"").replace(/名声LV\d+、?/,"")
+              .replace(/需交涉（难度[^）]*）/,"").replace(/、$/,"").trim();
+  if(h) extra = extra ? h+"；"+extra : h;
+  const dm = /难度\s*([高中低超]+)/.exec(x.cond||"");
+  const chm = /第(\d+)章/.exec(x.chapter||"");
+  let place = (x.when||"").replace(/\s*需满足挖角条件/,"")
+    .replace(/，?满足名声、支援及对应交涉条件后招募。?/,"")
+    .replace(/返回帝都后，在第6章自由行动期/,"第6章自由行动期").trim();
+  return { name:x.name, renown:+x.renown, support:+((x.support||"").replace(/\D/g,"")||0),
+           ch: chm?+chm[1]:99, diff: dm?dm[1]:"", cost, cond:extra, place };
+}
+let recQ="", recOnly=false;
+function routeRecs(){
+  return REC.filter(x=>x.route===route && kind(x)==="n").map(parseRow)
+            .sort((a,b)=> a.ch-b.ch || a.renown-b.renown || a.support-b.support);
+}
+function exclusives(){
+  const by = recIndex(), mine=[];
+  for(const n in by){
+    const v=by[n], ok=Object.keys(v).filter(r=>kind(v[r])==="n");
+    if(ok.length===1 && ok[0]===route) mine.push({name:n, row:parseRow(v[route]), other:Object.keys(v).filter(r=>r!==route)});
+  }
+  return mine;
+}
+function lockedHere(){
+  const by = recIndex(), out=[];
+  for(const n in by){
+    const v=by[n];
+    if(v[route] && kind(v[route])==="x" && Object.keys(v).some(r=>kind(v[r])==="n")){
+      out.push({name:n, where:Object.keys(v).filter(r=>kind(v[r])==="n")});
+    }
+  }
+  return out;
+}
+function bestHere(){
+  const by = recIndex(), out=[];
+  for(const n in by){
+    const v=by[n];
+    if(kind(v[route])!=="n") continue;
+    const me = {r:+v[route].renown, s:+((v[route].support||"").replace(/\D/g,"")||0)};
+    const others = Object.keys(v).filter(r=>r!==route && kind(v[r])==="n")
+      .map(r=>({r:+v[r].renown, s:+((v[r].support||"").replace(/\D/g,"")||0)}));
+    if(others.every(o=> o.r>me.r || (o.r===me.r && o.s>me.s))) out.push({name:n, ...me});
+  }
+  return out.sort((a,b)=>a.r-b.r||a.s-b.s);
+}
+function lockedByPara(){
+  const rn = new Set(routeRecs().map(x=>x.name));
+  const out=[];
+  paras().forEach(p=>p.unlock.forEach(u=>{ if(rn.has(u)) out.push({char:u, para:p.name, ch:p.routes[route].ch, win:dstr(p.routes[route].win)}); }));
+  return out;
+}
+function recTable(){
+  const list = routeRecs().filter(r=>{
+    if(recOnly && !lockedByPara().some(x=>x.char===r.name)) return false;
+    if(!recQ) return true;
+    return (r.name+r.cond+r.cost+r.place).toLowerCase().includes(recQ.toLowerCase());
+  });
+  let html="", lastCh=null;
+  for(const r of list){
+    if(r.ch!==lastCh){
+      lastCh=r.ch;
+      html+=`<tr class="grp"><td colspan="6">第${r.ch}章　<span class="tag grey">${list.filter(x=>x.ch===r.ch).length} 人</span></td></tr>`;
+    }
+    const dTone = {"超":"red","高":"red","中":"acc","低":"green"}[r.diff]||"grey";
+    const isLock = lockedByPara().some(x=>x.char===r.name);
+    html+=`<tr><td class="nm">${esc(r.name)}${isLock?' <span class="tag blue">外传前置</span>':""}</td>
+      <td class="c"><span class="req">${r.renown}</span></td>
+      <td class="c"><span class="req b">LV${r.support}</span></td>
+      <td class="c"><span class="tag ${dTone}">${esc(r.diff||"—")}</span></td>
+      <td class="small">${esc([r.cost,r.cond].filter(Boolean).join("；")||"—")}</td>
+      <td class="small">${esc(r.place||"—")}</td></tr>`;
+  }
+  return `<div class="bar-tools">
+      <input type="text" id="recq" placeholder="搜角色 / 素材 / 地名" value="${esc(recQ)}">
+      <button class="chip${recOnly?" on":""}" id="reconly">只看外传前置</button>
+      <span class="small muted">${list.length} 条</span>
+    </div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>名声</th><th>支援</th><th>交涉难度</th><th>代价 / 附加条件</th><th>地点 · 日期</th></tr></thead><tbody>${html}</tbody></table></div>`;
+}
+
+function tabRec(){
+  const total = routeRecs().length;
+  const ex = exclusives(), lk = lockedHere(), bs = bestHere(), lp = lockedByPara();
+  const free = REC.filter(x=>x.route===route && ["o","t","tmp"].includes(kind(x)));
+  const freeList = free.map(x=>`<tr><td class="nm">${esc(x.name)}</td>
+    <td><span class="tag ${kind(x)==="t"?"purple":(kind(x)==="tmp"?"acc":"green")}">${esc(x.renown)}</span></td>
+    <td class="small">${esc((x.chapter||"").replace("（附页参考）",""))}</td>
+    <td class="small muted">${esc(x.when||"—")}</td></tr>`).join("");
+
+  const exRows = ex.length ? ex.map(e=>`<tr><td class="nm">${esc(e.name)}</td>
+      <td class="small">名声 ${e.row.renown} / 支援 LV${e.row.support}</td>
+      <td class="small">${esc([e.row.cost,e.row.cond].filter(Boolean).join("；")||"—")}</td>
+      <td class="small muted">${esc(e.other.join(" / "))}：不可挖</td></tr>`).join("")
+    : `<tr><td colspan="4" class="muted">本线没有严格独占角色 —— 每个能挖的人，在别的线上也都能挖到。</td></tr>`;
+
+  const bsCards = bs.slice(0,8).map(b=>`<div class="bigc"><div class="n">名声 ${b.r}</div>
+    <div class="l"><b>${esc(b.name)}</b>　支援 LV${b.s}</div>
+    <div class="x">别的线更贵（名声更高或支援要求更高）</div></div>`).join("");
+
+  const lpRows = lp.length ? lp.map(x=>`<tr><td class="nm">${esc(x.char)}</td><td>${esc(x.para)}</td>
+      <td class="c">第${x.ch}章</td><td class="small">${esc(x.win)}</td></tr>`).join("")
+    : `<tr><td colspan="4" class="muted">本线的外传不挂任何挖角前置。</td></tr>`;
+
+  return `
+  <div class="three">
+    <div class="bigc"><div class="n">${total}</div><div class="l">本线可挖角色</div><div class="x">名声 + 支援 + 交涉条件三者都要满足</div></div>
+    <div class="bigc"><div class="n">${free.length}</div><div class="l">不用挖的（剧情 / 教学 / 临时）</div><div class="x">${free.filter(x=>kind(x)!=="tmp").map(x=>esc(x.name)).join(" / ")}</div></div>
+    <div class="bigc"><div class="n">${ex.length}</div><div class="l">严格独占</div><div class="x">${ex.length?ex.map(e=>esc(e.name)).join(" / "):"无"}</div></div>
+  </div>
+
+  <div class="card"><h3>① 严格独占（只有本线能挖到）</h3>
+    <div class="tw"><table><thead><tr><th>角色</th><th>本线门槛</th><th>代价 / 附加条件</th><th>别线情况</th></tr></thead><tbody>${exRows}</tbody></table></div>
+    <div class="info" style="margin-bottom:0">判定口径：把 44 名可挖角色的路线列表逐条摊开，某角色「只在一条线上名声要求是数字」才算独占。像「凯伊线挖起来最便宜」这种不算独占，所以凯伊线独占数为 0 —— 攻略站常把「门槛最低」写成「独占」，这是错的。</div>
+  </div>
+
+  <div class="card"><h3>② 本线门槛最低的角色 <span class="tag green">比其它三线都便宜</span></h3>
+    <div class="three" style="margin-top:6px">${bsCards||'<div class="muted small">本线没有门槛严格最低的角色。</div>'}</div>
+    <div class="small muted" style="margin-top:10px">共 ${bs.length} 人。判断标准：同角色在本线的名声更低，或名声相同但支援要求更低。</div>
+  </div>
+
+  <div class="card"><h3>③ 外传前置的挖角</h3>
+    <div class="tw"><table><thead><tr><th>角色</th><th>前置外传</th><th>章</th><th>窗口</th></tr></thead><tbody>${lpRows}</tbody></table></div>
+    ${lp.length?'<div class="warn" style="margin-bottom:0">这些人是「外传 + 挖角」双条件：外传漏一个，人就少一个。</div>':""}
+  </div>
+
+  <div class="card"><h3>④ 本线拿不到的人</h3>
+    <div class="small muted">在本线的挖角表里被标成「不可挖角」，但在别线可以挖。</div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>可在这些线挖到</th></tr></thead><tbody>
+      ${lk.map(x=>`<tr><td class="nm">${esc(x.name)}</td><td class="small">${esc(x.where.join(" / "))}</td></tr>`).join("")||'<tr><td colspan="2" class="muted">本线全员可挖。</td></tr>'}
+    </tbody></table></div>
+  </div>
+
+  <div class="card"><h3>⑤ 不用挖的：剧情白送 / 教学招募 / 临时加入</h3>
+    <div class="small muted">每条线各有一个「教学招募」免费名额，支援 LV1 即可，等于白送；「临时加入」的人不进队伍。</div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>方式</th><th>章节</th><th>条件</th></tr></thead><tbody>${freeList}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>⑥ 挖角全表（按章节）</h3>
+    <div class="small muted">名声大约每章 +1，名声 10 通常要压到第 9–11 章；别提前屯素材白等。</div>
+    ${recTable()}
+  </div>`;
+}
+
+/* ---------- Tab5 坐骑 ---------- */
+const MOUNT_PLAN = [
+  ["第5章","马厩解锁「引诱 / 照料」","先把四种口味（珍馐 / 甜味 / 苦味 / 辣味）× 三种食材（蔬菜 / 鱼 / 肉）的诱饵各买一批，后面几百回合全靠这批存货起手。"],
+  ["第6章","栽培 + 铁匠铺解锁","蔬菜类诱饵开始能自产；适合刷「野生马 / 野生欧鲁尼乌斯」这类保底坐骑。"],
+  ["第7章","胡戈关可通行","通路打开后才会出现新的产地，抓之前先确认地图解锁状态。"],
+  ["第8章","自由行动最长的章节","稀有产地集中在这一段：猎首岩（黑羽玛吉尼乌斯 / 玛吉尼乌斯）、法罗之森（白羽欧鲁尼乌斯）、亚库席翁溪谷（红羽 / 美加尼乌斯）。同时「猛兽盘踞的归途」会解锁黑翼之谷 —— 暗飞马的唯一产地。"],
+  ["第9章","回合很少","别指望抓，专心清有截止日的东西。运气好顺路补一两只过渡坐骑。"],
+  ["第10章","外传挤满","三个外传各 20000G，优先外传。抓坐骑只补缺口，不刷。"],
+  ["第11章","只做一件事","「翱翔天际的搭档」要在天马岩抓 1 只野生天马交任务 —— 这是唯一必须在本章抓的东西。"],
+  ["第12章","最后一次自由行动","挖角、采购全在这章收尾。<b>开打前把所有坐骑从角色身上卸下、放进仓库</b>，否则不继承。"]
+];
+const GATES = [
+  ["野生欧鲁尼乌斯 ×2","助人「捕获欧鲁尼乌斯的委托」要交 2 只","埃利萨岭 / 雀跃之径 / 乌拉诺司山 / 法罗之森　诱饵：甜味·鱼","别全卖掉或全装备在身上，留 2 只不装"],
+  ["野生天马 ×1","第11章助人「翱翔天际的搭档」要交 1 只","巨鸟之颈 / 天马岩 / 黑翼之谷　诱饵：甜味·蔬菜","第11章回合少，进章就去天马岩"],
+  ["暗飞马解锁","黑翼之谷要靠「猛兽盘踞的归途」打通","黑翼之谷（稀有）　诱饵：苦味·蔬菜","通路没开就刷不出来，别提前空耗"],
+  ["萨拉弥斯战象 ×2","支线「战象骑手的羁绊」报酬直接给 2 头","——（不用抓）","力+5 技+5 防+5 幸+5，全场最高加成，务必拿"]
+];
+let mType="全部";
+function tabMount(){
+  const types=["全部",...Array.from(new Set(MOUNTS.map(m=>m.type)))];
+  const chips=types.map(t=>`<button class="chip${t===mType?" on":""}" data-mt="${esc(t)}">${esc(t)}</button>`).join("");
+  const rows=MOUNTS.filter(m=>mType==="全部"||m.type===mType).map(m=>{
+    const tone=/必/.test(m.priority)?"red":(/抓 \d/.test(m.priority)?"acc":"grey");
+    return `<tr><td class="nm">${esc(m.name)}</td><td><span class="tag grey">${esc(m.type)}</span></td>
+      <td class="small">${esc(m.ability)}</td><td class="small muted">${esc(m.growth)}</td>
+      <td class="small">${esc(m.bait)}</td><td class="small">${esc(m.where)}</td>
+      <td class="small">${esc(m.skill)}</td><td><span class="tag ${tone}">${esc(m.priority)}</span></td>
+      <td class="small muted">${esc(m.note)}</td></tr>`;
+  }).join("");
+  const plan=MOUNT_PLAN.map(([c,t,d])=>`<tr><td class="nm" style="white-space:nowrap">${esc(c)}</td>
+    <td style="white-space:nowrap">${t}</td><td class="small">${esc(d)}</td></tr>`).join("");
+  const gates=GATES.map(([a,b,c,d])=>`<tr><td class="nm">${esc(a)}</td><td class="small">${esc(b)}</td>
+    <td class="small">${esc(c)}</td><td class="small muted">${esc(d)}</td></tr>`).join("");
+
+  return `
+  <div class="card"><h3>抓捕流程（第5章马厩解锁后，全路线通用）</h3>
+    <div class="step">
+      <b>1 备饵</b><div>按「口味 × 食材」配。马要<b>蔬菜</b>、飞鸵要<b>鱼</b>、飞龙要<b>肉</b>；口味决定出什么品种：珍馐→汗血马 / 圣飞马 / 独角兽，甜味→野生系保底，苦味→魔法向（黑羽 / 暗飞马），辣味→物理向飞鸵。</div>
+      <b>2 选点</b><div>去表里对应的产地。稀有品种只在指定地图出现，普通品种在多张图都有。</div>
+      <b>3 引诱</b><div>用诱饵引出目标，稀有判定看脸 —— 同一产地反复刷比换产地更划算，诱饵消耗要提前算。</div>
+      <b>4 捕获</b><div>捕获后立刻决定归属：要交任务的（野生欧鲁尼乌斯 / 野生天马）单独留出来，别装到人身上。</div>
+    </div>
+    <div class="warn" style="margin-bottom:0"><b>先抓什么：</b>汗血马（配战车兵成长翻倍，力 25% / 技 35% / 防 25%）→ 黑羽玛吉尼乌斯（法师与神鸵兵，第三部还要接着用）→ 圣飞马（第三部上天的位置很偏，第一部必须抓好）→ 莫诺凯洛斯（续航）。这四类抓够，其余都是过渡。</div>
+  </div>
+
+  <div class="card"><h3>15 种坐骑全表</h3>
+    <div class="bar-tools">${chips}</div>
+    <div class="tw"><table class="mt"><thead><tr><th>坐骑</th><th>类型</th><th>能力加成</th><th>成长补正</th><th>诱饵</th><th>产地</th><th>联合技</th><th>优先度</th><th>备注</th></tr></thead><tbody>${rows}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>按章节安排抓捕 <span class="tag grey">回合数以凯伊线为例</span></h3>
+    <div class="small muted">四线的章节数与自由行动回合数不同，但这几章的相对节奏一致：中段最宽、第9～11章最紧、第12章收尾。</div>
+    <div class="tw"><table><thead><tr><th>章</th><th>要点</th><th>做什么</th></tr></thead><tbody>${plan}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>四个必须留意的卡点</h3>
+    <div class="tw"><table><thead><tr><th>卡点</th><th>要求</th><th>产地 / 诱饵</th><th>提醒</th></tr></thead><tbody>${gates}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>继承：进战争篇之前必做</h3>
+    <div class="danger" style="margin-top:6px"><b>主线终战开打前，把所有坐骑从角色身上卸下、放进仓库。</b>继承判定只认仓库里的坐骑，装在角色身上的会随队伍重置一起消失。这是第一部最后一次自由行动，进了终战回不了头。</div>
+    <div class="small muted">多周目继承兵种解锁、支援、伟业录，但<b>不继承名声、等级、资金、道具</b>。所以坐骑这种装备类资产，是少数值得在第一部末尾刻意保下来的东西。</div>
+  </div>`;
+}
+
+/* ---------- 渲染 ---------- */
+function render(){
+  document.getElementById("rseg").innerHTML = ROUTES.map(r=>
+    `<button data-route="${r}" class="${r===route?"on":""}">${r}${r==="迪托利希"?"（迪哥）":(r==="赛奥朵拉"?"（女王）":"")}</button>`).join("");
+  const ps = paras();
+  document.getElementById("kpis").innerHTML = [
+    [ps.length+"/9","可打外传"],
+    [ps.reduce((a,p)=>a+p.unlock.length,0),"外传挂的挖角前置"],
+    [EXTRA.classes[route].length,"路线限定兵种"],
+    [routeRecs().length,"可挖角色"]
+  ].map(([n,l])=>`<div class="kpi"><b>${n}</b><span>${l}</span></div>`).join("");
+  document.getElementById("nav").innerHTML = TABS.map(t=>
+    `<button data-tab="${t.id}" class="${t.id===cur?"on":""}">${t.name}</button>`).join("");
+  const app = document.getElementById("app");
+  app.innerHTML = cur==="para" ? tabPara()
+                : cur==="battle" ? tabBattle()
+                : cur==="uniq" ? tabUniq()
+                : cur==="rec" ? tabRec()
+                : tabMount();
+  bind();
+}
+function bind(){
+  document.querySelectorAll("#rseg button").forEach(b=>b.onclick=()=>{
+    route=b.dataset.route; setHash(); render(); window.scrollTo({top:0,behavior:"smooth"});});
+  document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{
+    cur=b.dataset.tab; setHash(); render(); window.scrollTo({top:0,behavior:"smooth"});});
+  document.querySelectorAll("[data-mt]").forEach(b=>b.onclick=()=>{mType=b.dataset.mt;render();});
+  const q=document.getElementById("recq");
+  if(q) q.oninput=()=>{recQ=q.value;const p=q.selectionStart;render();
+    const q2=document.getElementById("recq"); if(q2){q2.focus();q2.setSelectionRange(p,p);}};
+  const ro=document.getElementById("reconly");
+  if(ro) ro.onclick=()=>{recOnly=!recOnly;render();};
+}
+setHash();
+render();
+</script>
+</body>
+</html>

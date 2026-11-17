@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>火焰纹章 万缕千丝 · 凯伊线 外传 / 抓捕 / 挖角攻略</title>
+<title>火焰纹章 万缕千丝 · 四线 外传 / 特有收集 / 挖角</title>
 <style>
 :root{
   --bg:#f6f7f9; --card:#ffffff; --ink:#1f2430; --ink2:#5b6472; --ink3:#8b94a3;
@@ -21,26 +21,31 @@ body{margin:0;background:var(--bg);color:var(--ink);
   font-size:14px;line-height:1.62;-webkit-font-smoothing:antialiased}
 a{color:var(--blue)}
 h1,h2,h3,h4,h5{margin:0;font-weight:700;letter-spacing:.2px}
-.wrap{max-width:1240px;margin:0 auto;padding:0 18px 90px}
+.wrap{max-width:1260px;margin:0 auto;padding:0 18px 90px}
 
 header{background:linear-gradient(135deg,#1d2433 0%,#2c3550 55%,#3b2f1e 100%);color:#fff;padding:22px 0 0}
-.hd{max-width:1240px;margin:0 auto;padding:0 18px}
+.hd{max-width:1260px;margin:0 auto;padding:0 18px}
 .hd h1{font-size:21px;letter-spacing:.5px}
 .hd .sub{color:#c9d0e0;font-size:12.5px;margin-top:5px}
 .hd .sub b{color:#f5c86b;font-weight:600}
-.kpis{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px}
+.rseg{display:inline-flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:10px;overflow:hidden;margin-top:14px;flex-wrap:wrap}
+.rseg button{background:none;border:0;color:#dfe4ef;padding:8px 16px;font-size:13.5px;cursor:pointer;
+  font-family:inherit;font-weight:600;white-space:nowrap}
+.rseg button.on{background:#f5c86b;color:#2a2113}
+.kpis{display:flex;gap:20px;flex-wrap:wrap;margin-top:12px}
 .kpi{display:flex;align-items:baseline;gap:6px}
-.kpi b{font-size:19px;color:#f5c86b;font-variant-numeric:tabular-nums}
+.kpi b{font-size:18px;color:#f5c86b;font-variant-numeric:tabular-nums}
 .kpi span{font-size:11.5px;color:#b9c2d4}
-nav{display:flex;gap:4px;margin-top:16px;flex-wrap:wrap}
-nav button{background:none;border:0;border-bottom:3px solid transparent;color:#c3cadb;padding:10px 16px;
-  font-size:14px;cursor:pointer;font-family:inherit;font-weight:600}
+nav{display:flex;gap:2px;margin-top:14px;flex-wrap:wrap}
+nav button{background:none;border:0;border-bottom:3px solid transparent;color:#c3cadb;padding:10px 14px;
+  font-size:13.5px;cursor:pointer;font-family:inherit;font-weight:600}
 nav button.on{color:#fff;border-bottom-color:#f5c86b}
 nav button:hover{color:#fff}
 
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
 .card>h3{font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.card>h4{font-size:13.5px;margin:14px 0 6px;color:var(--ink)}
+.card>h4{font-size:13.5px;margin:14px 0 6px}
 .muted{color:var(--ink2)} .small{font-size:12.5px} .tiny{font-size:11.5px}
 .tag{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;border:1px solid var(--line);
   background:#fafbfc;color:var(--ink2);margin:2px 4px 2px 0;white-space:nowrap}
@@ -55,7 +60,6 @@ nav button:hover{color:#fff}
   font-size:12.5px;color:#7a5510;margin:10px 0}
 .info{background:#eef4ff;border:1px solid #cfdcff;border-radius:8px;padding:10px 13px;font-size:12.5px;color:#24406e;margin:10px 0}
 .danger{background:var(--red-soft);border:1px solid #f5cdc9;border-radius:8px;padding:10px 13px;font-size:12.5px;color:var(--red);margin:10px 0}
-.hr{height:1px;background:var(--line2);margin:14px 0}
 
 .tw{overflow:auto;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:12px}
 table{border-collapse:collapse;width:100%;font-size:13px}
@@ -68,7 +72,7 @@ tr.grp td{background:#f7f9fc;font-weight:700;font-size:12px;color:var(--ink2);bo
 .bar-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
 select,input[type=text]{border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12.5px;
   background:#fff;font-family:inherit;color:var(--ink);outline:none}
-input[type=text]:focus,select:focus{border-color:var(--accent)}
+input[type=text]:focus{border-color:var(--accent)}
 .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12.5px;
   cursor:pointer;font-family:inherit;color:var(--ink2)}
 .chip.on{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent);font-weight:700}
@@ -76,23 +80,21 @@ input[type=text]:focus,select:focus{border-color:var(--accent)}
   border-radius:6px;padding:0 7px;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums}
 .req.b{background:var(--blue-soft);border-color:#c9d6ff;color:var(--blue)}
 .req.g{background:var(--green-soft);border-color:#c6e4d1;color:var(--green)}
-.req.r{background:var(--red-soft);border-color:#f5cdc9;color:var(--red)}
 
 /* gantt */
 .gantt{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:16px 16px 8px;overflow:auto}
 .grow{display:grid;grid-template-columns:186px 1fr;gap:10px;align-items:center;margin-bottom:7px;min-width:660px}
 .glab{font-size:12.5px;font-weight:700;white-space:nowrap}
 .glab i{display:block;font-style:normal;font-weight:400;color:var(--ink3);font-size:11px}
-.gtrack{position:relative;height:20px;background:#f7f9fc;border-radius:5px;border:1px solid var(--line2)}
-.gseg{position:absolute;top:2px;bottom:2px;border-radius:4px;font-size:10px;color:#fff;display:flex;
-  align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;text-indent:-9999px}
-.gseg.a{background:#c98a2e}.gseg.b{background:#b42318}.gseg.c{background:#0f766e}.gseg.d{background:#6d28d9}
+.gtrack{position:relative;height:18px;background:#f7f9fc;border-radius:5px;border:1px solid var(--line2)}
+.gseg{position:absolute;top:2px;bottom:2px;border-radius:4px;color:#fff;font-size:10px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;text-indent:-9999px}
 .gaxis{position:relative;height:22px;margin-left:196px;min-width:660px}
 .gaxis span{position:absolute;font-size:10.5px;color:var(--ink3);transform:translateX(-50%)}
 
 /* paralogue cards */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(390px,1fr));gap:13px;margin-top:12px}
-.pcard{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px;position:relative}
+.pcard{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
 .pcard.tight{border-color:#f0c9c4;box-shadow:0 0 0 3px #fdf1f0 inset}
 .pcard .t1{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .pcard .ttl{font-weight:700;font-size:15px}
@@ -121,22 +123,26 @@ ul.dt li::marker{color:var(--accent)}
 .step{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:12.5px;margin-top:8px}
 .step b{color:var(--teal);white-space:nowrap}
 
-/* mount table */
+/* summary */
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.bigc{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
+.bigc .n{font-size:25px;font-weight:800;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.bigc .l{font-size:12.5px;color:var(--ink2);margin-top:3px}
+.bigc .x{font-size:12px;color:var(--ink3);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
 table.mt{font-size:12.5px}
 table.mt th,table.mt td{padding:7px 9px}
 table.mt td:nth-child(3),table.mt td:nth-child(4),table.mt td:nth-child(5),table.mt td:nth-child(8){white-space:nowrap}
 table.mt th:nth-child(9),table.mt td:nth-child(9){min-width:216px}
-
-/* recruit summary */
-.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:12px}
-.bigc{border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px 16px}
-.bigc .n{font-size:26px;font-weight:800;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
-.bigc .l{font-size:12.5px;color:var(--ink2);margin-top:3px}
-.bigc .x{font-size:12px;color:var(--ink3);margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
-footer{max-width:1240px;margin:0 auto;padding:26px 18px 60px;color:var(--ink3);font-size:11.5px}
+details{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 14px}
+details summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--accent)}
+.upg{display:grid;grid-template-columns:72px 1fr;gap:6px 10px;margin-top:10px;font-size:12.5px}
+.upg .w{color:var(--ink3);font-weight:700}
+.upg .lst span{display:inline-block;background:#f7f9fc;border:1px solid var(--line2);border-radius:6px;
+  padding:0 6px;margin:0 4px 4px 0;font-size:12px}
+footer{max-width:1260px;margin:0 auto;padding:26px 18px 60px;color:var(--ink3);font-size:11.5px}
 @media(max-width:640px){
-  .wrap{padding:0 12px 70px}.hd h1{font-size:18px}
-  nav button{padding:9px 10px;font-size:13px}
+  .wrap{padding:0 12px 70px}.hd h1{font-size:17px}
+  nav button{padding:9px 9px;font-size:12.5px}.rseg button{padding:7px 11px;font-size:12.5px}
   .grow{grid-template-columns:120px 1fr}.gaxis{margin-left:132px}
 }
 </style>
@@ -144,90 +150,104 @@ footer{max-width:1240px;margin:0 auto;padding:26px 18px 60px;color:var(--ink3);f
 <body>
 <header>
   <div class="hd">
-    <h1>火焰纹章 万缕千丝 · 凯伊线 第一部</h1>
-    <div class="sub">外传 4 关全清 · 坐骑抓捕 · 挖角路线与门槛　｜　<b>数据源</b> fireemblem.top 逐路线挖角表 + 中文 wiki 外传专页 + 游戏内数值</div>
-    <div class="kpis">
-      <div class="kpi"><b>4</b><span>可打外传（共 9）</span></div>
-      <div class="kpi"><b>15</b><span>种可捕坐骑</span></div>
-      <div class="kpi"><b>36</b><span>可挖角色</span></div>
-      <div class="kpi"><b>812</b><span>自由行动回合</span></div>
-    </div>
+    <h1>火焰纹章 万缕千丝 · 四条路线</h1>
+    <div class="sub">第一部 外传全清 · 路线特有收集 · 独占挖角　｜　<b>数据源</b> fireemblem.top 逐路线挖角表 + 中文 wiki 外传专页 + 游戏内兵种/战技数值</div>
+    <div class="rseg" id="rseg"></div>
+    <div class="kpis" id="kpis"></div>
     <nav id="nav"></nav>
   </div>
 </header>
 
 <div class="wrap" id="app"></div>
 <footer>
-  本页为单文件离线速查表，所有数据内嵌，断网可用。外传日期取各来源中最窄的窗口（宁可早到，不会扑空）；不同攻略站日期有分歧处已在「坑」里单独标注。<br>
-  用法：先把「外传总表」的 4 个窗口抄进日程，再按「打法」逐关清，抓捕穿插在自由行动里，挖角按章节门槛推进。
+  单文件离线版，数据内嵌，断网可用。外传日期取各来源中最窄的窗口（宁可早到，不会扑空），源间分歧已在「坑」里标注。<br>
+  切换主角线后，外传、特有收集、挖角三个页签都会跟着换成本线的数据；坐骑抓捕全路线通用。
 </footer>
 
 <script>
-const PARA = [{"id":"ss7","name":"布里吉特王的亲善赛","en":"Friendly Match with Brigid's King","char":"贝特兰","ch":10,"win":[["9",17],["9",25]],"deadline":"1449/9/25","auto":"接取后自动推进到当天 21:00（当天的剩余行程会被吃掉）","giver":"加百列 (Gabriel)","place":"帝都鞑古席翁「大斗技场前」（Arena Square，竞技场外）","battlePlace":"帝都鞑古席翁","rank":"必打","why":"凯伊线拿到贝特兰的唯一途径；同时是佩佩的挖角前置。迪托利希线只有 9/17 一天，凯伊线给 9 天，是四线里最好打的版本。","rewards":["巨大金块 ×1","20,000G","名声 150","解锁佩佩挖角（第10章起，支援 LV1 / 名声 9）","第3部 第1区分 贝特兰正式加入"],"perfect":["四名巨人全部由我方击破 —— 只要有一只被佩佩一行抢掉，报酬就不完整","全程不让目标单位（被护卫的一方）被巨人碰到，带一个诱饵道具当肉盾","击破巨人的当回合顺手收掉周围黄色友军，别留他们蹭我方回合","战后确认报酬结算，巨大金块要到手"],"tactics":["开局先看佩佩一行往哪边走，主力抢在他们路径上开打，不要跟在他们后面捡漏","巨人血厚且分散，队伍分两股推进：飞鸵兵/骑兵先手压最近的一只，步兵随后跟上","击破巨人会连带清掉其周围的黄色友军，可以拿这个当推进节奏点，一波一波推"],"traps":["千万别把本外传排在第10章最后一天（9/25）才去接：接取瞬间时间跳到 21:00，同章剩下的自由行动直接结束","谭利穆恩外传的 9 月窗口只到 9/22，先打那个再回来打这个","名字有两种译法：中文 wiki 作「贝特兰」，部分攻略作「贝特朗」，指同一人"],"unlock":["佩佩"],"part3":"完成 → 贝特兰在第3部第1区分正式加入；未完成 → 第3部永久不可用（属必须在第1部通关对应外传才能取得的隐藏角色）。","risk":"两侧代价：第3部少一个角色 + 佩佩永远挖不到"},{"id":"ss1","name":"消失马车的秘密","en":"Secret of the Vanished Carriage","char":"谭利穆恩","ch":10,"win":[["9",17],["9",22]],"win2":[["10",1],["10",10]],"deadline":"1449/10/12","auto":"正常接取，不额外跳时间（但窗口本身分两段）","giver":"谭利穆恩（本人站在港口）","place":"帝都鞑古席翁「港口」（下城区码头区）","battlePlace":"德拉格登岭","rank":"必打","why":"乌修拉的挖角前置。更重要的是：这是九个外传里唯一在第2部有明确负面后果的一个 —— 漏打的话，第2部第4章（鞑古席翁突入战）谭利穆恩和乌修拉会作为敌人登场。","rewards":["净化剑 ×1","20,000G","名声 150","解锁乌修拉挖角（第10章，支援 LV3 / 名声 10，问题全答「是」）","第3部 第1区分 谭利穆恩正式加入"],"perfect":["盗贼一个都不能带着货物从地图上方出口逃走 —— 至少留一个高机动单位常驻逃脱路径上卡位","净化剑入手","第10章内顺手把乌修拉的挖角条件满足掉（每个问题都答「是」）"],"tactics":["盗贼抢到货物后会往北侧出口跑，开局第一回合就派飞鸵兵/骑兵绕后卡住出口，主力走中路推","货物格子可以用我方单位站住，物理堵路比追更快","德拉格登岭地形起伏大，飞行单位负责抢时间，步兵负责守货"],"traps":["两段窗口最容易记混：9 月段 9/22 就关，10 月段 10/1 才开，9/23–9/30 之间根本接不了","最终期限 10/12 是全路线统一的硬线，但别指望压线 —— 第11章开始日期就跳走了"],"unlock":["乌修拉"],"part3":"完成 → 谭利穆恩第3部第1区分加入；未完成 → 第3部不可用，且第2部第4章两人以敌人身份出场。","risk":"唯一有第2部剧情后果的外传：漏了会直接变成敌人"},{"id":"ss6","name":"金色的秘密","en":"Golden Secret","char":"安娜","ch":10,"win":[["9",24],["10",5]],"deadline":"1449/10/5","auto":"正常接取","giver":"安娜","place":"帝都鞑古席翁「达格扎神殿前」（Dagda's Temple）","battlePlace":"帝都鞑古席翁","rank":"打","why":"全作唯一能操控安娜出战的关卡，也是奥利哈钢（锻造素材）的主要来源。安娜个人特技【战象的进击】：自身为战象兵时「猛击」次数 +1。","rewards":["奥利哈钢 ×1","20,000G","名声 150"],"perfect":["出战人数受限 —— 名额全部给「能破重甲」+「会远程治疗」的人，别带纯输出","矿脉全部清掉，奥利哈钢是锻造的关键素材","索雷尔去顶巨人，其余人先撤开清矿脉，清完再回头合击","无人阵亡（出战位少，掉一个就少一份输出）"],"tactics":["开场把队伍分成「顶线 1 人 + 清矿脉小队」，顶线只要扛得住就别急着输出","巨人吃重甲特效，破甲武器/魔法优先；远程治疗（Physic）站在矿脉区就能救到顶线","安娜本人可以上场，但别让她单独深入"],"traps":["起始日两个源差一天：外传专页记 9/24、主线攻略页记 9/23 —— 按 9/23 提前准备","10/5 是硬截止，且这一段正是第10章自由行动的尾段，容易和贝特兰外传抢时间"],"unlock":[],"part3":"安娜为系列常驻商人，不占八位火焰领主名额，不影响第3部角色可用性；收益主要是奥利哈钢。","risk":"错过只损失素材，无角色损失"},{"id":"ss8","name":"欧露赫露的牵挂","en":"Orchel's Regret","char":"欧露赫露","ch":11,"win":[["10",18],["10",20]],"deadline":"1449/10/21","auto":"接取后自动推进到最近 12:00","giver":"欧露赫露","place":"帝都鞑古席翁「柯雷尔神殿分殿前」（克拉娜神殿分殿）","battlePlace":"帝都鞑古席翁","rank":"最紧","why":"迪雅各的挖角前置（第11章，支援 LV3 / 名声 10）。四个主角线都能打，但凯伊线窗口只有 3 天（10/18–10/20），是全作凯伊侧最窄的一个。","rewards":["治愈之杖 ×1","20,000G","名声 150","解锁迪雅各挖角（第11章，支援 LV3 / 名声 10）","第3部 第2区分 欧露赫露正式加入"],"perfect":["东西两侧各 2 个机关，必须「同时」激活 —— 分兵 2:2，不要一队跑完全部","投石机（Onager）只用来打 Boss 区域，别浪费在杂兵身上","东侧会出现天马骑士增援，提前在对空位放弓兵/风魔法","治愈之杖到手"],"tactics":["进图先分队：西队 2 人、东队 2 人，各踩两个机关后同时压上","机关踩完再发射投石机，顺序反了等于白打","Boss 区域被投石机打开后集中火力，天马增援交给后排弓兵处理"],"traps":["第11章自由行动只有 28 回合，进章第一件事就做这个外传，别排到最后","如果拖到最后一天接，时间自动跳到 12:00，很可能连主线都赶不上","起始日各源有分歧（外传页 10/18–10/20、主线页 10/18–10/19、部分英文源到 10/21）—— 按最窄的 10/20 规划"],"unlock":["迪雅各"],"part3":"完成 → 欧露赫露第3部第2区分加入；未完成 → 第3部不可用。","risk":"凯伊线窗口最窄（3 天）+ 迪雅各永久锁死"}];
+const PARA = [{"id":"ss5","name":"佯攻作战","en":"Diversionary Tactics","char":"蕾达","giver":"蕾达（卡拉神殿前）","place":"帝都鞑古席翁「卡拉神殿前」（Temple Row，卡拉神殿外）","battlePlace":"帝都鞑古席翁","auto":"接取后战斗被固定在 9/9 19:00，时间会直接推过去","rank":"必打","why":"迪托利希线和赛奥朵拉线都能打，是巴卡尼亚的招募条件之一。战斗本身是全作最简单的：一边击破敌人一边砸掉沿途障碍。","rewards":["银盾 ×1","20,000G","名声 150","达成巴卡尼亚的招募条件之一"],"perfect":["沿途障碍全部摧毁（只杀敌不砸障碍会少报酬）","不站毒地形：毒地形每回合掉血，容易被迫减员","确认巴卡尼亚的招募条件已计入","全程无人阵亡"],"tactics":["远程与飞行单位先手清障碍，步兵跟在后排补刀","毒地形能绕就绕，飞行单位可直接跨过","敌人会从两侧压上，别让队伍散成一条线"],"traps":["9/8 是最后一天能接的日子，接了就直接跳到 9/9 19:00，等于把当天剩下的自由行动全部吃掉","凯伊线和蕾达线都打不了：角色不能进自己的外传"],"unlock":["巴卡尼亚"],"part3":"完成 → 蕾达在第3部仍为受限状态（可参战，不参与剧情与支援）；只有在蕾达线通关第1部，蕾达才是完全体。","risk":"第3部蕾达只能是受限盟友 + 巴卡尼亚挖角条件不成立","routes":{"迪托利希":{"ch":9,"win":[[9,2],[9,8]],"deadline":"1449/9/8"},"赛奥朵拉":{"ch":10,"win":[[9,2],[9,8]],"deadline":"1449/9/8"}}},{"id":"ss4","name":"勇士像的去向","en":"Missing Brave-Warrior Statue","char":"赛奥朵拉","giver":"博纳文图 (Bonaventure)","place":"帝都鞑古席翁「下参道附近」（Temple Row 底部）","battlePlace":"禊之祭坛（兰巴斯地区）","auto":"正常接取，不额外跳时间","rank":"必打","why":"九个外传里唯一只能在迪托利希线解锁的一个。走迪托利希线就没有第二个入口，漏了就是永久漏了。","rewards":["投枪 (Pilum) ×1","20,000G","名声 150"],"perfect":["三个机关全部踩下：东南、西南、西北各一个","战争迷雾里不漏隐藏通路（贴着地图边缘走一圈）","脆皮远程/法师全程留后排，别进迷雾前锋","投枪到手"],"tactics":["开局用高移动单位沿地图边缘探图，把三个机关位置先记下来","机关踩完再集中推主线，否则迷雾里容易被包夹","法师与弓手站在已探明区域输出，等前排开路"],"traps":["可接窗口 9/3–9/12，9/15 是绝对截止，别把它留到第9章最后","这是唯一没有第二路线入口的外传 —— 别的外传漏了还能换线补，这个不能"],"unlock":[],"part3":"完成 → 赛奥朵拉在第3部仍为受限状态；只有在赛奥朵拉线通关第1部，赛奥朵拉才是完全体。","risk":"投枪拿不到 + 赛奥朵拉第3部受限","routes":{"迪托利希":{"ch":9,"win":[[9,3],[9,12]],"deadline":"1449/9/15"}}},{"id":"ss7","name":"布里吉特王的亲善赛","en":"Friendly Match with Brigid's King","char":"贝特兰","auto":"接取后自动推进到当天 21:00（当天的剩余行程会被吃掉）","giver":"加百列 (Gabriel)","place":"帝都鞑古席翁「大斗技场前」（Arena Square，竞技场外）","battlePlace":"帝都鞑古席翁","rank":"必打","why":"凯伊线拿到贝特兰的唯一途径；同时是佩佩的挖角前置。迪托利希线只有 9/17 一天，凯伊线给 9 天，是四线里最好打的版本。 迪托利希线只有 9/17 一天，是全作最紧的窗口。","rewards":["巨大金块 ×1","20,000G","名声 150","解锁佩佩挖角（第10章起，支援 LV1 / 名声 9）","第3部 第1区分 贝特兰正式加入"],"perfect":["四名巨人全部由我方击破 —— 只要有一只被佩佩一行抢掉，报酬就不完整","全程不让目标单位（被护卫的一方）被巨人碰到，带一个诱饵道具当肉盾","击破巨人的当回合顺手收掉周围黄色友军，别留他们蹭我方回合","战后确认报酬结算，巨大金块要到手"],"tactics":["开局先看佩佩一行往哪边走，主力抢在他们路径上开打，不要跟在他们后面捡漏","巨人血厚且分散，队伍分两股推进：飞鸵兵/骑兵先手压最近的一只，步兵随后跟上","击破巨人会连带清掉其周围的黄色友军，可以拿这个当推进节奏点，一波一波推"],"traps":["千万别把本外传排在第10章最后一天（9/25）才去接：接取瞬间时间跳到 21:00，同章剩下的自由行动直接结束","谭利穆恩外传的 9 月窗口只到 9/22，先打那个再回来打这个","名字有两种译法：中文 wiki 作「贝特兰」，部分攻略作「贝特朗」，指同一人","迪托利希线只有 9/17 当天能接 —— 全作窗口最窄的外传，9/17 进章第一件事就是它"],"unlock":["佩佩"],"part3":"完成 → 贝特兰在第3部第1区分正式加入；未完成 → 第3部永久不可用（属必须在第1部通关对应外传才能取得的隐藏角色）。","risk":"两侧代价：第3部少一个角色 + 佩佩永远挖不到","routes":{"凯伊":{"ch":10,"win":[[9,17],[9,25]],"deadline":"1449/9/25"},"迪托利希":{"ch":9,"win":[[9,17],[9,17]],"deadline":"1449/9/17"},"赛奥朵拉":{"ch":11,"win":[[9,17],[9,25]],"deadline":"1449/9/25"}}},{"id":"ss1","name":"消失马车的秘密","en":"Secret of the Vanished Carriage","char":"谭利穆恩","auto":"正常接取，不额外跳时间（但窗口本身分两段）","giver":"谭利穆恩（本人站在港口）","place":"帝都鞑古席翁「港口」（下城区码头区）","battlePlace":"德拉格登岭","rank":"必打","why":"乌修拉的挖角前置。更重要的是：这是九个外传里唯一在第2部有明确负面后果的一个 —— 漏打的话，第2部第4章（鞑古席翁突入战）谭利穆恩和乌修拉会作为敌人登场。","rewards":["净化剑 ×1","20,000G","名声 150","解锁乌修拉挖角（第10章，支援 LV3 / 名声 10，问题全答「是」）","第3部 第1区分 谭利穆恩正式加入"],"perfect":["盗贼一个都不能带着货物从地图上方出口逃走 —— 至少留一个高机动单位常驻逃脱路径上卡位","净化剑入手","第10章内顺手把乌修拉的挖角条件满足掉（每个问题都答「是」）"],"tactics":["盗贼抢到货物后会往北侧出口跑，开局第一回合就派飞鸵兵/骑兵绕后卡住出口，主力走中路推","货物格子可以用我方单位站住，物理堵路比追更快","德拉格登岭地形起伏大，飞行单位负责抢时间，步兵负责守货"],"traps":["两段窗口最容易记混：9 月段 9/22 就关，10 月段 10/1 才开，9/23–9/30 之间根本接不了","最终期限 10/12 是全路线统一的硬线，但别指望压线 —— 第11章开始日期就跳走了"],"unlock":["乌修拉"],"part3":"完成 → 谭利穆恩第3部第1区分加入；未完成 → 第3部不可用，且第2部第4章两人以敌人身份出场。","risk":"唯一有第2部剧情后果的外传：漏了会直接变成敌人","routes":{"凯伊":{"ch":10,"win":[[9,17],[9,22]],"deadline":"1449/10/12","win2":[[10,1],[10,10]]},"迪托利希":{"ch":9,"win":[[9,17],[9,19]],"deadline":"1449/10/12","win2":[[10,1],[10,10]]},"赛奥朵拉":{"ch":11,"win":[[9,17],[10,12]],"deadline":"1449/10/12"}}},{"id":"ss6","name":"金色的秘密","en":"Golden Secret","char":"安娜","auto":"正常接取","giver":"安娜","place":"帝都鞑古席翁「达格扎神殿前」（Dagda's Temple）","battlePlace":"帝都鞑古席翁","rank":"打","why":"全作唯一能操控安娜出战的关卡，也是奥利哈钢（锻造素材）的主要来源。安娜个人特技【战象的进击】：自身为战象兵时「猛击」次数 +1。","rewards":["奥利哈钢 ×1","20,000G","名声 150"],"perfect":["出战人数受限 —— 名额全部给「能破重甲」+「会远程治疗」的人，别带纯输出","矿脉全部清掉，奥利哈钢是锻造的关键素材","索雷尔去顶巨人，其余人先撤开清矿脉，清完再回头合击","无人阵亡（出战位少，掉一个就少一份输出）"],"tactics":["开场把队伍分成「顶线 1 人 + 清矿脉小队」，顶线只要扛得住就别急着输出","巨人吃重甲特效，破甲武器/魔法优先；远程治疗（Physic）站在矿脉区就能救到顶线","安娜本人可以上场，但别让她单独深入"],"traps":["起始日两个源差一天：外传专页记 9/24、主线攻略页记 9/23 —— 按 9/23 提前准备","10/5 是硬截止，且这一段正是第10章自由行动的尾段，容易和贝特兰外传抢时间"],"unlock":[],"part3":"安娜为系列常驻商人，不占八位火焰领主名额，不影响第3部角色可用性；收益主要是奥利哈钢。","risk":"错过只损失素材，无角色损失","routes":{"凯伊":{"ch":10,"win":[[9,24],[10,5]],"deadline":"1449/10/5"},"迪托利希":{"ch":10,"win":[[9,29],[10,5]],"deadline":"1449/10/5"},"赛奥朵拉":{"ch":11,"win":[[9,24],[10,5]],"deadline":"1449/10/5"}}},{"id":"ss9","name":"被抹消者们的女王","en":"Queen of the Erased","char":"爱娜特莉亚","giver":"（委托人在市街东北侧）","place":"帝都鞑古席翁「市街北东侧」（Midtown 东北）","battlePlace":"白鸦之台","auto":"正常接取","rank":"必打","why":"沙兰的招募条件之一，而且迪托利希线和蕾达线都靠它 —— 走这两条线想拿沙兰，这个外传必须打通。漏打还会连带第3部少一个隐藏角色。","rewards":["电子干扰索 ×1","20,000G","名声 150","达成沙兰的招募条件之一（基本报酬）","第3部 第2区分 爱娜特莉亚加入","追加报酬：居民脱离 5 人 → 魔阵石 + 安宁之露；4 人 → 魔阵石；3 人 → 无"],"perfect":["至少 5 名居民成功脱离，拿满追加报酬（魔阵石 + 安宁之露）","确认沙兰的招募条件已计入","无人阵亡：敌人优先咬居民，肉盾要卡在通道上","电子干扰索到手"],"tactics":["机动单位（骑兵/飞行）专职开路带居民脱离，别让他们自己走","敌人会追居民，用重甲或高防单位在路口堵住","主力清场与护送分两条线同时进行，别等清完再救人"],"traps":["追加报酬按「脱离人数」算，不是按「生还人数」—— 站在场上不走的居民不算","迪托利希线与蕾达线的最终期限都是 10/17，别以为能拖到第11章末"],"unlock":["沙兰"],"part3":"完成 → 爱娜特莉亚在第3部第2区分正式加入；未完成 → 第3部不可用。","risk":"沙兰永久锁死（迪/蕾线唯一的沙兰来源）+ 第3部少一人","routes":{"迪托利希":{"ch":11,"win":[[10,5],[10,14]],"deadline":"1449/10/17"},"蕾达":{"ch":10,"win":[[10,5],[10,14]],"deadline":"1449/10/17"}}},{"id":"ss2","name":"大逃亡","en":"Great Escape","char":"凯伊","giver":"凯伊","place":"帝都鞑古席翁「市街」（Midtown）","battlePlace":"帝都鞑古席翁","auto":"接取后战斗被固定在 10/23，时间会直接推过去","rank":"打","why":"媞雅拉的招募条件之一。三条非凯伊线（迪托利希 / 赛奥朵拉 / 蕾达）都能打，凯伊线自己打不了。","rewards":["宝珠箱 (Gem Box) ×1","20,000G","名声 150","达成媞雅拉的招募条件之一"],"perfect":["护送目标全部撤离，中途不被追兵截住","宝珠箱到手（宝箱位置要专门派一个人去开）","确认媞雅拉的招募条件已计入","无人阵亡"],"tactics":["高机动单位先清追兵开路，护送目标跟在后面两格","宝箱单独派人绕，别让护送队为了箱子改道","追兵会分批出现，留一名能一打三的前排断后"],"traps":["接取即跳到 10/23 的战斗日，10/22 是最后一天能接","攻略站对这关只给了时间与报酬，具体波次与地图细节待验证，按护送关通用思路处理"],"unlock":["媞雅拉"],"part3":"完成 → 凯伊在第3部仍为受限状态；只有在凯伊线通关第1部，凯伊才是完全体。","risk":"媞雅拉挖角条件不成立（凯伊线她是白送，所以只有别的线才在意）","routes":{"迪托利希":{"ch":11,"win":[[10,16],[10,22]],"deadline":"1449/10/22"},"赛奥朵拉":{"ch":12,"win":[[10,16],[10,22]],"deadline":"1449/10/22"},"蕾达":{"ch":11,"win":[[10,16],[10,22]],"deadline":"1449/10/22"}}},{"id":"ss3","name":"被封印的过去","en":"Sealed-Off Past","char":"迪托利希","giver":"法毕欧 (Fabio)","place":"帝都鞑古席翁「大斗技场前广场」（竞技场前，法毕欧常驻处）","battlePlace":"帝都鞑古席翁","auto":"正常接取","rank":"必打","why":"法毕欧的招募条件之一，而法毕欧是全作唯一只能在蕾达线挖到的人。这是唯一必须走「非本人路线」才能解锁的领主外传。","rewards":["沙拉曼达 (Salamander) ×1（部分英文源记 ×2，数量待验证）","20,000G","名声 150","达成法毕欧的招募条件之一"],"perfect":["法毕欧招募条件满足（蕾达线：名声 9 / 支援 LV3，并在第11章主线后送他满意的武器）","多打几次多拿沙拉曼达（中文 wiki 明确建议刷）","确认外传报酬结算","无人阵亡"],"tactics":["单一战场，稳推即可；重点是「能重复打」，别把次数浪费在没带够人的一次上","法毕欧本人可上场，注意别让他抢了经验位"],"traps":["赛奥朵拉线看似给到 10/24，但第12章本身在 10/24 就结束了，实操截止就是 10/24","蕾达线窗口更宽（到 10/29，最终 11/1），所以法毕欧留给蕾达线打最从容"],"unlock":["法毕欧"],"part3":"完成 → 迪托利希在第3部仍为受限状态；只有在迪托利希线通关第1部，迪托利希才是完全体。","risk":"法毕欧永久锁死（蕾达线唯一挖法）","routes":{"赛奥朵拉":{"ch":12,"win":[[10,16],[10,21]],"deadline":"1449/10/24"},"蕾达":{"ch":11,"win":[[10,16],[10,29]],"deadline":"1449/11/1"}}},{"id":"ss8","name":"欧露赫露的牵挂","en":"Orchel's Regret","char":"欧露赫露","auto":"接取后自动推进到最近 12:00","giver":"欧露赫露","place":"帝都鞑古席翁「柯雷尔神殿分殿前」（克拉娜神殿分殿）","battlePlace":"帝都鞑古席翁","rank":"最紧","why":"迪雅各的挖角前置（第11章，支援 LV3 / 名声 10）。四个主角线都能打，但凯伊线窗口只有 3 天（10/18–10/20），是全作凯伊侧最窄的一个。","rewards":["治愈之杖 ×1","20,000G","名声 150","解锁迪雅各挖角（第11章，支援 LV3 / 名声 10）","第3部 第2区分 欧露赫露正式加入"],"perfect":["东西两侧各 2 个机关，必须「同时」激活 —— 分兵 2:2，不要一队跑完全部","投石机（Onager）只用来打 Boss 区域，别浪费在杂兵身上","东侧会出现天马骑士增援，提前在对空位放弓兵/风魔法","治愈之杖到手"],"tactics":["进图先分队：西队 2 人、东队 2 人，各踩两个机关后同时压上","机关踩完再发射投石机，顺序反了等于白打","Boss 区域被投石机打开后集中火力，天马增援交给后排弓兵处理"],"traps":["第11章自由行动只有 28 回合，进章第一件事就做这个外传，别排到最后","如果拖到最后一天接，时间自动跳到 12:00，很可能连主线都赶不上","起始日各源有分歧（外传页 10/18–10/20、主线页 10/18–10/19、部分英文源到 10/21）—— 按最窄的 10/20 规划"],"unlock":["迪雅各"],"part3":"完成 → 欧露赫露第3部第2区分加入；未完成 → 第3部不可用。","risk":"凯伊线窗口最窄（3 天）+ 迪雅各永久锁死","routes":{"凯伊":{"ch":11,"win":[[10,18],[10,20]],"deadline":"1449/10/21"},"迪托利希":{"ch":11,"win":[[10,18],[10,25]],"deadline":"1449/10/27"},"赛奥朵拉":{"ch":12,"win":[[10,18],[10,22]],"deadline":"1449/10/24"},"蕾达":{"ch":11,"win":[[10,18],[10,25]],"deadline":"1449/10/27"}}}];
 const MOUNTS = [{"name":"汗血马","type":"马","ability":"力+2 防+2 技+1","growth":"HP5 力5 技5 防10%","bait":"珍馐 · 蔬菜","where":"落日之路（稀有）","skill":"联合猛战技 / 联合战技集中","tag":"再移动","priority":"必抓 4 匹以上","note":"配战车兵成长翻倍 → 力+25%/技+35%/防+25%，全作最夸张的成长组合"},{"name":"莫诺凯洛斯（独角兽）","type":"马","ability":"幸+3 速+1 技+1","growth":"HP5 速5 技5 魔防10%","bait":"珍馐 · 蔬菜","where":"奥雷安斯平原（稀有）","skill":"联合奇迹 / 联合治愈","tag":"战斗后回复HP","priority":"必抓 2 匹","note":"前排骑士与奶妈的续航神器"},{"name":"野生马","type":"马","ability":"技+3 速+1 防+1","growth":"HP5 速5 技5 防5 魔防5%","bait":"甜味 · 蔬菜","where":"向阳岭、奥雷安斯平原、落日之路","skill":"联合疾行 / 联合唤起","tag":"—","priority":"过渡用","note":"满地都是，缺坐骑时的保底；不用刻意刷"},{"name":"罗西南","type":"马","ability":"技+3 防+2 速+1","growth":"HP5 速5 技5 防10 魔防5%","bait":"—","where":"招募伊欧时附赠","skill":"联合疾行","tag":"—","priority":"白送","note":"不用抓，挖伊欧就到手（凯伊线第9章，名声10）"},{"name":"黑羽玛吉尼乌斯","type":"飞鸵","ability":"魔+2 速+2 技+1","growth":"魔10 速10 技5%","bait":"苦味 · 鱼","where":"猎首岩（稀有）","skill":"联合魔法尖锐","tag":"再移动","priority":"必抓 2 只以上","note":"配神鸵兵媲美最上级职业；第三部凯伊、西洛可还要接着用"},{"name":"红羽美加尼乌斯","type":"飞鸵","ability":"力+3 技+1 防+1","growth":"力15 防5 技5%","bait":"辣味 · 鱼","where":"亚库席翁溪谷（稀有）","skill":"联合防护","tag":"—","priority":"抓 2 只","note":"配飞鸵兵练物理角色，成长补正不输上级职业"},{"name":"美加尼乌斯","type":"飞鸵","ability":"防+3 力+1 技+1","growth":"力5 防15 技5%","bait":"辣味 · 鱼","where":"亚库席翁溪谷、乌拉诺司山（雀跃之径稀有）","skill":"联合疾行 / 联合巨躯","tag":"—","priority":"过渡用","note":"常见的飞鸵底子，刷稀有品种时的副产物"},{"name":"玛吉尼乌斯","type":"飞鸵","ability":"魔+3 技+2","growth":"魔15 技10%","bait":"苦味 · 鱼","where":"猎首岩","skill":"联合疾行 / 联合魔法集中","tag":"—","priority":"过渡用","note":"法师的保底坐骑，黑羽的下位替代"},{"name":"野生欧鲁尼乌斯","type":"飞鸵","ability":"技+3 速+2","growth":"速10 技15%","bait":"甜味 · 鱼","where":"埃利萨岭、雀跃之径、乌拉诺司山、法罗之森","skill":"联合隐密 / 联合疾行","tag":"—","priority":"任务需求 2 只","note":"助人「捕获欧鲁尼乌斯的委托」要交 2 只，别全卖/全装备"},{"name":"白羽欧鲁尼乌斯","type":"飞鸵","ability":"魔防+3 速+1 技+1","growth":"速5 技5 魔防15%","bait":"甜味 · 鱼","where":"法罗之森（稀有）","skill":"联合治愈 / 联合净化","tag":"—","priority":"可选","note":"魔防向，专门给吃魔法的前排或飞兵用"},{"name":"圣飞马","type":"天马","ability":"速+3 力+1 技+1","growth":"力5 速15 技5%","bait":"珍馐 · 蔬菜","where":"巨鸟之颈、天马岩（稀有）","skill":"飞行再移动 / 联合飞翔","tag":"再移动","priority":"抓 2 只以上","note":"第三部上天的位置很偏，第一部先抓好；配雷电剑强度极高"},{"name":"野生飞马","type":"天马","ability":"速+3 魔防+2","growth":"速15 魔防10%","bait":"甜味 · 蔬菜","where":"黑翼之谷（需支线）、巨鸟之颈、天马岩","skill":"联合对魔 / 联合飞翔","tag":"—","priority":"过渡用","note":"助人「翱翔天际的搭档」指定要 1 只野生天马（第11章）"},{"name":"暗飞马","type":"天马","ability":"魔+3 速+2","growth":"魔15 速10%","bait":"苦味 · 蔬菜","where":"黑翼之谷（稀有，需先完成助人「猛兽盘踞的归途」并回城交付）","skill":"联合飞翔 / 联合高速魔法","tag":"—","priority":"抓 1~2 只","note":"配雷电剑是公认的强度组合；黑翼之谷解锁别漏"},{"name":"野生巴乌","type":"飞龙","ability":"力+2 技+2 速+1","growth":"力10 速5 技10%","bait":"甜味 · 肉","where":"龙哮海岬","skill":"联合猛战技 / 联合飞翔","tag":"—","priority":"1~2 只即可","note":"第三部有更好的龙，第一部不必多抓"},{"name":"萨拉弥斯战象","type":"战象","ability":"力+5 技+5 防+5 幸+5","growth":"HP5 力5 技5 防5 幸5%","bait":"—","where":"支线「战象骑手的羁绊」报酬（2 头）","skill":"联合大移动","tag":"—","priority":"必拿（支线）","note":"不用抓，做支线直接给 2 头；数值加成是全场最高"}];
 const REC = [{"name":"凯伊","route":"凯伊","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"媞雅拉","route":"凯伊","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"开始时自动加入","cond":""},{"name":"媞雅拉","route":"迪托利希","renown":"9","support":"3","chapter":"第11章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、完成凯伊的外传、需交涉（难度 中）| 支付3000G"},{"name":"媞雅拉","route":"赛奥朵拉","renown":"10","support":"3","chapter":"第12章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV10、完成凯伊的外传、需交涉（难度 中）| 支付3000G"},{"name":"媞雅拉","route":"蕾达","renown":"8","support":"3","chapter":"第11章（附页参考）","when":"3月21日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8、完成凯伊的外传、需交涉（难度 中）| 支付3000G"},{"name":"皮特鲁","route":"凯伊","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"开始时自动加入","cond":""},{"name":"皮特鲁","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8、需交涉（难度 高）| 完成皮特鲁的委托"},{"name":"皮特鲁","route":"赛奥朵拉","renown":"7","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV7、需交涉（难度 高）| 完成皮特鲁的委托"},{"name":"皮特鲁","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 高）| 完成皮特鲁的委托"},{"name":"乌尔坦德","route":"凯伊","renown":"剧情加入","support":"","chapter":"第6章（附页参考）","when":"主线第5章结束后，第6章自动加入","cond":""},{"name":"乌尔坦德","route":"迪托利希","renown":"5","support":"3","chapter":"第7章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV5、需交涉（难度 高）| 完成乌尔坦德的委托"},{"name":"乌尔坦德","route":"赛奥朵拉","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV6、需交涉（难度 高）| 完成乌尔坦德的委托"},{"name":"乌尔坦德","route":"蕾达","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8、需交涉（难度 高）| 完成乌尔坦德的委托"},{"name":"迪托利希","route":"迪托利希","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"法毕欧","route":"凯伊","renown":"不可挖角","support":"","chapter":"凯伊篇不可挖角","when":"不可挖角","cond":"蕾达：支援LV3、名声LV9、完成迪托利希外传、需交涉（难度 低）| 剧情11章迪托利希败退后，赠送其满意的武器"},{"name":"法毕欧","route":"迪托利希","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"开始时自动加入","cond":"蕾达：支援LV3、名声LV9、完成迪托利希外传、需交涉（难度 低）| 剧情11章迪托利希败退后，赠送其满意的武器"},{"name":"法毕欧","route":"赛奥朵拉","renown":"不可挖角","support":"","chapter":"赛奥朵拉篇不可挖角","when":"不可挖角","cond":"蕾达：支援LV3、名声LV9、完成迪托利希外传、需交涉（难度 低）| 剧情11章迪托利希败退后，赠送其满意的武器"},{"name":"法毕欧","route":"蕾达","renown":"9","support":"3","chapter":"第11章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV9、完成迪托利希外传、需交涉（难度 低）| 剧情11章迪托利希败退后，赠送其满意的武器"},{"name":"艾丝梅拉尔达","route":"凯伊","renown":"7","support":"2","chapter":"第7章（附页参考）","when":"3月15日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV2、名声LV7、需交涉（难度 高）| 完成艾丝梅拉达的委托"},{"name":"艾丝梅拉尔达","route":"迪托利希","renown":"剧情加入","support":"","chapter":"第2章（附页参考）","when":"开始时自动加入","cond":""},{"name":"艾丝梅拉尔达","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 高）| 完成艾丝梅拉达的委托"},{"name":"艾丝梅拉尔达","route":"蕾达","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV6、需交涉（难度 高）| 完成艾丝梅拉达的委托"},{"name":"米迦艾拉","route":"凯伊","renown":"5","support":"3","chapter":"第6章（附页参考）","when":"3月15日 帝都上层 上参道  需满足挖角条件","cond":"凯伊：支援LV3、名声LV5、需交涉（难度 中）| 支付3000G"},{"name":"米迦艾拉","route":"迪托利希","renown":"剧情加入","support":"","chapter":"第4章（附页参考）","when":"3月23日 帝都下层 贫民窟 前往酒馆完成剧情后自动加入","cond":""},{"name":"米迦艾拉","route":"赛奥朵拉","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都上层 上参道  需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV8、需交涉（难度 中）| 支付3000G"},{"name":"米迦艾拉","route":"蕾达","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月21日 武器店附近触发剧情后 帝都上层 上参道 需满足挖角条件","cond":"蕾达：支援LV3、名声LV6、需交涉（难度 中）| 支付3000G"},{"name":"赛奥朵拉","route":"赛奥朵拉","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"波拿帕尔特","route":"赛奥朵拉","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"托比亚斯","route":"赛奥朵拉","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"莉利安","route":"凯伊","renown":"8","support":"2","chapter":"第8章（附页参考）","when":"","cond":"凯伊：支援LV2、名声LV8、需交涉（难度 中）| 支付 5000G"},{"name":"莉利安","route":"迪托利希","renown":"8","support":"2","chapter":"第9章（附页参考）","when":"","cond":"迪托利希：支援LV2、名声LV8、需交涉（难度 中）| 支付 5000G"},{"name":"莉利安","route":"赛奥朵拉","renown":"剧情加入","support":"","chapter":"第4章（附页参考）","when":"","cond":""},{"name":"莉利安","route":"蕾达","renown":"7","support":"2","chapter":"第7章（附页参考）","when":"第4章自由行动期间，随赛奥朵拉行动；满足名声、支援及交涉条件后招募。","cond":"蕾达：支援LV2、名声LV7、需交涉（难度 中）| 支付 5000G"},{"name":"莱桑达","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月1日 帝都下层 港口 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 高）| 给铁枪×5"},{"name":"莱桑达","route":"迪托利希","renown":"6","support":"3","chapter":"第8章（附页参考）","when":"3月27日 帝都上层 下参道 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV6、需交涉（难度 高）| 给铁枪×5"},{"name":"莱桑达","route":"赛奥朵拉","renown":"剧情加入","support":"","chapter":"第4章（附页参考）","when":"剧情自动加入","cond":""},{"name":"莱桑达","route":"蕾达","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"第4章自由行动期间，随赛奥朵拉行动；满足名声、支援及交涉条件后招募。","cond":"蕾达：支援LV3、名声LV7、需交涉（难度 高）| 给铁枪×5"},{"name":"蕾达","route":"蕾达","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":"--"},{"name":"巴卡尼亚","route":"凯伊","renown":"不可挖角","support":"","chapter":"凯伊篇不可挖角","when":"","cond":""},{"name":"巴卡尼亚","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"","cond":"迪托利希：支援LV3、名声LV8、完成完成蕾达的外传"},{"name":"巴卡尼亚","route":"赛奥朵拉","renown":"8","support":"3","chapter":"第10章（附页参考）","when":"","cond":"赛奥朵拉：支援LV3、名声LV8、完成完成蕾达的外传"},{"name":"巴卡尼亚","route":"蕾达","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":""},{"name":"西洛可","route":"凯伊","renown":"9","support":"3","chapter":"第8章（附页参考）","when":"","cond":"凯伊：支援LV3、名声LV9、需交涉（难度 超高）| 完成西洛可的委托"},{"name":"西洛可","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"","cond":"迪托利希：支援LV3、名声LV9、需交涉（难度 超高）| 完成西洛可的委托"},{"name":"西洛可","route":"赛奥朵拉","renown":"5","support":"1","chapter":"第7章（附页参考）","when":"","cond":"赛奥朵拉：支援LV1、名声LV5、需交涉（难度 超高）| 完成西洛可的委托"},{"name":"西洛可","route":"蕾达","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":""},{"name":"穆","route":"凯伊","renown":"9","support":"3","chapter":"第8章（附页参考）","when":"","cond":"凯伊：支援LV3、名声LV9、需交涉（难度 中）| 给食材 佳兰×3"},{"name":"穆","route":"迪托利希","renown":"7","support":"3","chapter":"第9章（附页参考）","when":"","cond":"迪托利希：支援LV3、名声LV7、需交涉（难度 中）| 给食材 佳兰×3"},{"name":"穆","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 中）| 给食材 佳兰×3"},{"name":"穆","route":"蕾达","renown":"剧情加入","support":"","chapter":"第1章（附页参考）","when":"","cond":""},{"name":"奥琳琵娅","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 超高）| 完成奥琳琵娅的委托 1～3"},{"name":"奥琳琵娅","route":"迪托利希","renown":"6","support":"3","chapter":"第8章（附页参考）","when":"","cond":"迪托利希：支援LV3、名声LV6、需交涉（难度 超高）| 完成奥琳琵娅的委托 1～3"},{"name":"奥琳琵娅","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 超高）| 完成奥琳琵娅的委托 1～3"},{"name":"奥琳琵娅","route":"蕾达","renown":"剧情加入","support":"","chapter":"第4章（附页参考）","when":"蕾达线第3章后段剧情加入，进入第4章时已经在队。","cond":""},{"name":"贝特兰","route":"凯伊","renown":"不可挖角","support":"","chapter":"第一部不可挖角","when":"第1部 凯伊篇 第11章 主线 斗技场地下之战 临时加入","cond":"--"},{"name":"盖茨","route":"凯伊","renown":"不可挖角","support":"","chapter":"凯伊篇不可挖角","when":"","cond":""},{"name":"盖茨","route":"迪托利希","renown":"10","support":"3","chapter":"第12章（附页参考）","when":"第12章自由行动期（11月4日起），完成贝特兰外传，且贝特兰在大剑斗祭中败退后，在帝都满足挖角要求。","cond":"迪托利希：支援LV3、名声LV10、完成贝特兰外传，并在11章主线击败盖茨"},{"name":"盖茨","route":"蕾达","renown":"不可挖角","support":"","chapter":"蕾达篇不可挖角","when":"","cond":""},{"name":"哥莱亚斯","route":"凯伊","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"2月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV7、需交涉（难度 高）| 给巨大肉×3"},{"name":"哥莱亚斯","route":"迪托利希","renown":"6","support":"3","chapter":"第8章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV6、需交涉（难度 高）| 给巨大肉×3"},{"name":"哥莱亚斯","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 高）| 给巨大肉×3"},{"name":"哥莱亚斯","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 高）| 给巨大肉×3"},{"name":"杰斯塔","route":"凯伊","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"2月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10、需交涉（难度 超高）| 完成杰斯塔的委托1~3"},{"name":"杰斯塔","route":"迪托利希","renown":"6","support":"3","chapter":"第8章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV6、需交涉（难度 超高）| 完成杰斯塔的委托1~3"},{"name":"杰斯塔","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 超高）| 完成杰斯塔的委托1~3"},{"name":"杰斯塔","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 超高）| 完成杰斯塔的委托1~3"},{"name":"丹提","route":"凯伊","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"2月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10、需交涉（难度 高）| 支付8000G"},{"name":"丹提","route":"迪托利希","renown":"8","support":"2","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 露天市场 需满足挖角条件","cond":"迪托利希：支援LV2、名声LV8、需交涉（难度 高）| 支付8000G"},{"name":"丹提","route":"赛奥朵拉","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV6、需交涉（难度 高）| 支付8000G"},{"name":"丹提","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都中层 露天市场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 高）| 支付8000G"},{"name":"迪雅各","route":"凯伊","renown":"10","support":"3","chapter":"第11章（附页参考）","when":"2月24日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10、完成欧露赫露的外传"},{"name":"迪雅各","route":"迪托利希","renown":"9","support":"3","chapter":"第11章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、完成欧露赫露的外传"},{"name":"迪雅各","route":"赛奥朵拉","renown":"8","support":"2","chapter":"第12章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV2、名声LV8、完成欧露赫露的外传"},{"name":"迪雅各","route":"蕾达","renown":"8","support":"3","chapter":"第11章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8、| 完成欧露赫露的外传"},{"name":"罗蕾塔","route":"凯伊","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"2月23日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV7、需交涉（难度 中）| 铁剑×3"},{"name":"罗蕾塔","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都上层 下参道 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、需交涉（难度 中）| 铁剑×3"},{"name":"罗蕾塔","route":"赛奥朵拉","renown":"5","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都下层 港口 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV5、需交涉（难度 中）| 铁剑×3"},{"name":"罗蕾塔","route":"蕾达","renown":"5","support":"3","chapter":"第6章（附页参考）","when":"3月21日 帝都下层 港口 需满足挖角条件","cond":"蕾达：支援LV3、名声LV5、需交涉（难度 中）| 铁剑×3"},{"name":"西提司","route":"凯伊","renown":"6","support":"3","chapter":"第6章（附页参考）","when":"2月23日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV6、需交涉（难度 高）| 完成西提司的委托"},{"name":"西提司","route":"迪托利希","renown":"不可挖角","support":"","chapter":"迪托利希篇不可挖角","when":"不可挖角","cond":""},{"name":"西提司","route":"赛奥朵拉","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都下层 港口 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV6、需交涉（难度 高）| 完成西提司的委托"},{"name":"西提司","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都下层 港口 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 高）| 完成西提司的委托"},{"name":"妮涅","route":"凯伊","renown":"6","support":"3","chapter":"第6章（附页参考）","when":"2月23日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV6、需交涉（难度 高）| 给辉光鱼×1"},{"name":"妮涅","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都上层 下参道 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8、需交涉（难度 高）| 给辉光鱼×1"},{"name":"妮涅","route":"赛奥朵拉","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都下层 港口 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV6、需交涉（难度 高）| 给辉光鱼×1"},{"name":"妮涅","route":"蕾达","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月21日 帝都下层 港口 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8、需交涉（难度 高）|给辉光鱼×1"},{"name":"乌修拉","route":"凯伊","renown":"10","support":"3","chapter":"第10章（附页参考）","when":"3月2日 帝都中层 露天市场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10、需交涉（难度 低）| 完成塔利穆恩的外传，所有问题均选择“是”"},{"name":"乌修拉","route":"迪托利希","renown":"7","support":"3","chapter":"第10章（附页参考）","when":"3月27日 帝都中层 露天市场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV7、需交涉（难度 低）| 完成塔利穆恩的外传，所有问题均选择“是”"},{"name":"乌修拉","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第11章（附页参考）","when":"3月8日 帝都中层 露天市场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 低）| 完成塔利穆恩的外传，所有问题均选择“是”"},{"name":"乌修拉","route":"蕾达","renown":"不可挖角","support":"","chapter":"蕾达篇不可挖角","when":"不可挖角","cond":""},{"name":"希蒙","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月2日 帝都下层 港口 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 低）| 抛硬币时选择反面"},{"name":"希蒙","route":"迪托利希","renown":"7","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都上层 游乐区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV7、需交涉（难度 低）| 抛硬币时选择反面"},{"name":"希蒙","route":"赛奥朵拉","renown":"7","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV7、需交涉（难度 低）| 抛硬币时选择反面"},{"name":"希蒙","route":"蕾达","renown":"6","support":"3","chapter":"第7章（附页参考）","when":"3月23日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV6、需交涉（难度 低）| 抛硬币时选择反面"},{"name":"露露蒂雅","route":"凯伊","renown":"9","support":"3","chapter":"第8章（附页参考）","when":"3月2日 帝都中层 露天市场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV9、需交涉（难度 高）| 完成露露蒂雅的委托"},{"name":"露露蒂雅","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 露天市场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、需交涉（难度 高）| 完成露露蒂雅的委托"},{"name":"露露蒂雅","route":"赛奥朵拉","renown":"7","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都中层 露天市场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV7、需交涉（难度 高）| 完成露露蒂雅的委托"},{"name":"露露蒂雅","route":"蕾达","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"3月23日 帝都中层 露天市场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV7、需交涉（难度 高）| 完成露露蒂雅的委托"},{"name":"绯亚娜","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月2日 帝都下层 港口 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 中）| 支付3000G"},{"name":"绯亚娜","route":"迪托利希","renown":"7","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都上层 游乐区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV7、需交涉（难度 中）| 支付3000G"},{"name":"绯亚娜","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 中）| 支付3000G"},{"name":"绯亚娜","route":"蕾达","renown":"5","support":"3","chapter":"第6章（附页参考）","when":"3月23日 帝都下层 厩舍前通道 需满足挖角条件","cond":"蕾达：支援LV3、名声LV5、需交涉（难度 中）| 支付3000G"},{"name":"沙兰","route":"凯伊","renown":"不可挖角","support":"","chapter":"凯伊篇不可挖角","when":"不可挖角","cond":""},{"name":"沙兰","route":"迪托利希","renown":"10","support":"3","chapter":"第11章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV10、需交涉（难度 低）| 完成爱娜特莉亚的外传"},{"name":"沙兰","route":"赛奥朵拉","renown":"不可挖角","support":"","chapter":"赛奥朵拉篇不可挖角","when":"不可挖角","cond":""},{"name":"沙兰","route":"蕾达","renown":"8","support":"3","chapter":"第10章（附页参考）","when":"3月23日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8、需交涉（难度 低）| 完成爱娜特莉亚的外传"},{"name":"哪吒","route":"凯伊","renown":"6","support":"3","chapter":"第6章（附页参考）","when":"3月6日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV3、名声LV6、需交涉（难度 高）| 给沙虫肉×3"},{"name":"哪吒","route":"迪托利希","renown":"10","support":"3","chapter":"第10章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV10、需交涉（难度 高）| 给沙虫肉×3"},{"name":"哪吒","route":"赛奥朵拉","renown":"6","support":"2","chapter":"第7章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV2、名声LV6、需交涉（难度 高）| 给沙虫肉×3"},{"name":"哪吒","route":"蕾达","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月23日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV9、需交涉（难度 高）| 给沙虫肉×3"},{"name":"大刀","route":"凯伊","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"3月6日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV3、名声LV7、需交涉（难度 中）| 给柯夏鲁雀鳝×2"},{"name":"大刀","route":"迪托利希","renown":"10","support":"3","chapter":"第10章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV10、需交涉（难度 中）| 给柯夏鲁雀鳝×2"},{"name":"大刀","route":"赛奥朵拉","renown":"5","support":"2","chapter":"第7章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV2、名声LV5、需交涉（难度 中）| 给柯夏鲁雀鳝×2"},{"name":"大刀","route":"蕾达","renown":"5","support":"2","chapter":"第6章（附页参考）","when":"3月23日 帝都中层 市区 需满足挖角条件","cond":"蕾达：支援LV2、名声LV5、需交涉（难度 中）| 给柯夏鲁雀鳝×2"},{"name":"哈尔温","route":"凯伊","renown":"5","support":"3","chapter":"第6章（附页参考）","when":"3月6日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV3、名声LV5、需交涉（难度 中）| 给椰枣×10"},{"name":"哈尔温","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、需交涉（难度 中）| 给椰枣×10"},{"name":"哈尔温","route":"赛奥朵拉","renown":"7","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV7、需交涉（难度 中）| 给椰枣×10"},{"name":"哈尔温","route":"蕾达","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"3月23日 帝都下层 厩舍前通道 需满足挖角条件","cond":"蕾达：支援LV3、名声LV7、需交涉（难度 中）| 给椰枣×10"},{"name":"卡塔妮雅","route":"凯伊","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"2月20日 帝都中层 露天市场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10"},{"name":"卡塔妮雅","route":"迪托利希","renown":"8","support":"1","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV1、名声LV8"},{"name":"卡塔妮雅","route":"赛奥朵拉","renown":"7","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都中层 市区 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV7"},{"name":"卡塔妮雅","route":"蕾达","renown":"教学招募","support":"1","chapter":"第4章（附页参考）","when":"3月21日 帝都上层 下参道 完成剧情送礼并挖角后加入","cond":"蕾达：支援LV1、名声LV2"},{"name":"努蒂奴","route":"凯伊","renown":"6","support":"1","chapter":"第6章（附页参考）","when":"2月20日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV1、名声LV6、需交涉（难度 中）| 给青铜斧*2"},{"name":"努蒂奴","route":"迪托利希","renown":"5","support":"2","chapter":"第7章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV2、名声LV5、需交涉（难度 中）| 给青铜斧*2"},{"name":"努蒂奴","route":"赛奥朵拉","renown":"5","support":"3","chapter":"第7章（附页参考）","when":"3月8日 帝都中层 露天市场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV5、需交涉（难度 中）| 给铁斧*3"},{"name":"努蒂奴","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都上层 游乐区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV10、需交涉（难度 中）| 给铁斧*3"},{"name":"伊欧","route":"凯伊","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"2月20日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV10、需交涉（难度 中）|  支付400G"},{"name":"伊欧","route":"迪托利希","renown":"3","support":"2","chapter":"第5章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV2、名声LV3、需交涉（难度 中）|  支付800G"},{"name":"伊欧","route":"赛奥朵拉","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV10、需交涉（难度 中）|  支付4000G"},{"name":"伊欧","route":"蕾达","renown":"6","support":"1","chapter":"第7章（附页参考）","when":"3月21日 帝都下层 港口 需满足挖角条件","cond":"蕾达：支援LV1、名声LV6、需交涉（难度 中）| 支付1500G"},{"name":"古扎岚","route":"凯伊","renown":"教学招募","support":"1","chapter":"第3章（附页参考）","when":"2月20日 帝都中层 市区 完成剧情送礼并挖角后加入","cond":"凯伊：支援LV1、名声LV2"},{"name":"古扎岚","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都上层 上参道 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8"},{"name":"古扎岚","route":"赛奥朵拉","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月8日 帝都上层 上参道  需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV8"},{"name":"古扎岚","route":"蕾达","renown":"3","support":"1","chapter":"第5章（附页参考）","when":"3月21日 帝都上层 下参道 需满足挖角条件","cond":"蕾达：支援LV1、名声LV3"},{"name":"杨界","route":"凯伊","renown":"3","support":"2","chapter":"第4章（附页参考）","when":"2月20日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV2、名声LV3、需交涉（难度 低）"},{"name":"杨界","route":"迪托利希","renown":"教学招募","support":"1","chapter":"第4章（附页参考）","when":"3月25日 帝都中层 露天市场 完成剧情送礼并挖角后加入","cond":"迪托利希：支援LV1、名声LV2"},{"name":"杨界","route":"赛奥朵拉","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月8日 帝都下层 港口 需满足挖角条件","cond":"赛奥朵拉：支援LV3、名声LV9、需交涉（难度 低）"},{"name":"杨界","route":"蕾达","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月21日 帝都中层 市区  满足挖角条件后加入","cond":"蕾达：支援LV3、名声LV8、需交涉（难度 低）"},{"name":"马吉迪","route":"凯伊","renown":"5","support":"2","chapter":"第6章（附页参考）","when":"3月15日 鞑古席翁下层 贫民窟 需满足挖角条件","cond":"凯伊：支援LV2、名声LV5、需交涉（难度 低）| 反复挖角选需要你"},{"name":"马吉迪","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8、需交涉（难度 低）| 所有提问都选有必要"},{"name":"马吉迪","route":"赛奥朵拉","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月9日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"赛奥朵拉：支援LV3、名声LV8、需交涉（难度 低）| 所有提问都选有必要"},{"name":"马吉迪","route":"蕾达","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月21日 帝都上层 游乐区 需满足挖角条件","cond":"蕾达：支援LV3、名声LV9、（难度 低）| 所有提问都选有必要"},{"name":"诺克裘拉","route":"凯伊","renown":"4","support":"1","chapter":"第5章（附页参考）","when":"2月20日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV1、名声LV4"},{"name":"诺克裘拉","route":"迪托利希","renown":"6","support":"1","chapter":"第8章（附页参考）","when":"4月1日 帝都上层 游乐区 需满足挖角条件","cond":"迪托利希：支援LV1、名声LV6"},{"name":"诺克裘拉","route":"赛奥朵拉","renown":"3","support":"1","chapter":"第6章（附页参考）","when":"3月8日 帝都中层 露天市场 需满足挖角条件","cond":"赛奥朵拉：支援LV1、名声LV3"},{"name":"诺克裘拉","route":"蕾达","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月21日 帝都上层 下参道 需满足挖角条件","cond":"蕾达：支援LV3、名声LV8"},{"name":"努佐","route":"凯伊","renown":"6","support":"2","chapter":"第7章（附页参考）","when":"7月1日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"凯伊：支援LV2、名声LV6、需交涉（难度 中）| 给铁弓*3"},{"name":"努佐","route":"迪托利希","renown":"9","support":"1","chapter":"第9章（附页参考）","when":"返回帝都后，在第8章自由行动期满足名声、支援及对应交涉条件后招募。","cond":"迪托利希：支援LV1、名声LV9、需交涉（难度 中）| 给铁弓*2"},{"name":"努佐","route":"赛奥朵拉","renown":"6","support":"1","chapter":"第9章（附页参考）","when":"？","cond":"赛奥朵拉：支援LV1、名声LV6、需交涉（难度 中）| 给铁弓*3"},{"name":"努佐","route":"蕾达","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"7月1日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"蕾达：支援LV3、名声LV9、需交涉（难度 中）| 给铁弓*3"},{"name":"索绯雅","route":"凯伊","renown":"9","support":"3","chapter":"第8章（附页参考）","when":"2月20日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV3、名声LV9"},{"name":"索绯雅","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9"},{"name":"索绯雅","route":"赛奥朵拉","renown":"教学招募","support":"1","chapter":"第5章（附页参考）","when":"3月8日 帝都上层 富裕区 完成剧情送礼并挖角后加入","cond":"赛奥朵拉：支援LV1、名声LV2"},{"name":"索绯雅","route":"蕾达","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"3月21日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"蕾达：支援LV3、名声LV7"},{"name":"佩佩","route":"凯伊","renown":"9","support":"1","chapter":"第10章（附页参考）","when":"2月20日 帝都中层 大斗技场前广场 需满足挖角条件","cond":"凯伊：支援LV1、名声LV9、完成贝特兰的外传"},{"name":"佩佩","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 露天市场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8、完成贝特兰的外传"},{"name":"佩佩","route":"赛奥朵拉","renown":"7","support":"2","chapter":"第11章（附页参考）","when":"3月8日 帝都上层 上参道  需满足挖角条件","cond":"赛奥朵拉：支援LV2、名声LV7、完成贝特兰的外传"},{"name":"佩佩","route":"蕾达","renown":"不可挖角","support":"","chapter":"蕾达篇不可挖角","when":"不可挖角","cond":""},{"name":"札可捏","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"3月15日 帝都下层  厩舍前通道 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 低）| 一直拒绝直至支付10G"},{"name":"札可捏","route":"迪托利希","renown":"7","support":"3","chapter":"第9章（附页参考）","when":"3月27日 帝都中层 露天市场 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV7、需交涉（难度 低）| 一直拒绝直至支付10G"},{"name":"札可捏","route":"赛奥朵拉","renown":"4","support":"1","chapter":"第6章（附页参考）","when":"3月8日 帝都下层 贫民窟  需满足挖角条件","cond":"赛奥朵拉：支援LV1、名声LV4、需交涉（难度 低）| 一直拒绝直至支付10G"},{"name":"札可捏","route":"蕾达","renown":"5","support":"2","chapter":"第6章（附页参考）","when":"3月21日 帝都下层 贫民窟  需满足挖角条件","cond":"蕾达：支援LV2、名声LV5、需交涉（难度 低）| 一直拒绝直至支付10G"},{"name":"班迪兹","route":"凯伊","renown":"9","support":"3","chapter":"第8章（附页参考）","when":"返回帝都后，在第6章自由行动期满足名声、支援及对应交涉条件后招募。","cond":"凯伊：支援LV3、名声LV9"},{"name":"班迪兹","route":"迪托利希","renown":"7","support":"2","chapter":"第9章（附页参考）","when":"4月11日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV2、名声LV7"},{"name":"班迪兹","route":"赛奥朵拉","renown":"8","support":"1","chapter":"第8章（附页参考）","when":"4月11日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"赛奥朵拉：支援LV1、名声LV8"},{"name":"班迪兹","route":"蕾达","renown":"7","support":"3","chapter":"第7章（附页参考）","when":"4月11日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"蕾达：支援LV3、名声LV7"},{"name":"亚历珊德拉","route":"凯伊","renown":"7","support":"2","chapter":"第7章（附页参考）","when":"6月9日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV2、名声LV7"},{"name":"亚历珊德拉","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"5月30日 帝都下层   厩舍前通道 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV8"},{"name":"亚历珊德拉","route":"赛奥朵拉","renown":"6","support":"1","chapter":"第8章（附页参考）","when":"6月（入队带马1力1速1魔防）","cond":"赛奥朵拉：支援LV1、名声LV6"},{"name":"亚历珊德拉","route":"蕾达","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"5月","cond":"蕾达：支援LV3、名声LV10"},{"name":"奇洛伊卡","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"5月4日 帝都中层 市区 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 中）| 给圣水*8"},{"name":"奇洛伊卡","route":"迪托利希","renown":"4","support":"1","chapter":"第6章（附页参考）","when":"5月4日 帝都中层 市区 需满足挖角条件","cond":"迪托利希：支援LV1、名声LV4、需交涉（难度 中）| 给圣水*3"},{"name":"奇洛伊卡","route":"赛奥朵拉","renown":"10","support":"3","chapter":"第9章（附页参考）","when":"？","cond":"赛奥朵拉：支援LV3、名声LV10、需交涉（难度 中）| 给圣水*8"},{"name":"奇洛伊卡","route":"蕾达","renown":"4","support":"1","chapter":"第5章（附页参考）","when":"5月1日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"蕾达：支援LV1、名声LV4、需交涉（难度 中）| 给圣水*3"},{"name":"嘉丝敏","route":"凯伊","renown":"8","support":"1","chapter":"第8章（附页参考）","when":"5月11日 帝都上层 游乐园 需满足挖角条件","cond":"凯伊：支援LV1、名声LV8、需交涉（难度 中）|  支付2000G"},{"name":"嘉丝敏","route":"迪托利希","renown":"9","support":"3","chapter":"第9章（附页参考）","when":"5月17日 帝都下层 港口 需满足挖角条件","cond":"迪托利希：支援LV3、名声LV9、需交涉（难度 中）|  支付5000G"},{"name":"嘉丝敏","route":"赛奥朵拉","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"5月8日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"赛奥朵拉：支援LV3、名声LV8、需交涉（难度 中）|   支付5000G"},{"name":"嘉丝敏","route":"蕾达","renown":"4","support":"2","chapter":"第6章（附页参考）","when":"5月9日 帝都上层 下参道 需满足挖角条件","cond":"蕾达：支援LV2、名声LV4、需交涉（难度 中）| 支付500G"},{"name":"易尼奥尼","route":"凯伊","renown":"8","support":"3","chapter":"第8章（附页参考）","when":"7月20日 帝都中层  市区 需满足挖角条件","cond":"凯伊：支援LV3、名声LV8、需交涉（难度 中）|  支付6000G"},{"name":"易尼奥尼","route":"迪托利希","renown":"8","support":"3","chapter":"第9章（附页参考）","when":"7月10日起返回帝都，满足名声、支援及对应交涉条件后招募。","cond":"迪托利希：支援LV3、名声LV8、需交涉（难度 中）|  支付6000G"},{"name":"易尼奥尼","route":"赛奥朵拉","renown":"9","support":"1","chapter":"第9章（附页参考）","when":"？","cond":"赛奥朵拉：支援LV1、名声LV9、需交涉（难度 中）|   支付4000G"},{"name":"易尼奥尼","route":"蕾达","renown":"7","support":"1","chapter":"第9章（附页参考）","when":"7月12日 帝都上层 下参道 需满足挖角条件","cond":"蕾达：支援LV1、名声LV7、需交涉（难度 中）| 支付3000G"},{"name":"齐利科","route":"蕾达","renown":"不可挖角","support":"","chapter":"第一部不可挖角","when":"","cond":"第二章 迪托利希、蕾达篇限定"},{"name":"内森","route":"蕾达","renown":"不可挖角","support":"","chapter":"第一部不可挖角","when":"","cond":"第二章 迪托利希、蕾达篇限定"},{"name":"盛托利翁","route":"凯伊","renown":"不可挖角","support":"","chapter":"第一部不可挖角","when":"第1部 凯伊篇 第6章 主线 与哈尔·哈里之战 临时加入","cond":""},{"name":"安娜","route":"凯伊","renown":"临时参战","support":"","chapter":"第10章 · 9月24日—10月5日","when":"在帝都鞑古席翁的鞑古扎神殿前找安娜，接取外传。","cond":""},{"name":"安娜","route":"迪托利希","renown":"临时参战","support":"","chapter":"第10—11章 · 9月29日—10月5日","when":"在帝都鞑古席翁的鞑古扎神殿前找安娜，接取外传。","cond":""},{"name":"安娜","route":"赛奥朵拉","renown":"临时参战","support":"","chapter":"第11章 · 9月24日—10月5日","when":"在帝都鞑古席翁的鞑古扎神殿前找安娜，接取外传。","cond":""},{"name":"安娜","route":"蕾达","renown":"不可挖角","support":"","chapter":"无对应外传","when":"","cond":""}];
-const CH = [{"ch":1,"free":0,"battle":"与盗贼之战","lv":"—","must":["纯剧情导入，选项无影响","熟悉凯伊的圣焰战技（击破前4名敌人后解锁）"],"note":"本战只有凯伊/媞雅拉/皮特鲁三人，按教程打即可。"},{"ch":2,"free":0,"battle":"公共马车防卫战","lv":"—","must":["⚠「追赶盗贼」→ 进迷宫「迦连堡垒残迹」，宝箱有装备（选「前往鞑古席翁」会跳过，别选错）","告示板接 2 条支线：「请来道具店看看吧」「来我的武器店看看吧」"],"note":"客将卡司托尔 Lv28，让他清敌；马车不能被破坏。"},{"ch":3,"free":0,"battle":"与哥莱亚斯之战","lv":5,"must":["接助人「重要的发夹」→ 尼古利亚矿山深处调查发光地面（500G/名声100）","本章解锁自由行动 + 挖角，优先用助人刷名声"],"note":"自由行动回合很少，别浪费在世界地图瞎逛。乌尔坦德是客将，站前排身后输出。"},{"ch":4,"free":24,"battle":"预选赛 盖亚旅团战","lv":6,"must":["下水道走东侧 → 地下牢（开门后以后可直接通行）","凡达尔商会开张（素材换道具）；内皮亚之森解锁探索；与盛托利翁对话解锁指导","⚠ 助人「寻找孙女的委托」截止 3/7，接到立刻做（1500G/名声100）","助人「废屋的统治者」（下层马厩前通道，1500G/名声130）","支线：瓦雷利八牙 / 击退古兰纳达的盗贼 / 收集锻造石 / 想要更了解他","西提司的要求（三段式，做完才入队）"],"note":"24 回合很短，只够跑一趟近处。探索与支线二选一，优先有截止日的助人。"},{"ch":5,"free":104,"battle":"预选赛 雷云骑士团战","lv":11,"must":["★ 马厩解锁「引诱 / 照料」——抓捕系统从这章正式开始，坐下先学","斗技场解锁训练；北侧参加资格考试（凯伊可转飞鸵兵）","助人「神秘的口信」截止 5/20（2000G/名声180，找两名拿扫帚的女性）","助人「被藏起来的回忆」（崩塌砦最深宝箱后方，2000G/名声100）","助人「捕获欧鲁尼乌斯的委托」——要交 2 只野生欧鲁尼乌斯（2000G/名声200）","奥琳琵娅的三连要求（1→2→3，全部要在第1部内做完，否则她永不入队）","西洛可的要求 / 艾丝梅拉尔达的要求"],"note":"104 回合是第一次真正宽裕的自由行动。建议先把马厩的诱饵买齐，边做支线边抓。"},{"ch":6,"free":120,"battle":"与哈尔·哈里族之战","lv":15,"must":["微风之丘解锁栽培（种菜，是后面几条缴纳蔬菜委托的来源）","铁匠铺解锁（修武器）","助人「迷路的神殿猫」截止 5/20（猫在斗技场前喷水池，2500G/名声130）","助人「永恒的爱之花束」（姬金鱼草×20）、「畏虫者的代理任务」（沙之主的尾巴）","露露蒂雅的要求（卡里亚涅拉港打听）"],"note":"战斗里 3 名诅咒师每回合加全体防/魔防，先用飞鸵兵点掉西侧那个。"},{"ch":7,"free":120,"battle":"预选赛 布拉甘萨同胞团战","lv":20,"must":["★ 助人「连在帝都也无法得到的东西」→ 王都美盖拉拿特制车轴，解锁公共马车 + 5000G","★ 助人「占据关隘之徒」→ 胡戈关可通行（后续地图的通路）","助人「喜欢与不擅长」「传达炽热的心意」「向萨拉米斯迎宾馆缴纳蔬菜」","支线：蠢动的异形之影 / 名震四方的必杀之剑 / 天下无双的战帖 / 游子思念的味道"],"note":"名声在这一章通常能推到 Lv7~8，是集中挖角的好时机；挖角要的素材提前备。"},{"ch":8,"free":172,"battle":"正赛 与蕾达之战","lv":24,"must":["★ 助人「猛兽盘踞的归途」→ 里贝尔塔斯关可通行，并解锁「黑翼之谷」（暗飞马唯一产地）","助人「让迷途的灵魂安息」（7000G，全篇最高单笔助人报酬）、「送蔬菜到亚拉格迎宾馆」","支线「全身长满毛的巨兽」——报酬含椰枣×2（哈尔温挖角素材）","驱除潮虫的委托"],"note":"172 回合是全篇最长的自由行动，也是抓坐骑的黄金章。主线蕾达战爆炸物可反用。"},{"ch":9,"free":32,"battle":"理想乡之战","lv":24,"must":["⚠ 只有 32 回合：先清「老爷在哪里」（9/3 起，4000G）和「远古的囚犯」（9/15 起，5000G）","调查神殿内所有目标标记（欧若拉的房间里也有），漏了拿不到星枪","支线「天下无双的战帖2」「人消失的森林」（4000G）"],"note":"回合太短，别出城。理想乡之战是索敌图，原地等敌人过来，走西侧楼梯打 Boss。"},{"ch":10,"free":120,"battle":"半决赛 与赛奥朵拉之战","lv":27,"must":["★ 外传三连：贝特兰（9/17~9/25）、安娜（9/24~10/5）、谭利穆恩（9/17~9/22 或 10/1~10/10，最终 10/12）","助人「平原的闹事者」（5000G）、「远古的囚犯」若还没做赶紧做","助人「送蔬菜到斗技场地下」（名声200）、「出现大鸟了！」「天下无双的战帖3」"],"note":"解锁圣焰技能「掌握」。外传报酬各 20000G，优先于任何刷钱路线。"},{"ch":11,"free":28,"battle":"斗技场地下之战","lv":27,"must":["⚠⚠ 欧露赫露外传 10/18~10/20（截止 10/21）——凯伊线窗口最窄的外传，进章第一件事就去做","助人「翱翔天际的搭档」→ 天马岩抓 1 只野生天马（4000G/名声130）","支线「讨伐暴走魔像」「秘密的光辉」","「充满回忆的家」需要先用其他主角通关第1部，没通就做不了"],"note":"28 回合，只能做 2~3 件事。外传战要留够回合，别把它排在最后。"},{"ch":12,"free":92,"battle":"决赛 与贝特兰之战","lv":30,"must":["★ 最后一次自由行动：能挖的全挖、装备全部买齐（战争篇以后不能挖角/采购受限）","清「猎首岩之怪」「对黑衣剑客的憧憬」（各 7000G）、「追踪消失的金币」「被夺走的星之记录」","「基斯柯财宝的所在之处」→ 需先完成「被夺走的星之记录」；「神威法王的秘密」需其他2名主角通关","★★ 主线战斗前：把所有坐骑卸下放仓库（见「坐骑抓捕」页的继承说明）"],"note":"决赛凯伊被分断与卡司托尔单挑，靠四角魔法阵轮转；贝特兰放「岚之觉醒」那回合别主动攻击。"}];
+const UNIQ = {"凯伊":{"tagline":"指导三条线 + 坐骑抓捕，是四线里唯一能靠「养」把兵种与坐骑同时拉满的路线。","systems":[{"name":"指导（可解锁兵种）","how":"卡司托尔的指导 → 神鸵兵；欧若拉的指导「来自母亲的特别委托」（名声 Lv8）→ 驭龙兵；白发鬼的指导「来自白发鬼的委托」（名声 Lv10）→ 游唱诗人。","payoff":"3 个上级兵种，其中神鸵兵与驭龙兵在第三部还要接着用。"},{"name":"助人任务","how":"第3章起在告示板/街头接取，报酬多为名声与 G。带截止日的（发夹、孙女、口信、神殿猫）优先做。","payoff":"名声是挖角的硬门槛，凯伊线的名声曲线主要靠助人任务堆。"},{"name":"坐骑抓捕","how":"第5章马厩解锁「引诱 / 照料」，按口味 × 食材配诱饵，去对应产地捕获。","payoff":"汗血马配战车兵成长翻倍（力 25% / 技 35% / 防 25%），是四线里唯一能稳定量产坐骑的路线。"}],"caveat":"凯伊线打不了自己的外传「大逃亡」，媞雅拉的招募条件要交给迪托利希 / 赛奥朵拉 / 蕾达线去达成。"},"迪托利希":{"tagline":"魔响石双系统（战技强化 + 秘传传授），是四线里唯一的「技能改造」路线 —— 这也是迪线独有的收集大头。","systems":[{"name":"战技强化（113 个战技可 +）","how":"第4章起在帝都上层史米尔诺斯神殿受理处，用魔响石（战斗「刃鸣」获得）强化指定战技。每个角色要分别强化，同一战技换人还得再花一次。","payoff":"剑 29 / 斧 25 / 枪 22 / 弓 20 / 手甲 17，共 113 个战技有「+」版。强化是 per 角色 per 战技，魔响石消耗极大。"},{"name":"秘传传授（9 个秘传战技）","how":"第7章开头的黑猫事件之后，在史米尔诺斯神殿消耗魔响石，把秘传战技传授给迪托利希以外的同伴。","payoff":"9 个秘传战技只能这样拿到，且「已强化的传授后要重新强化」—— 先传再强化，顺序错了要重练。"},{"name":"挑战书「寻求挑战者！」","how":"名声 LV10 的挑战书「寻求挑战者！必灭的奥科」→ 游侠；「寻求挑战者！飞枪伊尔·伊拉」→ 卫士。","payoff":"2 个上级兵种，都是别线拿不到的解锁口径。"}],"caveat":"迪线可挖 39 人（四线最多），只挖不到西提司一人；盖茨是迪线独占。"},"赛奥朵拉":{"tagline":"战备增强换兵种：铁甲骑兵与驭龙兵都是「缴纳素材」型解锁，女王线的特有收集其实是兵种。","systems":[{"name":"铁甲骑兵","how":"完成第8章开始前的全部战备强化。","payoff":"重装 + 骑乘的复合兵种，赛线专属解锁口径。"},{"name":"驭龙兵","how":"战备增强「海星石」与「里尔鱼」各缴纳 35 个，两项都通关。只交里尔鱼不够（玩家实机反馈）。","payoff":"飞行 + 斧/枪，赛线与凯伊线是仅有的两条能开驭龙兵的路线，但条件完全不同。"}],"caveat":"赛线 38 人可挖，无独占角色；法毕欧与沙兰在赛线不可挖。"},"蕾达":{"tagline":"不是「没有啥」—— 蕾达线是全作唯一能稳定拿到舞者的路线，配合兴行与歌系战技，是四线里唯一有「再动」体系的。","systems":[{"name":"舞者（唯一的稳定来源）","how":"第1部第9章起，通关支线任务「舞者的继承人」。","payoff":"舞者 = 再动核心。蕾达本人速度成长 65（全角色最高），转舞者后速度 65+25=90，是天然的舞者人选；救世篇会全员解锁，但第一部只有这条线能拿到。"},{"name":"兴行（酒馆表演）","how":"蕾达线特色玩法，通关表演拿报酬与战技；「我想制作并推出新商品4」之后解锁游侠。","payoff":"战技「冷狂之歌 / 狂骚之歌」由兴行通关报酬获得，是蕾达线独有的歌系战技。"},{"name":"圣焰·热狂之歌","how":"蕾达篇第1章剧情习得。","payoff":"范围内友军力量、魔力 +4，持续到下一个己方阶段 —— 配合舞者再动，一回合能把整队 buff 满。"}],"caveat":"蕾线 36 人可挖，独占法毕欧；但盖茨、乌修拉、佩佩三人在这条线永远挖不到。"}};
+const EXTRA = {"sanct":{"凯伊":{"name":"冥炎弹","effect":"释放熊熊燃烧的冥炎","cost":"HP 13","cond":"于凯伊篇第1章的剧情中习得"},"迪托利希":{"name":"影渡","effect":"转移移动至多3格。移动后可再进行攻击","cost":"HP 11","cond":"于迪托利希篇第4章的剧情中习得"},"赛奥朵拉":{"name":"轰土","effect":"劈裂大地进行投掷攻击","cost":"HP 6","cond":"于赛奥朵拉篇第1章的剧情中习得"},"蕾达":{"name":"热狂之歌","effect":"范围内友军的力量、魔力+4（持续到下一个己方阶段）","cost":"HP 7","cond":"于蕾达篇第1章的剧情中习得"}},"classes":{"凯伊":[{"name":"神鸵兵","tier":"上级","requirement":"主要 马术 D 黑魔术 B · 推荐 Lv35","cond":"通关卡司托尔的指导"},{"name":"驭龙兵","tier":"上级","requirement":"主要 飞行术 C · 任选其一 斧术 B 枪术 B · 推荐 Lv35","cond":"通关欧若拉的指导「来自母亲的特别委托」（名声Lv8）"},{"name":"游唱诗人","tier":"上级","requirement":"主要 马术 D · 任选其一 白魔术 B 黑魔术 B · 推荐 Lv35","cond":"名声 Lv.10 时通关白发鬼的指导「来自白发鬼的委托」"}],"迪托利希":[{"name":"卫士","tier":"上级","requirement":"主要 枪术 B · 推荐 Lv35 · 名声 Lv8","cond":"通关「寻求挑战者！飞枪伊尔·伊拉」"},{"name":"游侠","tier":"上级","requirement":"任选其一 箭术 B 剑术 B · 推荐 Lv35 · 名声 Lv8","cond":"通关名声 LV10 的挑战书「寻求挑战者！必灭的奥科」"}],"赛奥朵拉":[{"name":"驭龙兵","tier":"上级","requirement":"主要 飞行术 C · 任选其一 斧术 B 枪术 B · 推荐 Lv35","cond":"战备增强「海星石」与「里尔鱼」（各缴纳35个）两项都通关（只交里尔鱼不够，网友实机反馈）"},{"name":"铁甲骑兵","tier":"上级","requirement":"主要 重装术 E+ 马术 D · 任选其一 斧术 B 枪术 B · 推荐 Lv35 · 名声 Lv8","cond":"完成第8章开始前的全部战备强化"}],"蕾达":[{"name":"游侠","tier":"上级","requirement":"任选其一 箭术 B 剑术 B · 推荐 Lv35 · 名声 Lv8","cond":"酒馆表演「我想制作并推出新商品4」后解锁"},{"name":"舞者","tier":"上级","requirement":"任选其一 箭术 B 剑术 B · 推荐 Lv35 · 名声 Lv8","cond":"通关支线任务「舞者的继承人」（第 1 部第 9 章起）"}]},"secret":[{"name":"秘传·落燕","weapon":"剑","effect":"命中时，若敌人为飞行单位，敌人移动力-3（持续到下一个己方阶段）","cost":"3"},{"name":"秘传·血牙","weapon":"斧","effect":"回复相当于所造成伤害一半的HP","cost":"3"},{"name":"秘传·不动贯枪","weapon":"枪","effect":"若敌人攻速比自己高4以上，命中+20（仅限射程1～2的枪使用）","cost":"5"},{"name":"秘传·流水","weapon":"剑","effect":"战斗时，回避+20，且无视攻速进行追击；战斗中造成的伤害减半","cost":"6"},{"name":"秘传·巨击破","weapon":"剑","effect":"战斗时，若敌人为大型单位，自己受到的伤害减半","cost":"5"},{"name":"秘传·必杀碎","weapon":"剑","effect":"战斗时及战斗后，自身必避+20（持续到下一个己方阶段）","cost":"4"},{"name":"秘传·远雷","weapon":"弓","effect":"射程远，但消耗耐久非常大（无法追击）","cost":"30"},{"name":"秘传·绝刃","weapon":"剑","effect":"必杀极高，但命中率变为10（无法追击）","cost":"3"},{"name":"秘传·破邪铁拳","weapon":"手甲","effect":"命中时，使敌人的「冥府加护」无效（进行1次战斗后恢复）","cost":"5"}],"upgrade":{"剑":["必闪一击+","疾风横扫+","双刃+","刚击+","猛斩+","裂空+","大刚击+","秘传·流水+","秘传·巨击破+","秘传·必杀碎+","秘传·绝刃+","霞切+","穿铠+","疾风一击+","踏步烈风+","雾刃+","暗黑射线+","阳炎+","娴熟一击+","两断+","一刀两断+","烈炎一击+","暗影迫近+","虎切+","魔刃+","极一闪+","波纹斩+","落影之刃+","刀背打+"],"枪":["旋风枪+","流丽一击+","冰枪+","飓风+","光辉一击+","守护突枪+","圣突枪+","烈风枪+","秘传·不动贯枪+","流风枪+","翔闪枪+","二连投掷+","大投掷+","速突+","守护旋风+","推撞+","哈姆辛+","刺针+","大一番枪+","金刚一击+","骑士烈枪+","护身枪+"],"斧":["劈刺+","守护尖刺+","明镜止水+","力量尖刺+","投掷魔斧+","猛击+","愤怒激发+","秘传·血牙+","忘我+","雷斧+","半劈刺+","投击+","破枪+","双重攻击+","暴动+","瞬击+","看穿一击+","粉碎+","破盔+","三段尖刺+","战刃一击+","血风铁火+","刚腕投掷+","战鬼一击+","逆转乱舞+"],"弓":["曲射+","螺旋射击+","脱离射击+","全力一射+","要害射击+","影眩之箭+","秘传·远雷+","警戒射击+","精准射击+","合围之箭+","呼唤平静+","奇袭之箭+","大强弓+","射足+","精灵弓+","隐匿射击+","流丽双射+","猎人十字+","破坏光箭+","乱射+"],"手甲":["豪拳一击+","战斗强打+","精灵拳+","退身拳+","活杀一击+","秘传·破邪铁拳+","魔法截断+","用心一击+","佯攻拳+","反击+","加快节奏+","强打&治愈+","杰克一击+","活人拳+","单挑+","碎铠拳+","战斗重拳+"]},"upgradeTotal":113};
 
-const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ROUTES = ["凯伊","迪托利希","赛奥朵拉","蕾达"];
 const TABS = [
-  {id:"para", name:"① 外传总表"},
-  {id:"battle", name:"② 逐关打法"},
-  {id:"mount", name:"③ 坐骑抓捕"},
-  {id:"rec", name:"④ 挖角与独占"}
+  {id:"para",  name:"① 外传总表"},
+  {id:"battle",name:"② 逐关打法"},
+  {id:"uniq",  name:"③ 特有收集"},
+  {id:"rec",   name:"④ 挖角与独占"},
+  {id:"mount", name:"⑤ 坐骑抓捕"}
 ];
-let cur = (location.hash||"").replace("#","") || "para";
-if(!["para","battle","mount","rec"].includes(cur)) cur = "para";
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
-/* ---------- 通用 ---------- */
-function dateStr(w){ return w[0][0]+"/"+w[0][1]+" – "+w[1][0]+"/"+w[1][1]; }
+let route = "凯伊", cur = "para";
+(function initHash(){
+  const h = decodeURIComponent((location.hash||"").replace(/^#\/?/,""));
+  const [r,t] = h.split("/");
+  if(ROUTES.includes(r)) route = r;
+  if(TABS.some(x=>x.id===t)) cur = t;
+})();
+function setHash(){
+  if(history.replaceState) history.replaceState(null,"","#/"+encodeURIComponent(route)+"/"+cur);
+  else location.hash = "#/"+route+"/"+cur;
+}
+
+const dstr = w => w[0][0]+"/"+w[0][1]+"–"+w[1][0]+"/"+w[1][1];
+const dkey = s => { const m=/^(\d+)\/(\d+)\/(\d+)$/.exec(s||""); return m? (+m[1]*10000 + +m[2]*100 + +m[3]) : 9e9; };
+const paras = () => PARA.filter(p=>p.routes[route])
+  .sort((a,b)=> a.routes[route].ch - b.routes[route].ch
+             || dkey(a.routes[route].deadline) - dkey(b.routes[route].deadline));
+
+/* ---------- 甘特图：9/2 → 11/1 ---------- */
+const idx = (m,d)=> (+m===9) ? (+d-2) : (+m===10 ? 28 + +d : 58 + +d);
+const TOTAL = 59;
+const PAL = ["#c98a2e","#b42318","#0f766e","#6d28d9","#1d4ed8","#a1442c","#2f7d4f","#8a5a9e","#0e7490"];
+function gantt(){
+  const ps = paras();
+  const rows = ps.map((p,i)=>{
+    const w = p.routes[route], segs=[];
+    const push=(seg,lab)=>{
+      const a=idx(seg[0][0],seg[0][1]), b=idx(seg[1][0],seg[1][1]);
+      segs.push(`<div class="gseg" title="${lab}" style="left:${(a/TOTAL*100).toFixed(2)}%;width:${((b-a+1)/TOTAL*100).toFixed(2)}%;background:${PAL[i%PAL.length]}">${lab}</div>`);
+    };
+    push(w.win, dstr(w.win));
+    if(w.win2) push(w.win2, dstr(w.win2));
+    const txt = dstr(w.win) + (w.win2 ? " ／ "+dstr(w.win2) : "");
+    return `<div class="grow"><div class="glab">${esc(p.char)}<i>${esc(txt)}</i></div>
+      <div class="gtrack">${segs.join("")}</div></div>`;
+  }).join("");
+  const ticks=[[0,"9/2"],[14,"9/16"],[29,"10/1"],[44,"10/16"],[59,"11/1"]]
+    .map(([v,l])=>`<span style="left:${(v/TOTAL*100).toFixed(2)}%">${l}</span>`).join("");
+  return `<div class="gantt">${rows}<div class="gaxis">${ticks}</div></div>`;
+}
+
+/* ---------- Tab1 ---------- */
 function rankTag(r){
   const m={"必打":"red","最紧":"red","打":"acc"};
   return `<span class="tag ${m[r]||"grey"}">${esc(r)}</span>`;
 }
-
-/* ---------- Tab1 外传总表 ---------- */
-const UNAVAIL = [
-  ["ss5","佯攻作战","蕾达","只有迪托利希 / 赛奥朵拉线"],
-  ["ss4","勇士像的去向","赛奥朵拉","只有迪托利希线（唯一单线外传）"],
-  ["ss9","被抹消者们的女王","爱娜特莉亚","只有迪托利希 / 蕾达线"],
-  ["ss2","大逃亡","凯伊","角色不能进自己的外传 —— 凯伊线打不了，要留给迪/赛/蕾线"],
-  ["ss3","被封印的过去","迪托利希","只有赛奥朵拉 / 蕾达线"]
-];
-
-function gantt(){
-  // 轴：9/17 起，10 月按 30 天计；总跨度 9/17 → 10/21
-  const idx = (m,d)=> (+m===9) ? (+d-17) : (14 + +d);
-  const TOTAL = idx(10,21);
-  const pct = v => (v/TOTAL*100).toFixed(2)+"%";
-  const cls = {ss7:"a", ss6:"c", ss8:"b", ss1:"d"};
-  const rows = PARA.map(p=>{
-    const segs=[];
-    const push=(w)=>{
-      const a=idx(w[0][0],w[0][1]), b=idx(w[1][0],w[1][1]);
-      const lab=w[0][0]+"/"+w[0][1]+"–"+w[1][0]+"/"+w[1][1];
-      segs.push(`<div class="gseg ${cls[p.id]||"a"}" style="left:${pct(a)};width:${pct(b-a+1)}" title="${lab}">${lab}</div>`);
-    };
-    push(p.win); if(p.win2) push(p.win2);
-    const txt = p.win[0][0]+"/"+p.win[0][1]+"–"+p.win[1][0]+"/"+p.win[1][1]
-      + (p.win2 ? " ／ "+p.win2[0][0]+"/"+p.win2[0][1]+"–"+p.win2[1][0]+"/"+p.win2[1][1] : "");
-    return `<div class="grow"><div class="glab">${esc(p.char)}<i>${esc(txt)}</i></div>
-      <div class="gtrack">${segs.join("")}</div></div>`;
+function unavail(){
+  const mine = new Set(paras().map(p=>p.id));
+  return PARA.filter(p=>!mine.has(p.id)).map(p=>{
+    const others = Object.keys(p.routes).join(" / ");
+    const why = p.char===route ? "角色不能进自己的外传 —— 本线打不了，要交给 "+others+" 线"
+              : "本线没有接取点，只在 "+others+" 线开放";
+    return `<tr><td class="nm">${esc(p.name)}</td><td>${esc(p.char)}</td><td class="muted">${esc(why)}</td></tr>`;
   }).join("");
-  const ticks=[[0,"9/17"],[7,"9/24"],[15,"10/1"],[22,"10/8"],[29,"10/15"],[35,"10/21"]]
-    .map(([v,l])=>`<span style="left:${pct(v)}">${l}</span>`).join("");
-  return `<div class="gantt">${rows}<div class="gaxis">${ticks}</div></div>`;
 }
-
 function tabPara(){
-  const cards = PARA.map(p=>{
-    const tight = p.rank==="最紧"||p.ch===11;
+  const ps = paras();
+  const cards = ps.map(p=>{
+    const w = p.routes[route];
+    const tight = p.rank==="最紧" || (route==="迪托利希"&&p.id==="ss7");
     return `<div class="pcard${tight?" tight":""}">
       <div class="t1">
         <div><div class="ttl">${esc(p.name)}</div><div class="en">${esc(p.en)}</div></div>
-        <div style="text-align:right">${rankTag(p.rank)}<div class="tiny muted" style="margin-top:3px">第${p.ch}章</div></div>
+        <div style="text-align:right">${rankTag(tight?"最紧":p.rank)}<div class="tiny muted" style="margin-top:3px">第${w.ch}章</div></div>
       </div>
-      <div class="dw">${esc(dateStr(p.win))}${p.win2?"\n补接 "+esc(dateStr(p.win2)):""}
-硬截止 ${esc(p.deadline)}</div>
+      <div class="dw">${esc(dstr(w.win))}${w.win2?"\n补接 "+esc(dstr(w.win2)):""}
+硬截止 ${esc(w.deadline)}</div>
       <dl>
         <dt>委托人</dt><dd>${esc(p.giver)}</dd>
         <dt>接取点</dt><dd>${esc(p.place)}</dd>
@@ -237,66 +257,66 @@ function tabPara(){
         <dt>报酬</dt><dd>${p.rewards.filter(r=>!/^解锁/.test(r)).map(r=>`<span class="tag">${esc(r)}</span>`).join("")}</dd>
         <dt>第三部</dt><dd>${esc(p.part3)}</dd>
       </dl>
-      <div class="warn" style="margin-bottom:0"><b>为什么凯伊线要打：</b>${esc(p.why)}</div>
+      <div class="warn" style="margin-bottom:0"><b>为什么本线要打：</b>${esc(p.why)}</div>
     </div>`;
   }).join("");
 
-  const un = UNAVAIL.map(([id,n,c,why])=>
-    `<tr><td class="nm">${esc(n)}</td><td>${esc(c)}</td><td class="muted">${esc(why)}</td></tr>`).join("");
+  const order = ps.slice().sort((a,b)=> dkey(a.routes[route].deadline)-dkey(b.routes[route].deadline))
+    .map((p,i)=>`<tr><td class="c">${i+1}</td><td class="nm">${esc(p.name)}</td>
+      <td>第${p.routes[route].ch}章</td><td class="small">${esc(dstr(p.routes[route].win))}</td>
+      <td class="small"><span class="req r">${esc(p.routes[route].deadline)}</span></td>
+      <td class="small muted">${esc(p.unlock.join("、")||"—")}</td></tr>`).join("");
 
-  const order = [
-    ["第10章 · 9/17 起","① 谭利穆恩（9/17–9/22，先打，窗口最先关）","ss1","red"],
-    ["第10章 · 9/17 起","② 贝特兰（9/17–9/25，接取会跳到当天 21:00，放在一天行程的最后）","ss7","acc"],
-    ["第10章 · 9/23 起","③ 安娜（9/23–10/5，出战位少，先配好队伍再去接）","ss6","teal"],
-    ["第10章 · 10/1–10/10","④ 谭利穆恩 补打（9 月段没打完的唯一补救窗口，最终 10/12）","ss1","red"],
-    ["第11章 · 10/18 一进章","⑤ 欧露赫露（10/18–10/20，只有 3 天，进章第一件事）","ss8","red"]
-  ].map(([w,t])=>`<tr><td class="nm" style="white-space:nowrap">${esc(w)}</td><td>${esc(t)}</td></tr>`).join("");
+  const p3 = ps.map(p=>`<tr><td class="nm">${esc(p.char)}</td><td class="small">${esc(p.part3)}</td></tr>`).join("");
 
   return `
-  <div class="info"><b>凯伊线只能打 4 个外传</b>（贝特兰 / 谭利穆恩 / 安娜 / 欧露赫露）。九个外传里有 5 个在凯伊线根本没有接取点，其中「大逃亡」是凯伊本人的外传 —— 角色不能进自己的外传，必须靠迪托利希 / 赛奥朵拉 / 蕾达线去补。想全收集九关，凯伊线不是那个能一次打完的周目。</div>
+  <div class="info"><b>${route}线可打 ${ps.length} / 9 个外传。</b>${ps.length===8?"除自己本人的外传之外全都能打 —— 这是四线里外传覆盖最全的一条，缺的只有「被封印的过去」（迪托利希本人）。":"角色不能进自己的外传，所以本线最少也会缺一个；另外还有只对别的线开放的外传。"}
+  外传不只是拿钱和道具：<b>${ps.filter(p=>p.unlock.length).length} 个外传挂着挖角前置</b>，漏一个就少一个人。</div>
 
-  <div class="card"><h3>时间窗（9/17 – 10/21）</h3>
+  <div class="card"><h3>时间窗（9/2 – 11/1）</h3>
     ${gantt()}
-    <div class="small muted" style="margin-top:8px">红色 = 凯伊线窗口最窄、最容易翻车；紫色 = 有两段窗口、可以补打的。横向越长越好打。</div>
+    <div class="small muted" style="margin-top:8px">条越短越难打；只剩一个小方块的 = 当天窗口（贝特兰在迪托利希线只有 9/17 一天）。同一外传在不同线里的窗口可能差好几天，本图只画 ${route} 线的窗口。</div>
   </div>
 
-  <div class="card"><h3>四个外传 · 一览 <span class="tag grey">按接取时间排序</span></h3>
+  <div class="card"><h3>本线外传一览 <span class="tag grey">按章节排序</span></h3>
     <div class="pgrid">${cards}</div>
   </div>
 
-  <div class="card"><h3>凯伊线打不了的 5 个</h3>
-    <div class="tw"><table><thead><tr><th>外传</th><th>主角</th><th>原因</th></tr></thead><tbody>${un}</tbody></table></div>
+  <div class="card"><h3>按截止日排序的执行顺序</h3>
+    <div class="tw"><table><thead><tr><th>#</th><th>外传</th><th>章</th><th>窗口</th><th>硬截止</th><th>挖角前置</th></tr></thead><tbody>${order}</tbody></table></div>
+    <div class="warn" style="margin-bottom:0"><b>排序逻辑：</b>按「窗口关闭时间」而不是「报酬大小」。窗口只有一天的（迪托利希线的贝特兰）和接取会跳时间的（蕾达线佯攻作战、凯伊线大逃亡）要放在当天行程的最后。</div>
   </div>
 
-  <div class="card"><h3>推荐执行顺序</h3>
-    <div class="tw"><table><thead><tr><th>时点</th><th>动作</th></tr></thead><tbody>${order}</tbody></table></div>
-    <div class="warn" style="margin-bottom:0"><b>顺序的核心逻辑：</b>按「窗口关闭时间」而不是「报酬大小」排。谭利穆恩 9/22 就关，贝特兰虽然给 9 天但接取会跳时间，安娜能拖到 10/5，欧露赫露只有 3 天且在第11章的 28 回合里，所以必须进章就做。</div>
+  <div class="card"><h3>本线打不了的 ${9-ps.length} 个</h3>
+    <div class="tw"><table><thead><tr><th>外传</th><th>主角</th><th>原因</th></tr></thead><tbody>${unavail()}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>第三部后果（漏打会怎样）</h3>
+    <div class="tw"><table><thead><tr><th>外传主角</th><th>后果</th></tr></thead><tbody>${p3}</tbody></table></div>
   </div>`;
 }
 
-/* ---------- Tab2 逐关打法 ---------- */
+/* ---------- Tab2 ---------- */
 function tabBattle(){
-  return PARA.map((p,i)=>{
-    const ck = p.perfect.map(x=>`<li>${esc(x)}</li>`).join("");
-    const tac = p.tactics.map(x=>`<li>${esc(x)}</li>`).join("");
-    const tr = p.traps.map(x=>`<li>${esc(x)}</li>`).join("");
+  return paras().map((p,i)=>{
+    const w = p.routes[route];
     return `<div class="bblock">
       <div class="bhead">
-        <div><div class="bt">${i+1}. ${esc(p.name)}　<span class="muted" style="font-size:13px">${esc(p.char)} · 第${p.ch}章</span></div>
-        <div class="bs">${esc(dateStr(p.win))}${p.win2?" ／ 补接 "+esc(dateStr(p.win2)):""}　·　硬截止 ${esc(p.deadline)}　·　${esc(p.place)}</div></div>
+        <div><div class="bt">${i+1}. ${esc(p.name)}　<span class="muted" style="font-size:13px">${esc(p.char)} · 第${w.ch}章</span></div>
+        <div class="bs">${esc(dstr(w.win))}${w.win2?" ／ 补接 "+esc(dstr(w.win2)):""}　·　硬截止 ${esc(w.deadline)}　·　${esc(p.place)}</div></div>
         <div>${rankTag(p.rank)}</div>
       </div>
       <div class="bbody">
         <div class="two">
           <div>
             <h4 style="margin-top:12px">完美达成清单</h4>
-            <ul class="ck">${ck}</ul>
+            <ul class="ck">${p.perfect.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
             <h4>打法</h4>
-            <ul class="dt">${tac}</ul>
+            <ul class="dt">${p.tactics.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
           </div>
           <div>
             <h4 style="margin-top:12px">坑（会翻车的地方）</h4>
-            <ul class="dt">${tr}</ul>
+            <ul class="dt">${p.traps.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
             <h4>报酬与后果</h4>
             <div class="small">${p.rewards.map(r=>`<span class="tag">${esc(r)}</span>`).join("")}</div>
             <div class="danger" style="margin-top:10px"><b>漏打：</b>${esc(p.risk)}</div>
@@ -307,234 +327,327 @@ function tabBattle(){
   }).join("");
 }
 
-/* ---------- Tab3 坐骑抓捕 ---------- */
-const MOUNT_PLAN = [
-  ["第5章","马厩解锁「引诱 / 照料」","先把四种口味（珍馐 / 甜味 / 苦味 / 辣味）× 三种食材（蔬菜 / 鱼 / 肉）的诱饵各买一批，后面 700+ 回合全靠这批存货起手。104 回合，边做助人边抓。"],
-  ["第6章","栽培 + 铁匠铺解锁","蔬菜类诱饵开始能自产；本章 120 回合，适合刷「野生马 / 野生欧鲁尼乌斯」这类保底坐骑。"],
-  ["第7章","胡戈关可通行","通路打开后才会出现新的产地，抓之前先确认地图解锁状态。"],
-  ["第8章","172 回合 · 黄金章","全篇最长的自由行动，稀有产地集中在这一章：猎首岩（黑羽玛吉尼乌斯 / 玛吉尼乌斯）、法罗之森（白羽欧鲁尼乌斯）、亚库席翁溪谷（红羽 / 美加尼乌斯）。同时「猛兽盘踞的归途」会解锁黑翼之谷 —— 暗飞马的唯一产地。"],
-  ["第9章","32 回合 · 不出城","别指望抓，专心清有截止日的助人。运气好顺路补一两只过渡坐骑。"],
-  ["第10章","120 回合 · 外传占满","三个外传各 20000G，优先外传。抓坐骑只补缺口，不刷。"],
-  ["第11章","28 回合 · 只做一件事","「翱翔天际的搭档」要在天马岩抓 1 只野生天马交任务 —— 这是唯一必须在本章抓的东西。"],
-  ["第12章","决赛前最后一次","挖角、采购全在这章收尾。<b>开打前把所有坐骑从角色身上卸下、放进仓库</b>，否则不继承。"]
-];
-const GATES = [
-  ["野生欧鲁尼乌斯 ×2","第5章助人「捕获欧鲁尼乌斯的委托」要交 2 只","埃利萨岭 / 雀跃之径 / 乌拉诺司山 / 法罗之森　诱饵：甜味·鱼","别全卖掉或全装备在身上，留 2 只不装"],
-  ["野生天马 ×1","第11章助人「翱翔天际的搭档」要交 1 只","巨鸟之颈 / 天马岩 / 黑翼之谷　诱饵：甜味·蔬菜","第11章只有 28 回合，进章就去天马岩"],
-  ["暗飞马解锁","黑翼之谷要靠第8章「猛兽盘踞的归途」打通","黑翼之谷（稀有）　诱饵：苦味·蔬菜","通路没开就刷不出来，别在第7章空耗"],
-  ["萨拉弥斯战象 ×2","支线「战象骑手的羁绊」报酬直接给 2 头","——（不用抓）","力+5 技+5 防+5 幸+5，全场最高加成，务必拿"]
-];
+/* ---------- Tab3 特有收集 ---------- */
+function tabUniq(){
+  const u = UNIQ[route] || {tagline:"",systems:[],caveat:""};
+  const sys = (u.systems||[]).map(s=>`<tr><td class="nm" style="white-space:nowrap">${esc(s.name)}</td>
+    <td class="small">${esc(s.how)}</td><td class="small muted">${esc(s.payoff)}</td></tr>`).join("");
 
-let mType = "全部";
-function mountTable(){
-  const types = ["全部",...Array.from(new Set(MOUNTS.map(m=>m.type)))];
-  const chips = types.map(t=>`<button class="chip${t===mType?" on":""}" data-mt="${esc(t)}">${esc(t)}</button>`).join("");
-  const rows = MOUNTS.filter(m=>mType==="全部"||m.type===mType).map(m=>{
-    const pr = m.priority;
-    const tone = /必/.test(pr)?"red":(/抓 \d/.test(pr)?"acc":"grey");
-    return `<tr>
-      <td class="nm">${esc(m.name)}</td>
-      <td><span class="tag grey">${esc(m.type)}</span></td>
-      <td class="small">${esc(m.ability)}</td>
-      <td class="small muted">${esc(m.growth)}</td>
-      <td class="small">${esc(m.bait)}</td>
-      <td class="small">${esc(m.where)}</td>
-      <td class="small">${esc(m.skill)}</td>
-      <td><span class="tag ${tone}">${esc(pr)}</span></td>
-      <td class="small muted">${esc(m.note)}</td>
-    </tr>`;
-  }).join("");
-  return `<div class="bar-tools">${chips}</div>
-  <div class="tw"><table class="mt"><thead><tr><th>坐骑</th><th>类型</th><th>能力加成</th><th>成长补正</th><th>诱饵</th><th>产地</th><th>联合技</th><th>优先度</th><th>备注</th></tr></thead>
-  <tbody>${rows}</tbody></table></div>`;
+  const sanct = EXTRA.sanct[route];
+  const sanctBox = sanct ? `<div class="bigc"><div class="l">本线专属圣焰战技</div>
+      <div style="font-size:16px;font-weight:800;margin-top:2px">${esc(sanct.name)}</div>
+      <div class="x">${esc(sanct.effect)}　·　消耗 HP ${esc(sanct.cost)}<br><span class="muted">${esc(sanct.cond)}</span></div></div>` : "";
+
+  const cls = EXTRA.classes[route] || [];
+  const clsRows = cls.map(c=>`<tr><td class="nm">${esc(c.name)}</td><td><span class="tag grey">${esc(c.tier)}</span></td>
+    <td class="small muted">${esc(c.requirement)}</td><td class="small">${esc(c.cond)}</td></tr>`).join("");
+  const clsBox = cls.length ? `<div class="tw"><table><thead><tr><th>兵种</th><th>层级</th><th>转职要求</th><th>本线解锁条件</th></tr></thead><tbody>${clsRows}</tbody></table></div>
+    <div class="small muted" style="margin-top:8px">这些兵种的解锁文案里带着「${route}篇」，换别的线拿不到同样的入口。第一部实际只能转到上级职业（最上级要 Lv45、神将要靠第4区分道具）。</div>`
+    : `<div class="info">本线没有专属解锁的兵种。</div>`;
+
+  let dietrich = "";
+  if(route==="迪托利希"){
+    const sec = EXTRA.secret.map(a=>`<tr><td class="nm">${esc(a.name)}</td><td><span class="tag grey">${esc(a.weapon)}</span></td>
+      <td class="c">${esc(a.cost)}</td><td class="small">${esc(a.effect)}</td></tr>`).join("");
+    const groups = Object.entries(EXTRA.upgrade).map(([w,lst])=>
+      `<div class="w">${esc(w)} <span class="muted tiny">${lst.length}</span></div>
+       <div class="lst">${lst.map(n=>`<span>${esc(n)}</span>`).join("")}</div>`).join("");
+    dietrich = `
+    <div class="card"><h3>秘传传授 · 9 个只能这样拿的战技</h3>
+      <div class="small muted">第7章开头的黑猫事件之后，在帝都上层史米尔诺斯神殿消耗魔响石，传授给「迪托利希以外」的同伴。</div>
+      <div class="tw"><table><thead><tr><th>战技</th><th>武器</th><th>耐久</th><th>效果</th></tr></thead><tbody>${sec}</tbody></table></div>
+      <div class="warn" style="margin-bottom:0"><b>顺序陷阱：</b>「已强化的传授后要重新强化」—— 先把战技强化到 +，再传授给别人，否则对方拿到的是未强化版，得重练一次。</div>
+    </div>
+    <div class="card"><h3>战技强化 · ${EXTRA.upgradeTotal} 个战技有「+」</h3>
+      <div class="small muted">第4章起在史米尔诺斯神殿受理处，用魔响石（战斗「刃鸣」获得）强化。<b>每个角色要分别强化</b> —— 同一战技换个人还得再花一次魔响石，这是全作最长的养成线。</div>
+      <details><summary>展开 ${EXTRA.upgradeTotal} 个可强化战技（按武器分类）</summary>
+        <div class="upg">${groups}</div>
+      </details>
+      <div class="info" style="margin-bottom:0">实用取舍：优先强化队伍主力真正常用的 1～2 个战技（例如「必闪一击+」「双刃+」这类低消耗高收益的），别摊大饼。魔响石总量有限，摊开等于谁都不强。</div>
+    </div>`;
+  }
+
+  return `
+  <div class="card"><h3>${route}线的特有收集</h3>
+    <div class="info" style="margin-top:0">${esc(u.tagline)}</div>
+    <div class="tw"><table><thead><tr><th>系统 / 收集</th><th>怎么拿</th><th>拿到什么</th></tr></thead><tbody>${sys}</tbody></table></div>
+    <div class="warn" style="margin-bottom:0">${esc(u.caveat)}</div>
+  </div>
+
+  <div class="three">${sanctBox}
+    <div class="bigc"><div class="l">本线专属兵种</div><div class="n">${cls.length}</div>
+      <div class="x">${cls.map(c=>esc(c.name)).join(" / ")||"—"}</div></div>
+    <div class="bigc"><div class="l">本线独占挖角</div><div class="n">${exclusives().length}</div>
+      <div class="x">${exclusives().length?exclusives().map(e=>esc(e.name)).join(" / "):"无（能挖的人在别线也能挖）"}</div></div>
+  </div>
+
+  <div class="card"><h3>路线限定兵种</h3>${clsBox}</div>
+  ${dietrich}`;
 }
 
-function tabMount(){
-  const plan = MOUNT_PLAN.map(([c,t,d])=>`<tr><td class="nm" style="white-space:nowrap">${esc(c)}</td><td style="white-space:nowrap">${t}</td><td class="small">${esc(d)}</td></tr>`).join("");
-  const gates = GATES.map(([a,b,c,d])=>`<tr><td class="nm">${esc(a)}</td><td class="small">${esc(b)}</td><td class="small">${esc(c)}</td><td class="small muted">${esc(d)}</td></tr>`).join("");
+/* ---------- 挖角数据 ---------- */
+function kind(x){
+  const r = (x&&x.renown)||"";
+  if(/^\d+$/.test(r)) return "n";
+  if(r.includes("教学")) return "t";
+  if(r.includes("不可挖")) return "x";
+  if(r.includes("临时")) return "tmp";
+  return "o";
+}
+function recIndex(){
+  const by={};
+  REC.forEach(x=>{ (by[x.name]=by[x.name]||{})[x.route]=x; });
+  return by;
+}
+function parseRow(x){
+  const parts = (x.cond||"").split("|");
+  const head = parts[0]||"", tail = parts.slice(1).join(" ").trim();
+  const isPay = t => /^(支付|给|交|消耗)/.test(t) || /[×xX\*]\s*\d/.test(t);
+  let cost="", extra="";
+  if(tail){ isPay(tail)?(cost=tail):(extra=tail); }
+  let h = head.replace(new RegExp("^"+route+"："),"").replace(/支援LV\d、?/,"").replace(/名声LV\d+、?/,"")
+              .replace(/需交涉（难度[^）]*）/,"").replace(/、$/,"").trim();
+  if(h) extra = extra ? h+"；"+extra : h;
+  const dm = /难度\s*([高中低超]+)/.exec(x.cond||"");
+  const chm = /第(\d+)章/.exec(x.chapter||"");
+  let place = (x.when||"").replace(/\s*需满足挖角条件/,"")
+    .replace(/，?满足名声、支援及对应交涉条件后招募。?/,"")
+    .replace(/返回帝都后，在第6章自由行动期/,"第6章自由行动期").trim();
+  return { name:x.name, renown:+x.renown, support:+((x.support||"").replace(/\D/g,"")||0),
+           ch: chm?+chm[1]:99, diff: dm?dm[1]:"", cost, cond:extra, place };
+}
+let recQ="", recOnly=false;
+function routeRecs(){
+  return REC.filter(x=>x.route===route && kind(x)==="n").map(parseRow)
+            .sort((a,b)=> a.ch-b.ch || a.renown-b.renown || a.support-b.support);
+}
+function exclusives(){
+  const by = recIndex(), mine=[];
+  for(const n in by){
+    const v=by[n], ok=Object.keys(v).filter(r=>kind(v[r])==="n");
+    if(ok.length===1 && ok[0]===route) mine.push({name:n, row:parseRow(v[route]), other:Object.keys(v).filter(r=>r!==route)});
+  }
+  return mine;
+}
+function lockedHere(){
+  const by = recIndex(), out=[];
+  for(const n in by){
+    const v=by[n];
+    if(v[route] && kind(v[route])==="x" && Object.keys(v).some(r=>kind(v[r])==="n")){
+      out.push({name:n, where:Object.keys(v).filter(r=>kind(v[r])==="n")});
+    }
+  }
+  return out;
+}
+function bestHere(){
+  const by = recIndex(), out=[];
+  for(const n in by){
+    const v=by[n];
+    if(kind(v[route])!=="n") continue;
+    const me = {r:+v[route].renown, s:+((v[route].support||"").replace(/\D/g,"")||0)};
+    const others = Object.keys(v).filter(r=>r!==route && kind(v[r])==="n")
+      .map(r=>({r:+v[r].renown, s:+((v[r].support||"").replace(/\D/g,"")||0)}));
+    if(others.every(o=> o.r>me.r || (o.r===me.r && o.s>me.s))) out.push({name:n, ...me});
+  }
+  return out.sort((a,b)=>a.r-b.r||a.s-b.s);
+}
+function lockedByPara(){
+  const rn = new Set(routeRecs().map(x=>x.name));
+  const out=[];
+  paras().forEach(p=>p.unlock.forEach(u=>{ if(rn.has(u)) out.push({char:u, para:p.name, ch:p.routes[route].ch, win:dstr(p.routes[route].win)}); }));
+  return out;
+}
+function recTable(){
+  const list = routeRecs().filter(r=>{
+    if(recOnly && !lockedByPara().some(x=>x.char===r.name)) return false;
+    if(!recQ) return true;
+    return (r.name+r.cond+r.cost+r.place).toLowerCase().includes(recQ.toLowerCase());
+  });
+  let html="", lastCh=null;
+  for(const r of list){
+    if(r.ch!==lastCh){
+      lastCh=r.ch;
+      html+=`<tr class="grp"><td colspan="6">第${r.ch}章　<span class="tag grey">${list.filter(x=>x.ch===r.ch).length} 人</span></td></tr>`;
+    }
+    const dTone = {"超":"red","高":"red","中":"acc","低":"green"}[r.diff]||"grey";
+    const isLock = lockedByPara().some(x=>x.char===r.name);
+    html+=`<tr><td class="nm">${esc(r.name)}${isLock?' <span class="tag blue">外传前置</span>':""}</td>
+      <td class="c"><span class="req">${r.renown}</span></td>
+      <td class="c"><span class="req b">LV${r.support}</span></td>
+      <td class="c"><span class="tag ${dTone}">${esc(r.diff||"—")}</span></td>
+      <td class="small">${esc([r.cost,r.cond].filter(Boolean).join("；")||"—")}</td>
+      <td class="small">${esc(r.place||"—")}</td></tr>`;
+  }
+  return `<div class="bar-tools">
+      <input type="text" id="recq" placeholder="搜角色 / 素材 / 地名" value="${esc(recQ)}">
+      <button class="chip${recOnly?" on":""}" id="reconly">只看外传前置</button>
+      <span class="small muted">${list.length} 条</span>
+    </div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>名声</th><th>支援</th><th>交涉难度</th><th>代价 / 附加条件</th><th>地点 · 日期</th></tr></thead><tbody>${html}</tbody></table></div>`;
+}
+
+function tabRec(){
+  const total = routeRecs().length;
+  const ex = exclusives(), lk = lockedHere(), bs = bestHere(), lp = lockedByPara();
+  const free = REC.filter(x=>x.route===route && ["o","t","tmp"].includes(kind(x)));
+  const freeList = free.map(x=>`<tr><td class="nm">${esc(x.name)}</td>
+    <td><span class="tag ${kind(x)==="t"?"purple":(kind(x)==="tmp"?"acc":"green")}">${esc(x.renown)}</span></td>
+    <td class="small">${esc((x.chapter||"").replace("（附页参考）",""))}</td>
+    <td class="small muted">${esc(x.when||"—")}</td></tr>`).join("");
+
+  const exRows = ex.length ? ex.map(e=>`<tr><td class="nm">${esc(e.name)}</td>
+      <td class="small">名声 ${e.row.renown} / 支援 LV${e.row.support}</td>
+      <td class="small">${esc([e.row.cost,e.row.cond].filter(Boolean).join("；")||"—")}</td>
+      <td class="small muted">${esc(e.other.join(" / "))}：不可挖</td></tr>`).join("")
+    : `<tr><td colspan="4" class="muted">本线没有严格独占角色 —— 每个能挖的人，在别的线上也都能挖到。</td></tr>`;
+
+  const bsCards = bs.slice(0,8).map(b=>`<div class="bigc"><div class="n">名声 ${b.r}</div>
+    <div class="l"><b>${esc(b.name)}</b>　支援 LV${b.s}</div>
+    <div class="x">别的线更贵（名声更高或支援要求更高）</div></div>`).join("");
+
+  const lpRows = lp.length ? lp.map(x=>`<tr><td class="nm">${esc(x.char)}</td><td>${esc(x.para)}</td>
+      <td class="c">第${x.ch}章</td><td class="small">${esc(x.win)}</td></tr>`).join("")
+    : `<tr><td colspan="4" class="muted">本线的外传不挂任何挖角前置。</td></tr>`;
+
   return `
-  <div class="card"><h3>抓捕流程（第5章马厩解锁后）</h3>
+  <div class="three">
+    <div class="bigc"><div class="n">${total}</div><div class="l">本线可挖角色</div><div class="x">名声 + 支援 + 交涉条件三者都要满足</div></div>
+    <div class="bigc"><div class="n">${free.length}</div><div class="l">不用挖的（剧情 / 教学 / 临时）</div><div class="x">${free.filter(x=>kind(x)!=="tmp").map(x=>esc(x.name)).join(" / ")}</div></div>
+    <div class="bigc"><div class="n">${ex.length}</div><div class="l">严格独占</div><div class="x">${ex.length?ex.map(e=>esc(e.name)).join(" / "):"无"}</div></div>
+  </div>
+
+  <div class="card"><h3>① 严格独占（只有本线能挖到）</h3>
+    <div class="tw"><table><thead><tr><th>角色</th><th>本线门槛</th><th>代价 / 附加条件</th><th>别线情况</th></tr></thead><tbody>${exRows}</tbody></table></div>
+    <div class="info" style="margin-bottom:0">判定口径：把 44 名可挖角色的路线列表逐条摊开，某角色「只在一条线上名声要求是数字」才算独占。像「凯伊线挖起来最便宜」这种不算独占，所以凯伊线独占数为 0 —— 攻略站常把「门槛最低」写成「独占」，这是错的。</div>
+  </div>
+
+  <div class="card"><h3>② 本线门槛最低的角色 <span class="tag green">比其它三线都便宜</span></h3>
+    <div class="three" style="margin-top:6px">${bsCards||'<div class="muted small">本线没有门槛严格最低的角色。</div>'}</div>
+    <div class="small muted" style="margin-top:10px">共 ${bs.length} 人。判断标准：同角色在本线的名声更低，或名声相同但支援要求更低。</div>
+  </div>
+
+  <div class="card"><h3>③ 外传前置的挖角</h3>
+    <div class="tw"><table><thead><tr><th>角色</th><th>前置外传</th><th>章</th><th>窗口</th></tr></thead><tbody>${lpRows}</tbody></table></div>
+    ${lp.length?'<div class="warn" style="margin-bottom:0">这些人是「外传 + 挖角」双条件：外传漏一个，人就少一个。</div>':""}
+  </div>
+
+  <div class="card"><h3>④ 本线拿不到的人</h3>
+    <div class="small muted">在本线的挖角表里被标成「不可挖角」，但在别线可以挖。</div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>可在这些线挖到</th></tr></thead><tbody>
+      ${lk.map(x=>`<tr><td class="nm">${esc(x.name)}</td><td class="small">${esc(x.where.join(" / "))}</td></tr>`).join("")||'<tr><td colspan="2" class="muted">本线全员可挖。</td></tr>'}
+    </tbody></table></div>
+  </div>
+
+  <div class="card"><h3>⑤ 不用挖的：剧情白送 / 教学招募 / 临时加入</h3>
+    <div class="small muted">每条线各有一个「教学招募」免费名额，支援 LV1 即可，等于白送；「临时加入」的人不进队伍。</div>
+    <div class="tw"><table><thead><tr><th>角色</th><th>方式</th><th>章节</th><th>条件</th></tr></thead><tbody>${freeList}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>⑥ 挖角全表（按章节）</h3>
+    <div class="small muted">名声大约每章 +1，名声 10 通常要压到第 9–11 章；别提前屯素材白等。</div>
+    ${recTable()}
+  </div>`;
+}
+
+/* ---------- Tab5 坐骑 ---------- */
+const MOUNT_PLAN = [
+  ["第5章","马厩解锁「引诱 / 照料」","先把四种口味（珍馐 / 甜味 / 苦味 / 辣味）× 三种食材（蔬菜 / 鱼 / 肉）的诱饵各买一批，后面几百回合全靠这批存货起手。"],
+  ["第6章","栽培 + 铁匠铺解锁","蔬菜类诱饵开始能自产；适合刷「野生马 / 野生欧鲁尼乌斯」这类保底坐骑。"],
+  ["第7章","胡戈关可通行","通路打开后才会出现新的产地，抓之前先确认地图解锁状态。"],
+  ["第8章","自由行动最长的章节","稀有产地集中在这一段：猎首岩（黑羽玛吉尼乌斯 / 玛吉尼乌斯）、法罗之森（白羽欧鲁尼乌斯）、亚库席翁溪谷（红羽 / 美加尼乌斯）。同时「猛兽盘踞的归途」会解锁黑翼之谷 —— 暗飞马的唯一产地。"],
+  ["第9章","回合很少","别指望抓，专心清有截止日的东西。运气好顺路补一两只过渡坐骑。"],
+  ["第10章","外传挤满","三个外传各 20000G，优先外传。抓坐骑只补缺口，不刷。"],
+  ["第11章","只做一件事","「翱翔天际的搭档」要在天马岩抓 1 只野生天马交任务 —— 这是唯一必须在本章抓的东西。"],
+  ["第12章","最后一次自由行动","挖角、采购全在这章收尾。<b>开打前把所有坐骑从角色身上卸下、放进仓库</b>，否则不继承。"]
+];
+const GATES = [
+  ["野生欧鲁尼乌斯 ×2","助人「捕获欧鲁尼乌斯的委托」要交 2 只","埃利萨岭 / 雀跃之径 / 乌拉诺司山 / 法罗之森　诱饵：甜味·鱼","别全卖掉或全装备在身上，留 2 只不装"],
+  ["野生天马 ×1","第11章助人「翱翔天际的搭档」要交 1 只","巨鸟之颈 / 天马岩 / 黑翼之谷　诱饵：甜味·蔬菜","第11章回合少，进章就去天马岩"],
+  ["暗飞马解锁","黑翼之谷要靠「猛兽盘踞的归途」打通","黑翼之谷（稀有）　诱饵：苦味·蔬菜","通路没开就刷不出来，别提前空耗"],
+  ["萨拉弥斯战象 ×2","支线「战象骑手的羁绊」报酬直接给 2 头","——（不用抓）","力+5 技+5 防+5 幸+5，全场最高加成，务必拿"]
+];
+let mType="全部";
+function tabMount(){
+  const types=["全部",...Array.from(new Set(MOUNTS.map(m=>m.type)))];
+  const chips=types.map(t=>`<button class="chip${t===mType?" on":""}" data-mt="${esc(t)}">${esc(t)}</button>`).join("");
+  const rows=MOUNTS.filter(m=>mType==="全部"||m.type===mType).map(m=>{
+    const tone=/必/.test(m.priority)?"red":(/抓 \d/.test(m.priority)?"acc":"grey");
+    return `<tr><td class="nm">${esc(m.name)}</td><td><span class="tag grey">${esc(m.type)}</span></td>
+      <td class="small">${esc(m.ability)}</td><td class="small muted">${esc(m.growth)}</td>
+      <td class="small">${esc(m.bait)}</td><td class="small">${esc(m.where)}</td>
+      <td class="small">${esc(m.skill)}</td><td><span class="tag ${tone}">${esc(m.priority)}</span></td>
+      <td class="small muted">${esc(m.note)}</td></tr>`;
+  }).join("");
+  const plan=MOUNT_PLAN.map(([c,t,d])=>`<tr><td class="nm" style="white-space:nowrap">${esc(c)}</td>
+    <td style="white-space:nowrap">${t}</td><td class="small">${esc(d)}</td></tr>`).join("");
+  const gates=GATES.map(([a,b,c,d])=>`<tr><td class="nm">${esc(a)}</td><td class="small">${esc(b)}</td>
+    <td class="small">${esc(c)}</td><td class="small muted">${esc(d)}</td></tr>`).join("");
+
+  return `
+  <div class="card"><h3>抓捕流程（第5章马厩解锁后，全路线通用）</h3>
     <div class="step">
       <b>1 备饵</b><div>按「口味 × 食材」配。马要<b>蔬菜</b>、飞鸵要<b>鱼</b>、飞龙要<b>肉</b>；口味决定出什么品种：珍馐→汗血马 / 圣飞马 / 独角兽，甜味→野生系保底，苦味→魔法向（黑羽 / 暗飞马），辣味→物理向飞鸵。</div>
-      <b>2 选点</b><div>去表里对应的产地（第 8 章以后产地最全）。稀有品种只在指定地图出现，普通品种在多张图都有。</div>
+      <b>2 选点</b><div>去表里对应的产地。稀有品种只在指定地图出现，普通品种在多张图都有。</div>
       <b>3 引诱</b><div>用诱饵引出目标，稀有判定看脸 —— 同一产地反复刷比换产地更划算，诱饵消耗要提前算。</div>
       <b>4 捕获</b><div>捕获后立刻决定归属：要交任务的（野生欧鲁尼乌斯 / 野生天马）单独留出来，别装到人身上。</div>
     </div>
-    <div class="warn" style="margin-bottom:0"><b>先抓什么：</b>汗血马（配战车兵成长翻倍，力 25% / 技 35% / 防 25%）→ 黑羽玛吉尼乌斯（法师与神鸵兵，第三部凯伊、西洛可还要接着用）→ 圣飞马（第三部上天的位置很偏，第一部必须抓好）→ 莫诺凯洛斯（续航）。这四类抓够，其余都是过渡。</div>
-  </div>
-
-  <div class="card"><h3>按章节安排抓捕</h3>
-    <div class="tw"><table><thead><tr><th>章</th><th>要点</th><th>做什么</th></tr></thead><tbody>${plan}</tbody></table></div>
+    <div class="warn" style="margin-bottom:0"><b>先抓什么：</b>汗血马（配战车兵成长翻倍，力 25% / 技 35% / 防 25%）→ 黑羽玛吉尼乌斯（法师与神鸵兵，第三部还要接着用）→ 圣飞马（第三部上天的位置很偏，第一部必须抓好）→ 莫诺凯洛斯（续航）。这四类抓够，其余都是过渡。</div>
   </div>
 
   <div class="card"><h3>15 种坐骑全表</h3>
-    <div class="small muted">按类型筛选；优先度里「必抓」的是能改变队伍强度曲线的，「过渡用」的缺坐骑时再抓。</div>
-    ${mountTable()}
+    <div class="bar-tools">${chips}</div>
+    <div class="tw"><table class="mt"><thead><tr><th>坐骑</th><th>类型</th><th>能力加成</th><th>成长补正</th><th>诱饵</th><th>产地</th><th>联合技</th><th>优先度</th><th>备注</th></tr></thead><tbody>${rows}</tbody></table></div>
+  </div>
+
+  <div class="card"><h3>按章节安排抓捕 <span class="tag grey">回合数以凯伊线为例</span></h3>
+    <div class="small muted">四线的章节数与自由行动回合数不同，但这几章的相对节奏一致：中段最宽、第9～11章最紧、第12章收尾。</div>
+    <div class="tw"><table><thead><tr><th>章</th><th>要点</th><th>做什么</th></tr></thead><tbody>${plan}</tbody></table></div>
   </div>
 
   <div class="card"><h3>四个必须留意的卡点</h3>
     <div class="tw"><table><thead><tr><th>卡点</th><th>要求</th><th>产地 / 诱饵</th><th>提醒</th></tr></thead><tbody>${gates}</tbody></table></div>
   </div>
 
-  <div class="card"><h3>继承：第12章决赛前必做</h3>
-    <div class="danger" style="margin-top:6px"><b>主线战斗开打前，把所有坐骑从角色身上卸下、放进仓库。</b>继承判定只认仓库里的坐骑，装在角色身上的会随队伍重置一起消失。第12章是第一部最后一次自由行动，一旦进了决赛就回不了头。</div>
-    <div class="small muted">另外注意：多周目继承兵种解锁、支援、伟业录，但<b>不继承名声、等级、资金、道具</b>。所以坐骑这种「装备类」资产，是少数值得在第一部末尾刻意保下来的东西。</div>
-  </div>`;
-}
-
-/* ---------- Tab4 挖角 ---------- */
-function parseRec(){
-  return REC.filter(x=>x.route==="凯伊").map(x=>{
-    const rn = x.renown||"";
-    const isNum = /^\d+$/.test(rn);
-    const chm = /第(\d+)章/.exec(x.chapter||"");
-    const dm = /难度\s*([高中低超]+)/.exec(x.cond||"");
-    const parts = (x.cond||"").split("|");
-    const head = parts[0]||"";
-    const tail = parts.slice(1).join(" ").trim();
-    // 交换条件 vs 交涉条件：给东西/付钱 = 代价；完成委托/答题/抛硬币 = 附加条件
-    const isPay = t => /^(支付|给|交|消耗)/.test(t) || /[×xX\*]\s*\d/.test(t);
-    let cost = "", extra = "";
-    if(tail){ (isPay(tail) ? (cost=tail) : (extra=tail)); }
-    let h = head.replace(/^凯伊：/,"").replace(/支援LV\d、?/,"").replace(/名声LV\d+、?/,"")
-                .replace(/需交涉（难度[^）]*）/,"").replace(/、$/,"").trim();
-    if(h) extra = extra ? (h+"；"+extra) : h;
-    let place = (x.when||"").replace(/\s*需满足挖角条件/,"")
-                .replace(/，?满足名声、支援及对应交涉条件后招募。?/,"")
-                .replace(/返回帝都后，在第6章自由行动期/,"第6章自由行动期")
-                .trim();
-    return {
-      name:x.name, renown:isNum?+rn:null, support:+((x.support||"").replace(/\D/g,"")||0),
-      ch: chm?+chm[1]:null, diff:(dm?dm[1]:""), cost, cond:extra, place, raw:rn
-    };
-  });
-}
-function bonusTable(){
-  const rows = REC.filter(x=>x.route==="凯伊" && !/^\d+$/.test(x.renown||""))
-    .filter(x=>/剧情|教学|临时/.test(x.renown||""));
-  return rows.map(x=>`<tr><td class="nm">${esc(x.name)}</td>
-    <td><span class="tag ${/教学/.test(x.renown)?"purple":(/临时/.test(x.renown)?"acc":"green")}">${esc(x.renown)}</span></td>
-    <td class="small">${esc((x.chapter||"").replace("（附页参考）",""))}</td>
-    <td class="small muted">${esc(x.when||"—")}</td></tr>`).join("");
-}
-let recQ = "", recOnly = false;
-function recTable(){
-  const all = parseRec().filter(r=>r.renown!==null);
-  const list = all.filter(r=>{
-    if(recOnly && !["佩佩","乌修拉","迪雅各"].includes(r.name)) return false;
-    if(!recQ) return true;
-    const s=(r.name+r.cond+r.cost+r.place).toLowerCase();
-    return s.includes(recQ.toLowerCase());
-  }).sort((a,b)=> a.ch-b.ch || a.renown-b.renown);
-  let html="", lastCh=null;
-  for(const r of list){
-    if(r.ch!==lastCh){
-      lastCh=r.ch;
-      const cnt = list.filter(x=>x.ch===r.ch).length;
-      html+=`<tr class="grp"><td colspan="6">第${r.ch}章　<span class="tag grey">${cnt} 人</span></td></tr>`;
-    }
-    const dTone = {"超":"r","高":"r","中":"acc","低":"g"}[r.diff]||"grey";
-    const isLock = ["佩佩","乌修拉","迪雅各"].includes(r.name);
-    html+=`<tr>
-      <td class="nm">${esc(r.name)}${isLock?' <span class="tag blue">外传前置</span>':""}</td>
-      <td class="c"><span class="req">${r.renown}</span></td>
-      <td class="c"><span class="req b">LV${r.support}</span></td>
-      <td class="c"><span class="tag ${dTone}">${esc(r.diff||"—")}</span></td>
-      <td class="small">${esc([r.cost,r.cond].filter(Boolean).join("；")||"—")}</td>
-      <td class="small">${esc(r.place||"—")}</td>
-    </tr>`;
-  }
-  return `<div class="bar-tools">
-      <input type="text" id="recq" placeholder="搜角色 / 素材 / 地名" value="${esc(recQ)}">
-      <button class="chip${recOnly?" on":""}" id="reconly">只看外传前置的 3 人</button>
-      <span class="small muted" id="reccnt">${list.length} 条</span>
-    </div>
-    <div class="tw"><table><thead><tr><th>角色</th><th>名声</th><th>支援</th><th>交涉难度</th><th>代价 / 附加条件</th><th>地点 · 日期</th></tr></thead><tbody>${html}</tbody></table></div>`;
-}
-
-function tabRec(){
-  const lows = [
-    ["杨界",3,2,"回答顺序：乾酪 → 满月之夜 → 第三题随意"],
-    ["哈尔温",5,3,"交椰枣 ×10（凯伊线采不到，用利贝拉村道具店读档法开蔬菜箱）"],
-    ["米迦艾拉",5,3,"付 3000G"],
-    ["马吉迪",5,2,"每次都回答「需要」"]
-  ].map(([n,r,s,t])=>`<div class="bigc"><div class="n">名声 ${r}</div>
-     <div class="l"><b>${esc(n)}</b>　支援 LV${s}</div><div class="x">${esc(t)}</div></div>`).join("");
-
-  const locks = [
-    ["佩佩","贝特兰外传","第10章起 · 名声 9 / 支援 LV1","外传 9/17–9/25 打完才能挖；凯伊线是四线里最容易打的窗口"],
-    ["乌修拉","谭利穆恩外传","第10章 · 名声 10 / 支援 LV3","问题全答「是」；漏打外传还会在第2部第4章变敌人"],
-    ["迪雅各","欧露赫露外传","第11章 · 名声 10 / 支援 LV3","欧露赫露窗口只有 10/18–10/20，外传一漏迪雅各直接锁死"]
-  ].map(([n,p,r,t])=>`<tr><td class="nm">${esc(n)}</td><td>${esc(p)}</td><td class="small">${esc(r)}</td><td class="small muted">${esc(t)}</td></tr>`).join("");
-
-  const no = [
-    ["法毕欧","仅蕾达线","蕾达线 第11章 名声 9 / 支援 LV3 + 完成迪托利希外传 + 送他满意的武器"],
-    ["巴卡尼亚","仅赛奥朵拉 / 迪托利希线","凯伊篇标注「不可挖角」"],
-    ["盖茨","仅迪托利希线","且需先完成贝特兰外传 + 露露蒂雅支援"],
-    ["沙兰","仅迪托利希 / 蕾达线","且需完成爱娜特莉亚外传（凯伊线根本打不了）"]
-  ].map(([n,r,t])=>`<tr><td class="nm">${esc(n)}</td><td>${esc(r)}</td><td class="small muted">${esc(t)}</td></tr>`).join("");
-
-  return `
-  <div class="three">
-    <div class="bigc"><div class="n">36</div><div class="l">凯伊线可挖角色</div><div class="x">名声 + 支援 + 交涉条件三者都要满足</div></div>
-    <div class="bigc"><div class="n">4 + 1</div><div class="l">剧情白送 3 人 + 教学招募 1 人</div><div class="x">媞雅拉 / 皮特鲁（第1章）、乌尔坦德（第6章）、古扎岚（第3章教学招募）</div></div>
-    <div class="bigc"><div class="n">4</div><div class="l">凯伊线永远拿不到</div><div class="x">法毕欧 / 巴卡尼亚 / 盖茨 / 沙兰</div></div>
-  </div>
-
-  <div class="warn"><b>先把一个常见误解说清：</b>凯伊线<b>没有严格意义上的「独占角色」</b>。逐条核对 44 名可挖角色的路线列表后，凯伊线能挖到的每一个人，在别的线上也都能挖 —— 所谓「独占」真正的含义是三层：① 有 4 人<b>只在凯伊线门槛最低</b>；② 有 3 人的<b>前置外传</b>是凯伊线必须打完的；③ 有 4 人凯伊线<b>永远拿不到</b>。攻略站常把「某个角色在凯伊线最好挖」写成「凯伊独占」，别被带偏。</div>
-
-  <div class="card"><h3>① 凯伊线门槛严格最低的 4 人 <span class="tag green">同角色在别的线都要更高的名声 / 支援</span></h3>
-    <div class="three" style="margin-top:6px">${lows}</div>
-    <div class="small muted" style="margin-top:10px">其余 32 人的最低门槛落在别的线上（例如易尼奥尼在蕾达线只要名声 7 + 支援 LV1 + 3000G，凯伊线要名声 8 + 支援 LV3 + 6000G）。如果只是「想拿到这个人」，不必非在凯伊线挖。</div>
-  </div>
-
-  <div class="card"><h3>② 外传前置的 3 人 —— 这才是凯伊线真正的独占价值</h3>
-    <div class="tw"><table><thead><tr><th>角色</th><th>前置外传</th><th>凯伊线门槛</th><th>说明</th></tr></thead><tbody>${locks}</tbody></table></div>
-    <div class="info" style="margin-bottom:0">这 3 个人把「外传」和「挖角」绑在了一起：外传漏一个，就少一个人。<b>4 个外传 = 3 个挖角名额</b>，这就是为什么凯伊线外传必须全清，而不是「看心情打」。</div>
-  </div>
-
-  <div class="card"><h3>③ 凯伊线拿不到的 4 人</h3>
-    <div class="tw"><table><thead><tr><th>角色</th><th>可用路线</th><th>说明</th></tr></thead><tbody>${no}</tbody></table></div>
-  </div>
-
-  <div class="card"><h3>④ 不用挖的：剧情白送 / 教学招募 / 临时加入</h3>
-    <div class="small muted">「教学招募」是每条线各一个的免费名额 —— 凯伊线是<b>古扎岚</b>（第3章，支援 LV1 / 名声 2），其余三线只能靠挖角拿他。「临时加入」的人不进入队伍，别指望养。</div>
-    <div class="tw"><table><thead><tr><th>角色</th><th>方式</th><th>章节</th><th>条件</th></tr></thead><tbody>${bonusTable()}</tbody></table></div>
-  </div>
-
-  <div class="card"><h3>⑤ 挖角全表（按章节）</h3>
-    <div class="small muted">默认按「最早可挖章节 → 名声」排序。名声门槛是硬线：名声大约每章 +1，名声 10 通常要压到第 9–11 章，别提前屯素材白等。</div>
-    ${recTable()}
-  </div>
-
-  <div class="card"><h3>口径说明</h3>
-    <div class="small muted">
-      ① 本章挖角数据取自 fireemblem.top 的逐路线挖角表（每线各自的名声 / 支援 / 最早章节），与旧版「角色出现章节」口径不同，旧数据会让人误以为第 3 章就能挖名声 10 的角色。<br>
-      ② 名字译法有分歧时以中文 wiki 为准：贝特兰 = 贝特朗，谭利穆恩 = 塔利穆恩，欧露赫露 = 奥尔谢尔。<br>
-      ③ 「第X章」是攻略站标注的最早可挖章节（附页参考），不是硬性限制；名声不够时晚一两章照样能挖。
-    </div>
+  <div class="card"><h3>继承：进战争篇之前必做</h3>
+    <div class="danger" style="margin-top:6px"><b>主线终战开打前，把所有坐骑从角色身上卸下、放进仓库。</b>继承判定只认仓库里的坐骑，装在角色身上的会随队伍重置一起消失。这是第一部最后一次自由行动，进了终战回不了头。</div>
+    <div class="small muted">多周目继承兵种解锁、支援、伟业录，但<b>不继承名声、等级、资金、道具</b>。所以坐骑这种装备类资产，是少数值得在第一部末尾刻意保下来的东西。</div>
   </div>`;
 }
 
 /* ---------- 渲染 ---------- */
 function render(){
+  document.getElementById("rseg").innerHTML = ROUTES.map(r=>
+    `<button data-route="${r}" class="${r===route?"on":""}">${r}${r==="迪托利希"?"（迪哥）":(r==="赛奥朵拉"?"（女王）":"")}</button>`).join("");
+  const ps = paras();
+  document.getElementById("kpis").innerHTML = [
+    [ps.length+"/9","可打外传"],
+    [ps.reduce((a,p)=>a+p.unlock.length,0),"外传挂的挖角前置"],
+    [EXTRA.classes[route].length,"路线限定兵种"],
+    [routeRecs().length,"可挖角色"]
+  ].map(([n,l])=>`<div class="kpi"><b>${n}</b><span>${l}</span></div>`).join("");
   document.getElementById("nav").innerHTML = TABS.map(t=>
     `<button data-tab="${t.id}" class="${t.id===cur?"on":""}">${t.name}</button>`).join("");
   const app = document.getElementById("app");
-  if(cur==="para") app.innerHTML = tabPara();
-  else if(cur==="battle") app.innerHTML = tabBattle();
-  else if(cur==="mount") app.innerHTML = tabMount();
-  else app.innerHTML = tabRec();
+  app.innerHTML = cur==="para" ? tabPara()
+                : cur==="battle" ? tabBattle()
+                : cur==="uniq" ? tabUniq()
+                : cur==="rec" ? tabRec()
+                : tabMount();
   bind();
 }
 function bind(){
-  document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{cur=b.dataset.tab;if(history.replaceState)history.replaceState(null,"","#"+cur);else location.hash=cur;render();window.scrollTo({top:0,behavior:"smooth"});});
+  document.querySelectorAll("#rseg button").forEach(b=>b.onclick=()=>{
+    route=b.dataset.route; setHash(); render(); window.scrollTo({top:0,behavior:"smooth"});});
+  document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{
+    cur=b.dataset.tab; setHash(); render(); window.scrollTo({top:0,behavior:"smooth"});});
   document.querySelectorAll("[data-mt]").forEach(b=>b.onclick=()=>{mType=b.dataset.mt;render();});
   const q=document.getElementById("recq");
-  if(q) q.oninput=()=>{recQ=q.value;const p=q.selectionStart;render();const q2=document.getElementById("recq");q2.focus();q2.setSelectionRange(p,p);};
+  if(q) q.oninput=()=>{recQ=q.value;const p=q.selectionStart;render();
+    const q2=document.getElementById("recq"); if(q2){q2.focus();q2.setSelectionRange(p,p);}};
   const ro=document.getElementById("reconly");
   if(ro) ro.onclick=()=>{recOnly=!recOnly;render();};
 }
+setHash();
 render();
 </script>
 </body>
