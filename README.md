@@ -6,6 +6,12 @@
 >
 > 手机、平板直接打开即可，无需安装；也可下载 `index.html` 双击离线使用。
 
+## 分册：凯伊线专项攻略
+
+> **🌐 <https://rhozero-div.github.io/fe-fw-guide/kai.html>**（本地文件 `kai.html` / `凯伊线-外传抓捕挖角攻略.html`）
+>
+> 凯伊线第一部重玩专用：4 个可打外传的窗口与完美打法、15 种坐骑抓捕、36 人挖角门槛与「路线独占」的真实情况。
+
 ---
 
 ## 收录内容
@@ -31,9 +37,13 @@
 .
 ├── index.html                               # 构建产物（GitHub Pages 入口）
 ├── 火焰纹章-万缕千丝-第一部速查手册.html      # 同一份产物（中文文件名，便于本地保存）
+├── kai.html                                 # 凯伊线专项攻略（外传 / 抓捕 / 挖角）
+├── 凯伊线-外传抓捕挖角攻略.html              # 同一份产物（中文文件名）
 ├── build/
 │   ├── template.html                        # 页面模板，含 __DATA__ 占位符与全部前端逻辑
-│   └── build.py                             # 注入数据 → 生成上述两个 HTML
+│   ├── build.py                             # 注入数据 → 生成上述两个 HTML
+│   ├── kai_template.html                    # 凯伊线攻略模板（四个 Tab，hash 路由）
+│   └── kai_build.py                         # 注入 kai_* 数据 → 生成 kai.html
 └── data/                                    # 数据源（唯一真相来源）
     ├── characters.json                      # 63 名角色：特技/血印/成长率/熟练度/加入时点
     ├── recruitment.json                     # 151 条挖角记录
@@ -41,7 +51,11 @@
     ├── paralogues.json                      # 9 个外传
     ├── proficiency_skills.json              # 117 项熟练度习得特技 + 等级顺序
     ├── combat_arts.json                     # 355 个战技及可习得角色
-    └── portraits.json                       # 63 名角色头像（base64）
+    ├── portraits.json                       # 63 名角色头像（base64）
+    ├── kai_paralogues.json                  # 凯伊线 4 个外传：窗口/完美清单/打法/坑
+    ├── kai_mounts.json                      # 15 种可捕坐骑：诱饵/产地/优先度
+    ├── kai_chapters.json                    # 凯伊线 12 章自由行动回合与必做事项
+    └── recruitment_timeline.json            # 逐路线挖角表（含教学招募与不可挖角标注）
 ```
 
 ## 更新数据
@@ -50,6 +64,7 @@
 
 ```bash
 python3 build/build.py     # 需要 Python 3.8+，无第三方依赖
+python3 build/kai_build.py # 单独重建凯伊线攻略
 ```
 
 该命令会重新生成 `index.html` 与中文名 HTML。推送到 `main` 分支后，GitHub Pages 约 1 分钟内自动更新。
